@@ -29,3 +29,10 @@ input:after {
   -ms-user-select: initial;
   user-select: initial;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: white;
+    background-color:  #121212;
+  }
+}

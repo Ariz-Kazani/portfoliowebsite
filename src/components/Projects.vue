@@ -72,15 +72,6 @@ const projects = ref({
   text-decoration: none;
 }
 
-/* .the-movie {
-  position: sticky;
-  top: 80px
-}
-
-.coming-soon {
-  position: sticky;
-  top: 100px;
-} */
 
 @media only screen and (max-width: 890px) {
   #projects {
@@ -101,8 +92,8 @@ const projects = ref({
   }
 }
 
-@media only screen and (max-width: 720px){
-  
+@media only screen and (max-width: 720px) {
+
   #projects {
     grid-template-columns: 89px 1fr;
   }
@@ -120,15 +111,32 @@ const projects = ref({
     grid-row: 2;
     grid-column: 1 / span 2;
   }
-} 
+}
 
 @media only screen and (max-width: 420px) {
   #projects {
     height: 430px;
   }
+
   #projects a {
     font-size: 3vw;
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  #projects {
+    background-color: rgba(255, 255, 255, 0.14);
+    box-shadow: 0px 0px 20px 4px #8F95EE;
+  }
+
+  #projects:hover {
+    box-shadow: 0px 0px 30px 6px #8F95EE;
+  }
+
+  #projects a {
+    color: #4651EA;
+  }
+
+
+}
 </style>

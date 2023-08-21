@@ -89,7 +89,7 @@ function abtMPREffect() {
     </div>
     <div id="about">
       <h1 id="about-title">About Me</h1>
-      <div id="about-me-data" :class="{ 'abt-me-trans': showAMe }" >
+      <div id="about-me-data" :class="{ 'abt-me-trans': showAMe, 'abt-me-trans-b': !showAMe }">
         <p id="about-me-info">
           Hi, my name is Ariz! I am an aspiring software engineer from Toronto, who is currently studying computer science
           at University. For as long as I can I've been taking things apart to see how they work (sorry mom and dad), and
@@ -102,8 +102,9 @@ function abtMPREffect() {
           Below you can see some of the projects I’ve worked on. If you have any questions, please feel free to reach out
           on my <a href="https://www.linkedin.com/in/arizkazani/" target="_blank">LinkedIn!</a>
         </p>
-        <div id="about-me-pic" @mousemove="abtMPEffect" @mouseleave="abtMPREffect()" :style="{'transform': 'perspective(2000px) rotateX('+rotateX+'deg) rotateY('+ rotateY+'deg)'}">
-          <img src="../assets/Ariz.jpg" alt="" >
+        <div id="about-me-pic" @mousemove="abtMPEffect" @mouseleave="abtMPREffect()"
+          :style="{ 'transform': 'perspective(2000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)' }">
+          <img src="../assets/Ariz.jpg" alt="">
         </div>
       </div>
     </div>
@@ -285,22 +286,30 @@ function abtMPREffect() {
   display: grid;
   grid-template-columns: 1fr 35vw;
   align-items: center;
-
 }
+
+
 
 .abt-me-trans {
   animation: abtMeTrans 1s;
   -webkit-animation: abtMeTrans 1s;
   box-shadow: 0px 0px 30px 4px #1F2366;
+  opacity: 100%;
+}
+
+.abt-me-trans-b {
+  opacity: 0%;
 }
 
 @keyframes abtMeTrans {
   0% {
     box-shadow: 0px 0px 0px 0px #1F2366;
+    opacity: 0%;
   }
 
   20% {
     box-shadow: 0px 0px 0px 0px #1F2366;
+    opacity: 100%;
   }
 
   50% {
@@ -436,5 +445,109 @@ function abtMPREffect() {
     font-size: 16vw;
   }
 
+}
+
+@media (prefers-color-scheme: dark) {
+  #body-con #about #about-me-data {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.14);
+  }
+
+  #body-con #about #about-title {
+    background: -webkit-linear-gradient(#20256B, #3740B8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .abt-me-trans {
+    box-shadow: 0px 0px 30px 4px #8F95EE;
+  }
+
+  @keyframes abtMeTrans {
+    0% {
+      box-shadow: 0px 0px 0px 0px #8F95EE;
+      opacity: 0%;
+    }
+
+    20% {
+      box-shadow: 0px 0px 0px 0px #8F95EE;
+      opacity: 100%;
+    }
+
+    50% {
+      box-shadow: 0px 0px 50px 6px #8F95EE;
+    }
+
+    60% {
+      box-shadow: 0px 0px 30px 4px #8F95EE;
+    }
+
+    70% {
+      box-shadow: 0px 0px 20px 3px #8F95EE;
+    }
+
+    80% {
+      box-shadow: 0px 0px 30px 4px #8F95EE;
+    }
+
+    90% {
+      box-shadow: 0px 0px 40px 5px #8F95EE;
+    }
+
+    100% {
+      box-shadow: 0px 0px 30px 4px #8F95EE;
+    }
+  }
+
+  @-webkit-keyframes abtMeTrans {
+    0% {
+      box-shadow: 0px 0px 0px 0px #8F95EE;
+    }
+
+    16.66% {
+      box-shadow: 0px 0px 50px 6px #8F95EE;
+    }
+
+    33.33% {
+      box-shadow: 0px 0px 30px 4px #8F95EE;
+    }
+
+    50% {
+      box-shadow: 0px 0px 20px 3px #8F95EE;
+    }
+
+    66.66% {
+      box-shadow: 0px 0px 30px 4px #8F95EE;
+    }
+
+    83.33% {
+      box-shadow: 0px 0px 40px 5px #8F95EE;
+    }
+
+    100% {
+      box-shadow: 0px 0px 30px 4px #8F95EE;
+    }
+  }
+
+  #body-con #about #about-me-data #about-me-pic {
+    box-shadow: 0px 0px 10px 1px #8F95EE;
+
+  }
+
+  #body-con #about #about-me-data #about-me-pic:hover {
+    box-shadow: 0px 0px 20px 2px #8F95EE;
+  }
+
+  a {
+    color: #4651EA;
+  }
+
+  #body-con #work #work-title {
+    background: -webkit-linear-gradient(#8F95EE, #4651EA, #3740B8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 </style>
