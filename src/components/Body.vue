@@ -81,7 +81,7 @@ function abtMPREffect() {
       </div>
       <div id="landingMCon">
         <span v-for="(char, index) in openingMessage" id="landing-message"
-          :class="{ 'tLargeS': oMessageLtext == index, 'tMedS': oMessageMtext.includes(index), 'tSmallS': oMessageStext.includes(index), 'tDefaultS': !oMessageMtext.includes(index) && oMessageLtext != index }"
+          :class="{ 'tLargeS': oMessageLtext == index, 'tMedS': oMessageMtext.includes(index), 'tSmallS': oMessageStext.includes(index), 'tDefaultS': !oMessageMtext.includes(index) && oMessageLtext != index && !oMessageStext.includes(index)}"
           @mouseover="landingMEffect(index)" @mouseleave="landingMEffect(-1)" :key="index">
           {{ char }} </span>
         <h2 id="alt-landing-message"> {{ openingMessage }}</h2>
