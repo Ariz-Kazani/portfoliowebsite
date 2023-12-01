@@ -11,6 +11,11 @@ const showAMe = ref(false);
 const rotateX = ref(0);
 const rotateY = ref(0);
 
+const test = ref(100);
+
+window.addEventListener("scroll", () => {
+  test.value = Math.min(100, 100 - window.scrollY / window.innerHeight * 70);
+});
 
 onMounted(() => {
   const abtMeData = document.querySelector("#about-me-data");
@@ -70,21 +75,23 @@ function abtMPREffect() {
 
 <template>
   <div id="body-con">
-    <div class="spacer1a"></div>
-    <div id="landing-con">
-      <div id="img-con">
-        <div id="img-style-con">
-          <img
-            src="https://images.ctfassets.net/cnu0m8re1exe/5rbmLp9h6Xk7WBETUO2Vui/bc9da4fdecc5ded795fa252b47d310b7/earth.jpg"
-            alt="" id="earth-img">
+    <div id="landing-con-outer">
+      <div class="spacer1a" :style="{ 'opacity': test + '%' }"></div>
+      <div id="landing-con" :style="{ 'opacity': test + '%' }">
+        <div id="img-con">
+          <div id="img-style-con">
+            <img
+              src="https://images.ctfassets.net/cnu0m8re1exe/5rbmLp9h6Xk7WBETUO2Vui/bc9da4fdecc5ded795fa252b47d310b7/earth.jpg"
+              alt="" id="earth-img">
+          </div>
         </div>
-      </div>
-      <div id="landingMCon">
-        <span v-for="(char, index) in openingMessage" id="landing-message"
-          :class="{ 'tLargeS': oMessageLtext == index, 'tMedS': oMessageMtext.includes(index), 'tSmallS': oMessageStext.includes(index), 'tDefaultS': !oMessageMtext.includes(index) && oMessageLtext != index && !oMessageStext.includes(index)}"
-          @mouseover="landingMEffect(index)" @mouseleave="landingMEffect(-1)" :key="index">
-          {{ char }} </span>
-        <h2 id="alt-landing-message"> {{ openingMessage }}</h2>
+        <div id="landingMCon">
+          <span v-for="(char, index) in openingMessage" id="landing-message"
+            :class="{ 'tLargeS': oMessageLtext == index, 'tMedS': oMessageMtext.includes(index), 'tSmallS': oMessageStext.includes(index), 'tDefaultS': !oMessageMtext.includes(index) && oMessageLtext != index && !oMessageStext.includes(index) }"
+            @mouseover="landingMEffect(index)" @mouseleave="landingMEffect(-1)" :key="index">
+            {{ char }} </span>
+          <h2 id="alt-landing-message"> {{ openingMessage }}</h2>
+        </div>
       </div>
     </div>
     <div id="about">
@@ -130,12 +137,18 @@ function abtMPREffect() {
 .spacer1a {
   width: 100%;
   height: 50px;
+  position: sticky;
+  top: 0;
   background-color: rgb(5, 5, 5);
 }
 
+#body-con #landing-con-outer {
+  height: 250vh;
+}
+
 #body-con #landing-con {
-  /* width: 100%;
-    aspect-ratio: 16 / 9; */
+  position: sticky;
+  top: 50px;
   background-color: rgba(0, 9, 9, 0.5);
   aspect-ratio: 16 / 9;
   display: grid;
