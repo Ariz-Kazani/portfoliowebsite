@@ -14,7 +14,7 @@ const rotateY = ref(0);
 const test = ref(100);
 
 window.addEventListener("scroll", () => {
-  test.value = Math.min(100, 100 - window.scrollY / window.innerHeight * 70);
+  test.value = Math.min(100, 100 - window.scrollY / window.innerHeight * 65);
 });
 
 onMounted(() => {
@@ -147,17 +147,18 @@ function abtMPREffect() {
 }
 
 #body-con #landing-con {
-  position: sticky;
+  /* background-color: rgba(0, 9, 9, 0.5); */
   top: 50px;
-  background-color: rgba(0, 9, 9, 0.5);
   aspect-ratio: 16 / 9;
   display: grid;
   justify-content: center;
   -webkit-justify-content: center;
+  position: sticky;
 }
 
 #body-con #landing-con #img-con #earth-img {
   height: 100%;
+  filter: brightness(70%);
   aspect-ratio: 16 / 9;
 }
 
