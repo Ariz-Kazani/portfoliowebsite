@@ -46,7 +46,7 @@
 
 p {
   grid-row: 2;
-  grid-column: 2;
+  grid-column: 1 /span 3;
   margin-bottom: 19px;
 }
 

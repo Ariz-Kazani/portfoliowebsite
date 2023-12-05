@@ -11,6 +11,7 @@ const projects = ref({
     photo: theMovieIMG,
     description: 'The Movie is a portfolio project I created. It requires users to get authenticated, then  gives access to "purchase" the movies they like. Users can search for movies, or can look at movies that are currently trending. By clicking on the movie posters, users are presented with information about the movie, such as rating and release date.',
     id: 'the-movie',
+    index: 0,
   },
 
   SortingAlgoVisualizer: {
@@ -19,6 +20,7 @@ const projects = ref({
     photo: sortingAlgoIMG,
     description: 'I created a sorting algorithm visualizer in python for people who are just starting to learn how to code, and don\'t quite understand how they work. Visualise algorithms like merge-sort, quick-sort and even bogo-sort. Find the source code on my GitHub!',
     id: 'algorithm-visualizer',
+    index: 1,
   },
 
   JavaSearchEngin: {
@@ -27,6 +29,7 @@ const projects = ref({
     photo: null,
     description: 'A java search engine & web crawler. Coming soon!',
     id: 'algorithm-visualizer',
+    index: 2,
   },
 
   ComingSoon: {
@@ -35,6 +38,7 @@ const projects = ref({
     photo: null,
     description: 'Coming Soon',
     id: 'coming-soon',
+    index: 3,
   }
 
 })
@@ -43,19 +47,25 @@ const projects = ref({
 </script>
 
 <template>
-  <div id="projects" v-for="site of projects" :class="site.id" :href="site.link" target=”_blank”>
-    <a :href="site.link" target=”_blank”>
-      <h1 id="title-con">{{ site.name }}</h1>
-    </a>
-    <p id="description"> {{ site.description }}</p>
-    <img id="project-img" :src="site.photo" alt="Coming Soon">
+  <div class="project-con">
+    <div id="projects" v-for="site of projects" :class="site.id" :href="site.link" :style="{'top': 100+site.index*10+'px'}" >
+      <a :href="site.link" target=”_blank”>
+        <h1 id="title-con">{{ site.name }}</h1>
+      </a>
+      <p id="description"> {{ site.description }}</p>
+      <img id="project-img" :src="site.photo" alt="Coming Soon">
+    </div>
   </div>
 </template>
 
 
 <style scoped>
+.project-con {
+  min-height: calc(4*300px + 30px + 4*40vh);
+}
+
 #projects {
-  margin: 0px 5% 50px 5%;
+  margin: 0px 5% 40vh 5%;
   height: 300px;
   padding: 30px;
   display: grid;
@@ -63,6 +73,10 @@ const projects = ref({
   grid-template-rows: 50px 190px;
   border-radius: 30px;
   box-shadow: 0px 0px 20px 4px #1F2366;
+  background-color: white;
+  position: sticky;
+  /* top: 100px; */
+  overflow: hidden;
 }
 
 #projects:hover {
@@ -133,6 +147,10 @@ const projects = ref({
 }
 
 @media only screen and (max-width: 420px) {
+  .project-con {
+    min-height: calc(4*430px + 30px + 4*40vh);
+  }
+
   #projects {
     height: 430px;
   }
@@ -144,7 +162,7 @@ const projects = ref({
 
 @media (prefers-color-scheme: dark) {
   #projects {
-    background-color: rgba(255, 255, 255, 0.14);
+    background-color: rgb(52, 52, 52);
     box-shadow: 0px 0px 20px 4px #8F95EE;
   }
 
