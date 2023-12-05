@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue';
-import theMovieIMG from '../assets/themovie.png'
+import theMovieIMG from '../assets/themovie.png';
+import sortingAlgoIMG from '../assets/sortingalgo.png';
+
 
 const projects = ref({
   TheMovie: {
@@ -9,6 +11,22 @@ const projects = ref({
     photo: theMovieIMG,
     description: 'The Movie is a portfolio project I created. It requires users to get authenticated, then  gives access to "purchase" the movies they like. Users can search for movies, or can look at movies that are currently trending. By clicking on the movie posters, users are presented with information about the movie, such as rating and release date.',
     id: 'the-movie',
+  },
+
+  SortingAlgoVisualizer: {
+    name: 'Algorithm Visualizer',
+    link: 'https://github.com/Ariz-Kazani',
+    photo: sortingAlgoIMG,
+    description: 'I created a sorting algorithm visualizer in python for people who are just starting to learn how to code, and don\'t quite understand how they work. Visualise algorithms like merge-sort, quick-sort and even bogo-sort. Find the source code on my GitHub!',
+    id: 'algorithm-visualizer',
+  },
+
+  JavaSearchEngin: {
+    name: 'Search Engine',
+    link: 'https://github.com/Ariz-Kazani',
+    photo: null,
+    description: 'A java search engine & web crawler. Coming soon!',
+    id: 'algorithm-visualizer',
   },
 
   ComingSoon: {
@@ -30,7 +48,7 @@ const projects = ref({
       <h1 id="title-con">{{ site.name }}</h1>
     </a>
     <p id="description"> {{ site.description }}</p>
-    <img id="project-img" :src="site.photo" alt="">
+    <img id="project-img" :src="site.photo" alt="Coming Soon">
   </div>
 </template>
 
@@ -105,6 +123,7 @@ const projects = ref({
 
   #projects a {
     grid-column: 2;
+    font-size: 2.8vw;
   }
 
   #projects #description {
@@ -119,7 +138,7 @@ const projects = ref({
   }
 
   #projects a {
-    font-size: 3vw;
+    font-size: 2.5vw;
   }
 }
 
@@ -136,7 +155,5 @@ const projects = ref({
   #projects a {
     color: #4651EA;
   }
-
-
 }
 </style>
