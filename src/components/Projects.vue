@@ -16,7 +16,7 @@ const projects = ref({
 
   SortingAlgoVisualizer: {
     name: 'Algorithm Visualizer',
-    link: 'https://github.com/Ariz-Kazani',
+    link: 'https://github.com/Ariz-Kazani/python-sorting-algorithm-visualizer',
     photo: sortingAlgoIMG,
     description: 'I created a sorting algorithm visualizer in python for people who are just starting to learn how to code, and don\'t quite understand how they work. Visualise algorithms like merge-sort, quick-sort and even bogo-sort. Find the source code on my GitHub!',
     id: 'algorithm-visualizer',
