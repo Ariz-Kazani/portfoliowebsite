@@ -79,10 +79,10 @@ const projects = ref({
   overflow: hidden;
 }
 
-#projects:hover {
+/* #projects:hover {
   transform: scale(1.01);
   box-shadow: 0px 0px 30px 6px #1F2366;
-}
+} */
 
 #projects #project-img {
   height: 100%;
