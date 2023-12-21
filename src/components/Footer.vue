@@ -64,6 +64,11 @@ a {
   margin: 10px;
 }
 
+a:hover {
+  transition-timing-function: ease-in;
+  transition: 0.2s;
+  transform: scale(1.1);
+}
 
 @media (prefers-color-scheme: dark) {
   #footer-con {

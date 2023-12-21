@@ -166,9 +166,9 @@ const projects = ref({
     box-shadow: 0px 0px 20px 4px #8F95EE;
   }
 
-  #projects:hover {
+  /* #projects:hover {
     box-shadow: 0px 0px 30px 6px #8F95EE;
-  }
+  } */
 
   #projects a {
     color: #4651EA;
