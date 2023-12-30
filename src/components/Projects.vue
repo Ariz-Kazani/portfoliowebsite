@@ -2,53 +2,54 @@
 import { ref } from 'vue';
 import theMovieIMG from '../assets/themovie.png';
 import sortingAlgoIMG from '../assets/sortingalgo.png';
+import timecopilotIMG from '../assets/time-copilot.png';
 
-
-const projects = ref({
-  TheMovie: {
+// Add projects here in the format below 
+const projects = ref([
+  {
+    name: 'Time-CoPilot',
+    link: 'https://time-copilot.com',
+    photo: timecopilotIMG,
+    description: 'In Development: Time-CoPilot is a productivity app that will take your productivity to the next level. Uses AWS, react(with next.js), typescript, tailwind css and Shaden.',
+    id: 'time-copilot',
+  },
+  {
     name: 'The Movie',
     link: 'https://the-movie-arizkazani.web.app/',
     photo: theMovieIMG,
     description: 'The Movie is a portfolio project I created. It requires users to get authenticated, then  gives access to "purchase" the movies they like. Users can search for movies, or can look at movies that are currently trending. By clicking on the movie posters, users are presented with information about the movie, such as rating and release date.',
     id: 'the-movie',
-    index: 0,
   },
-
-  SortingAlgoVisualizer: {
+  {
     name: 'Algorithm Visualizer',
     link: 'https://github.com/Ariz-Kazani/python-sorting-algorithm-visualizer',
     photo: sortingAlgoIMG,
     description: 'I created a sorting algorithm visualizer in python for people who are just starting to learn how to code, and don\'t quite understand how they work. Visualise algorithms like merge-sort, quick-sort and even bogo-sort. Find the source code on my GitHub!',
     id: 'algorithm-visualizer',
-    index: 1,
   },
-
-  JavaSearchEngin: {
+  {
     name: 'Search Engine',
     link: 'https://github.com/Ariz-Kazani',
     photo: null,
-    description: 'A java search engine & web crawler. Coming soon!',
+    description: 'Bugs Getting fixed: A java search engine & web crawler (contact for details, restricted due to Carleton Universitie\'s academic integrity policy)',
     id: 'algorithm-visualizer',
-    index: 2,
   },
-
-  ComingSoon: {
+  {
     name: 'Coming Soon',
     link: null,
     photo: null,
     description: 'Coming Soon',
     id: 'coming-soon',
-    index: 3,
   }
-
-})
+])
 
 
 </script>
 
 <template>
   <div class="project-con">
-    <div id="projects" v-for="site of projects" :class="site.id" :href="site.link" :style="{'top': 100+site.index*10+'px'}" >
+    <div id="projects" v-for="(site, index) in projects" :class="site.id" :href="site.link"
+      :style="{ 'top': 100 + index * 10 + 'px' }">
       <a :href="site.link" target=”_blank”>
         <h1 id="title-con">{{ site.name }}</h1>
       </a>
@@ -61,7 +62,8 @@ const projects = ref({
 
 <style scoped>
 .project-con {
-  min-height: calc(4*300px + 30px + 4*40vh);
+  /*adjust         !                !     */
+  min-height: calc(5*300px + 30px + 5*40vh);
 }
 
 #projects {
@@ -75,14 +77,8 @@ const projects = ref({
   box-shadow: 0px 0px 20px 4px #1F2366;
   background-color: white;
   position: sticky;
-  /* top: 100px; */
   overflow: hidden;
 }
-
-/* #projects:hover {
-  transform: scale(1.01);
-  box-shadow: 0px 0px 30px 6px #1F2366;
-} */
 
 #projects #project-img {
   height: 100%;
@@ -165,10 +161,6 @@ const projects = ref({
     background-color: rgb(52, 52, 52);
     box-shadow: 0px 0px 20px 4px #8F95EE;
   }
-
-  /* #projects:hover {
-    box-shadow: 0px 0px 30px 6px #8F95EE;
-  } */
 
   #projects a {
     color: #4651EA;
