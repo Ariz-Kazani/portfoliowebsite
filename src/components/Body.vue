@@ -61,6 +61,21 @@ function landingMEffect(id) {
   }
 }
 
+function landingInitialAnimation() {
+  let i = 0;
+  let interval = setInterval(() => {
+    landingMEffect(-1);
+    if (i < openingMessage.value.length) {
+      landingMEffect(i);
+      i++;
+    } else {
+      clearInterval(interval);
+    }
+  }, 40);
+}
+
+landingInitialAnimation();
+
 function abtMPEffect(e) {
   rotateY.value = 20 * ((e.layerX - e.target.clientWidth / 2) / e.target.clientWidth);
   rotateX.value = -20 * ((e.layerY - e.target.clientHeight / 2) / e.target.clientHeight);
@@ -98,15 +113,19 @@ function abtMPREffect() {
       <h1 id="about-title">About Me</h1>
       <div id="about-me-data" :class="{ 'abt-me-trans': showAMe, 'abt-me-trans-b': !showAMe }">
         <p id="about-me-info">
-          Hi, my name is Ariz! I am an aspiring software engineer from Toronto, who is currently studying computer science
-          at Carleton University. For as long as I can I've been taking things apart to see how they work (sorry mom and dad), and
-          create new things. This passion for curiosity led me to the field of computer science. An immeasurable focus has
+          Hi, my name is Ariz! I am an aspiring software engineer from Toronto, who is currently studying computer
+          science
+          at Carleton University. For as long as I can I've been taking things apart to see how they work (sorry mom and
+          dad), and
+          create new things. This passion for curiosity led me to the field of computer science. An immeasurable focus
+          has
           allowed me to learn a lot in not a lot of time.
           <br><br>
           I've gained valuable experience in Python, Java and JavaScript, and am always looking to expand my skill set.
           The majority of my experience lies with JavaScript and the Vue.js framework.
           <br><br>
-          Below you can see some of the projects I’ve worked on. If you have any questions, please feel free to reach out
+          Below you can see some of the projects I’ve worked on. If you have any questions, please feel free to reach
+          out
           on my <a href="https://www.linkedin.com/in/arizkazani/" target="_blank">LinkedIn!</a>
         </p>
         <div id="about-me-pic" @mousemove="abtMPEffect" @mouseleave="abtMPREffect()"
