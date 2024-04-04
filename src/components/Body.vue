@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue'
 import Projects from './Projects.vue';
 
-const openingMessage = ref('PushingTheLimitsOfCode!');
+const openingMessage = ref('');
 const oMessageStext = ref([]);
 const oMessageLtext = ref(null);
 const oMessageMtext = ref([]);
@@ -61,17 +61,20 @@ function landingMEffect(id) {
   }
 }
 
-function landingInitialAnimation() {
+async function landingInitialAnimation() {
+  await new Promise(resolve => setTimeout(resolve, 300))
+  const message = "PushingTheLimitsOfCode!";
   let i = 0;
   let interval = setInterval(() => {
+    openingMessage.value += message[i];
     landingMEffect(-1);
-    if (i < openingMessage.value.length) {
+    if (i < message.length - 1) {
       landingMEffect(i);
       i++;
     } else {
       clearInterval(interval);
     }
-  }, 40);
+  }, 35);
 }
 
 landingInitialAnimation();
@@ -95,9 +98,7 @@ function abtMPREffect() {
       <div id="landing-con" :style="{ 'opacity': test + '%' }">
         <div id="img-con">
           <div id="img-style-con">
-            <img
-              src="https://images.ctfassets.net/cnu0m8re1exe/5rbmLp9h6Xk7WBETUO2Vui/bc9da4fdecc5ded795fa252b47d310b7/earth.jpg"
-              alt="" id="earth-img">
+            <img src="../assets/earth.jpg" alt="" id="earth-img">
           </div>
         </div>
         <div id="landingMCon">
