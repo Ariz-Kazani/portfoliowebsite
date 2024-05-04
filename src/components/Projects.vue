@@ -10,7 +10,7 @@ const projects = ref([
     name: 'Time-CoPilot',
     link: 'https://time-copilot.com',
     photo: timecopilotIMG,
-    description: 'In Beta: Time-CoPilot is a productivity app that will take your productivity to the next level. Uses AWS, React(with Next.js), Typescript, tailwindcss and Shaden. Time-CoPilot allows users to plan their day, and track their progress. Users can also create, notes, todos and more!',
+    description: 'Time-CoPilot is a productivity app that will take your productivity to the next level. Uses AWS, React(with Next.js), Typescript, tailwindcss and Shaden. Time-CoPilot allows users to plan their day, and track their progress. Users can also create, notes, todos and much much more!',
     id: 'time-copilot',
   },
   {
