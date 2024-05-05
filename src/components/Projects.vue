@@ -5,7 +5,7 @@ import sortingAlgoIMG from '../assets/sortingalgo.png';
 import timecopilotIMG from '../assets/time-copilot.png';
 import { analytics } from '../firebase';
 import { getAnalytics, logEvent } from "firebase/analytics";
-const a = getAnalytics();
+const an = getAnalytics();
 
 // Add projects here in the format below 
 const projects = ref([
@@ -53,7 +53,7 @@ const projects = ref([
   <div class="project-con">
     <div id="projects" v-for="(site, index) in projects" :class="site.id" :href="site.link"
       :style="{ 'top': 100 + index * 10 + 'px' }">
-      <a @click="logEvent(analytics, 'Clicked A Link', { name: site.id });" :href="site.link" target=”_blank”>
+      <a @click="logEvent(an, 'Clicked A Link', { name: site.id });" :href="site.link" target=”_blank”>
         <h1 id="title-con">{{ site.name }}</h1>
       </a>
       <p id="description"> {{ site.description }}</p>
