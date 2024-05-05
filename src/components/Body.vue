@@ -1,6 +1,10 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import Projects from './Projects.vue';
+import { analytics } from '../firebase';
+import { getAnalytics, logEvent } from "firebase/analytics";
+const an = getAnalytics();
+
 
 const openingMessage = ref('');
 const oMessageStext = ref([]);
@@ -127,7 +131,8 @@ function abtMPREffect() {
           <br><br>
           Below you can see some of the projects I’ve worked on. If you have any questions, please feel free to reach
           out
-          on my <a href="https://www.linkedin.com/in/arizkazani/" target="_blank">LinkedIn!</a>
+          on my <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'LinkedIn' });"
+            href="https://www.linkedin.com/in/arizkazani/" target="_blank">LinkedIn!</a>
         </p>
         <div id="about-me-pic" @mousemove="abtMPEffect" @mouseleave="abtMPREffect()"
           :style="{ 'transform': 'perspective(2000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)' }">
