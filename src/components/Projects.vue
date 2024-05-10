@@ -13,7 +13,7 @@ const projects = ref([
     name: 'Time-CoPilot',
     link: 'https://time-copilot.com',
     photo: timecopilotIMG,
-    description: 'Time-CoPilot is a productivity app that will take your productivity to the next level. Uses AWS, React(with Next.js), Typescript, tailwindcss and Shaden. Time-CoPilot allows users to plan their day, and track their progress. Users can also create, notes, todos and much much more!',
+    description: `Time-CoPilot is a productivity app that will take your productivity to the next level. Uses AWS, React (with Next.js), Typescript, TailwindCSS and Shadcn. Time-CoPilot allows users to plan their day, and track their progress. Users can also create, notes, todo's and much much more!`,
     id: 'time-copilot',
   },
   {
@@ -35,7 +35,7 @@ const projects = ref([
     link: 'https://github.com/Ariz-Kazani',
     photo: null,
     description: 'A java search engine & web crawler (contact for details, restricted due to Carleton Universitie\'s academic integrity policy)',
-    id: 'algorithm-visualizer',
+    id: 'search-engine',
   },
   {
     name: 'Coming Soon',
@@ -53,7 +53,7 @@ const projects = ref([
   <div class="project-con">
     <div id="projects" v-for="(site, index) in projects" :class="site.id" :href="site.link"
       :style="{ 'top': 100 + index * 10 + 'px' }">
-      <a @click="logEvent(an, 'Clicked A Project Link', { linkName: site.id });" :href="site.link" target=”_blank”>
+      <a @click="logEvent(an, 'Clicked A Project Link', { linkName: site.id });" :href="site.link" target="_blank">
         <h1 id="title-con">{{ site.name }}</h1>
       </a>
       <p id="description"> {{ site.description }}</p>
@@ -65,6 +65,7 @@ const projects = ref([
 
 <style scoped>
 .project-con {
+  /* Adjust the number of projects */
   /*adjust         !                !     */
   min-height: calc(5*300px + 30px + 5*40vh);
 }
