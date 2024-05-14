@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import theMovieIMG from '../assets/themovie.png';
 import sortingAlgoIMG from '../assets/sortingalgo.png';
-import timecopilotIMG from '../assets/time-copilot.png';
+import timecopilotIMG from '../assets/time-copilot2.jpg';
 import { analytics } from '../firebase';
 import { getAnalytics, logEvent } from "firebase/analytics";
 const an = getAnalytics();
