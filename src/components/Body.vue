@@ -134,10 +134,10 @@ function abtMPREffect() {
           on my <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'LinkedIn' });"
             href="https://www.linkedin.com/in/arizkazani/" target="_blank">LinkedIn!</a>
         </p>
-        <div id="about-me-pic" @mousemove="abtMPEffect" @mouseleave="abtMPREffect()"
+        <!-- <div id="about-me-pic" @mousemove="abtMPEffect" @mouseleave="abtMPREffect()"
           :style="{ 'transform': 'perspective(2000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)' }">
           <img src="../assets/Ariz.jpg" alt="">
-        </div>
+        </div> -->
       </div>
     </div>
     <div id="work">
@@ -323,7 +323,6 @@ function abtMPREffect() {
   border-radius: 20px;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 35vw;
   align-items: center;
 }
 
@@ -410,56 +409,6 @@ function abtMPREffect() {
   font-size: large;
   width: 80%;
   margin: 10%;
-}
-
-#body-con #about #about-me-data #about-me-pic {
-  width: 80%;
-  /* height: 400px; */
-  aspect-ratio: 1 / 1;
-  margin: 10%;
-  border-radius: 20px;
-  background-color: grey;
-  overflow: hidden;
-  justify-self: center;
-  position: relative;
-  box-shadow: 0px 0px 10px 1px #1F2366;
-
-}
-
-#body-con #about #about-me-data #about-me-pic:hover {
-  box-shadow: 0px 0px 20px 2px #1F2366;
-}
-
-#body-con #about #about-me-data #about-me-pic img {
-  width: 100%;
-  height: 100%;
-  filter: grayscale(100%);
-}
-
-
-@media only screen and (max-width: 1100px) {
-  #body-con #about #about-me-data {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 400px;
-  }
-
-  #body-con #about #about-me-data #about-me-pic {
-    grid-row: 2;
-    margin: 0 0 10% 0;
-    width: 400px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  #body-con #about #about-me-data {
-    grid-template-rows: 1fr 60vw;
-
-  }
-
-  #body-con #about #about-me-data #about-me-pic {
-    width: 80%;
-    height: 60vw;
-  }
 }
 
 #body-con #work {

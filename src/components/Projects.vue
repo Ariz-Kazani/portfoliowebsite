@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import theMovieIMG from '../assets/themovie.png';
 import sortingAlgoIMG from '../assets/sortingalgo.png';
 import timecopilotIMG from '../assets/time-copilot2.jpg';
+import searchEngineIMG from '../assets/searchengine.png';
 import { analytics } from '../firebase';
 import { getAnalytics, logEvent } from "firebase/analytics";
 const an = getAnalytics();
@@ -33,14 +34,14 @@ const projects = ref([
   {
     name: 'Search Engine',
     link: 'https://github.com/Ariz-Kazani',
-    photo: null,
+    photo: searchEngineIMG,
     description: 'A java search engine & web crawler (contact for details, restricted due to Carleton Universitie\'s academic integrity policy)',
     id: 'search-engine',
   },
   {
     name: 'Coming Soon',
     link: null,
-    photo: null,
+    photo: 'https://www.shutterstock.com/shutterstock/videos/25940564/thumb/3.jpg?ip=x480',
     description: 'Coming Soon',
     id: 'coming-soon',
   }

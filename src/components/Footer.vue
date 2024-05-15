@@ -27,7 +27,7 @@ const an = getAnalytics();
       </a>
     </div>
     <p>
-      &copy 2023 Ariz Kazani
+      &copy 2024 Ariz Kazani
     </p>
   </div>
 </template>
