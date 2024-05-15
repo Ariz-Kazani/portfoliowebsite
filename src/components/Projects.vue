@@ -41,7 +41,7 @@ const projects = ref([
   {
     name: 'Coming Soon',
     link: null,
-    photo: 'https://www.shutterstock.com/shutterstock/videos/25940564/thumb/3.jpg?ip=x480',
+    photo: 'https://t4.ftcdn.net/jpg/05/79/68/85/240_F_579688567_hmuT3hnFxTeDBXsyUUsmvB6Kvt0UF8Bd.webp',
     description: 'Coming Soon',
     id: 'coming-soon',
   }
