@@ -4,9 +4,8 @@ import theMovieIMG from '../assets/themovie.png';
 import sortingAlgoIMG from '../assets/sortingalgo.png';
 import timecopilotIMG from '../assets/time-copilot2.jpg';
 import searchEngineIMG from '../assets/searchengine.png';
-import { analytics } from '../firebase';
-import { getAnalytics, logEvent } from "firebase/analytics";
-const an = getAnalytics();
+import Card from './Card.vue';
+
 
 // Add projects here in the format below 
 const projects = ref([
@@ -42,7 +41,7 @@ const projects = ref([
     name: 'Coming Soon',
     link: null,
     photo: 'https://t4.ftcdn.net/jpg/05/79/68/85/240_F_579688567_hmuT3hnFxTeDBXsyUUsmvB6Kvt0UF8Bd.webp',
-    description: 'Coming Soon',
+    description: 'Coming Soon, stay tuned ;)',
     id: 'coming-soon',
   }
 ])
@@ -52,123 +51,26 @@ const projects = ref([
 
 <template>
   <div class="project-con">
-    <div id="projects" v-for="(site, index) in projects" :class="site.id" :href="site.link"
-      :style="{ 'top': 100 + index * 10 + 'px' }">
-      <a @click="logEvent(an, 'Clicked A Project Link', { linkName: site.id });" :href="site.link" target="_blank">
-        <h1 id="title-con">{{ site.name }}</h1>
-      </a>
-      <p id="description"> {{ site.description }}</p>
-      <img id="project-img" :src="site.photo" alt="Coming Soon">
-    </div>
+    <template v-for="(site, index) in projects">
+      <Card :name="site.name" :description="site.description" :link="site.link" :photo="site.photo" :id="site.id"
+        :index="index" />
+    </template>
   </div>
 </template>
 
 
 <style scoped>
 .project-con {
-  /* Adjust the number of projects */
+  /* Adjust the number of projects  1 more after this*/
   /*adjust         !                !     */
   min-height: calc(5*300px + 30px + 5*40vh);
 }
 
-#projects {
-  margin: 0px 5% 40vh 5%;
-  height: 300px;
-  padding: 30px;
-  display: grid;
-  grid-template-columns: 427px 1fr;
-  grid-template-rows: 50px 190px;
-  border-radius: 30px;
-  box-shadow: 0px 0px 20px 4px #1F2366;
-  background-color: white;
-  position: sticky;
-  overflow: hidden;
-}
-
-#projects #project-img {
-  height: 100%;
-  width: 420px;
-  grid-column: 1;
-  grid-row: 1 / span 2;
-  border-radius: 5px;
-}
-
-#projects #description {
-  grid-row: 2;
-  grid-column: 2;
-}
-
-#projects a {
-  grid-row: 1;
-  grid-column: 2;
-  color: #000766;
-  text-decoration: none;
-}
-
-
-@media only screen and (max-width: 890px) {
-  #projects {
-    grid-template-columns: 338px 1fr;
-  }
-
-  #projects #project-img {
-    grid-row: 2;
-    width: 331px;
-  }
-
-  #projects #description {
-    grid-row: 1 / span 2;
-  }
-
-  #projects a {
-    grid-column: 1;
-  }
-}
-
-@media only screen and (max-width: 720px) {
-
-  #projects {
-    grid-template-columns: 89px 1fr;
-  }
-
-  #projects #project-img {
-    grid-row: 1;
-    width: 82px;
-  }
-
-  #projects a {
-    grid-column: 2;
-    font-size: 2.8vw;
-  }
-
-  #projects #description {
-    grid-row: 2;
-    grid-column: 1 / span 2;
-  }
-}
-
 @media only screen and (max-width: 420px) {
   .project-con {
-    min-height: calc(4*430px + 30px + 4*40vh);
-  }
-
-  #projects {
-    height: 430px;
-  }
-
-  #projects a {
-    font-size: 2.5vw;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  #projects {
-    background-color: rgb(52, 52, 52);
-    box-shadow: 0px 0px 20px 4px #8F95EE;
-  }
-
-  #projects a {
-    color: #4651EA;
+    /* Adjust the number of projects */
+    /*adjust         !                !     */
+    min-height: calc(5*430px + 30px + 5*40vh);
   }
 }
 </style>

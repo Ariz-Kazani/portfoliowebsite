@@ -1,24 +1,25 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import Projects from './Projects.vue';
+
+// analytics stuff
 import { analytics } from '../firebase';
 import { getAnalytics, logEvent } from "firebase/analytics";
 const an = getAnalytics();
 
-
+// landing page hover effect 
 const openingMessage = ref('');
 const oMessageStext = ref([]);
 const oMessageLtext = ref(null);
 const oMessageMtext = ref([]);
 const showAMe = ref(false);
 
-const rotateX = ref(0);
-const rotateY = ref(0);
+// landing page opacity
+const landingOpacity = ref(100);
 
-const test = ref(100);
 
 window.addEventListener("scroll", () => {
-  test.value = Math.min(100, 100 - window.scrollY / window.innerHeight * 65);
+  landingOpacity.value = Math.min(100, 100 - window.scrollY / window.innerHeight * 65);
 });
 
 onMounted(() => {
@@ -78,28 +79,20 @@ async function landingInitialAnimation() {
     } else {
       clearInterval(interval);
     }
-  }, 35);
+  }, 100);
 }
 
 landingInitialAnimation();
 
-function abtMPEffect(e) {
-  rotateY.value = 20 * ((e.layerX - e.target.clientWidth / 2) / e.target.clientWidth);
-  rotateX.value = -20 * ((e.layerY - e.target.clientHeight / 2) / e.target.clientHeight);
-}
 
-function abtMPREffect() {
-  rotateX.value = 0;
-  rotateY.value = 0;
-}
 
 </script>
 
 <template>
   <div id="body-con">
     <div id="landing-con-outer">
-      <div class="spacer1a" :style="{ 'opacity': test + '%' }"></div>
-      <div id="landing-con" :style="{ 'opacity': test + '%' }">
+      <div class="spacer1a" :style="{ 'opacity': landingOpacity + '%' }"></div>
+      <div id="landing-con" :style="{ 'opacity': landingOpacity + '%' }">
         <div id="img-con">
           <div id="img-style-con">
             <img src="../assets/earth.jpg" alt="" id="earth-img">
@@ -118,26 +111,31 @@ function abtMPREffect() {
       <h1 id="about-title">About Me</h1>
       <div id="about-me-data" :class="{ 'abt-me-trans': showAMe, 'abt-me-trans-b': !showAMe }">
         <p id="about-me-info">
-          Hi, my name is Ariz! I am an aspiring software engineer from Toronto, who is currently studying computer
-          science
-          at Carleton University. For as long as I can I've been taking things apart to see how they work (sorry mom and
-          dad), and
-          create new things. This passion for curiosity led me to the field of computer science. An immeasurable focus
-          has
-          allowed me to learn a lot in not a lot of time.
-          <br><br>
-          I've gained valuable experience in Python, Java and JavaScript, and am always looking to expand my skill set.
-          The majority of my experience lies with JavaScript and the Vue.js framework.
-          <br><br>
-          Below you can see some of the projects I’ve worked on. If you have any questions, please feel free to reach
-          out
-          on my <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'LinkedIn' });"
-            href="https://www.linkedin.com/in/arizkazani/" target="_blank">LinkedIn!</a>
+          Hi, I'm Ariz Kazani, a passionate Full Stack Developer currently honing my skills at Carleton University,
+          where I'm pursuing a Bachelor of Science in Computer Science, and a Minor in Statistics. I'm currently
+          interning at Confidens Analytics,
+          where I contribute to building comprehensive applications that assist dentists in starting their practices.
+          This experience has allowed me to apply my knowledge in real-world scenarios, enhancing my development skills
+          and understanding of full stack application development.
+          <br />
+          <br />
+          In addition to my internship, I've worked on several projects that highlight my technical versatility. I've
+          created a productivity app with Next.js and AWS, a dynamic movie streaming website using Vue.js and Firebase,
+          and even developed a search engine with Java. These projects have not only improved my technical skills but
+          also fueled my passion.
+          <br />
+          <br />
+          I love tackling challenging problems and continuously learning new technologies. My technical arsenal includes
+          a variety of languages like C, Java, and PHP, and frameworks such as Next.js, Vue.js, and Larvel. When I'm not
+          coding, you can find me exploring the latest in tech, experimenting with new programming languages, or sharing
+          my knowledge with fellow developers.
+          <br />
+          <br />
+          Feel free to check out my projects and get in touch on my <a
+            @click="logEvent(an, 'Clicked A Social Link', { linkName: 'LinkedIn' });"
+            href="https://www.linkedin.com/in/arizkazani/" target="_blank">LinkedIn</a> if you'd like to work with me!
         </p>
-        <!-- <div id="about-me-pic" @mousemove="abtMPEffect" @mouseleave="abtMPREffect()"
-          :style="{ 'transform': 'perspective(2000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)' }">
-          <img src="../assets/Ariz.jpg" alt="">
-        </div> -->
+
       </div>
     </div>
     <div id="work">
@@ -539,4 +537,4 @@ function abtMPREffect() {
     -webkit-text-fill-color: transparent;
   }
 }
-</style>
+</style>style
