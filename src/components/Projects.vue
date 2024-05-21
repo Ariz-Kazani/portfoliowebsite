@@ -18,7 +18,7 @@ const projects = ref([
   },
   {
     name: 'The Movie',
-    link: 'https://the-movie-arizkazani.web.app/',
+    link: 'https://the-movie-arizkazani.firebaseapp.com/',
     photo: theMovieIMG,
     description: 'The Movie is a portfolio project I created. It requires users to get authenticated, then  gives access to "purchase" the movies they like. Users can search for movies, or can look at movies that are currently trending. By clicking on the movie posters, users are presented with information about the movie, such as rating and release date.',
     id: 'the-movie',
