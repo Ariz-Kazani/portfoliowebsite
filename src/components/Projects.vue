@@ -1,9 +1,9 @@
 <script setup>
 import { ref } from 'vue';
-import theMovieIMG from '../assets/themovie.png';
-import sortingAlgoIMG from '../assets/sortingalgo.png';
+import theMovieIMG from '../assets/themovie.jpg';
+import sortingAlgoIMG from '../assets/sortingalgo.jpg';
 import timecopilotIMG from '../assets/time-copilot2.jpg';
-import searchEngineIMG from '../assets/searchengine.png';
+import searchEngineIMG from '../assets/searchengine.jpg';
 import Card from './Card.vue';
 
 
