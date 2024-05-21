@@ -113,7 +113,7 @@ landingInitialAnimation();
         <p id="about-me-info">
           Hi, I'm Ariz Kazani, a passionate Full Stack Developer currently honing my skills at Carleton University,
           where I'm pursuing a Bachelor of Science in Computer Science, and a Minor in Statistics. I'm currently
-          interning at Confidens Analytics,
+          interning at Confidens Analytics as a Full Stack Developer,
           where I contribute to building comprehensive applications that assist dentists in starting their practices.
           This experience has allowed me to apply my knowledge in real-world scenarios, enhancing my development skills
           and understanding of full stack application development.
