@@ -32,7 +32,7 @@ const projects = ref([
   },
   {
     name: 'Search Engine',
-    link: 'https://github.com/Ariz-Kazani',
+    link: 'https://github.com/Ariz-Kazani/Spider-Search-Engine',
     photo: searchEngineIMG,
     description: 'A java search engine & web crawler (contact for details, restricted due to Carleton Universitie\'s academic integrity policy)',
     id: 'search-engine',
