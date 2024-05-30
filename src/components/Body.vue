@@ -421,7 +421,7 @@ async function landingInitialAnimation() {
 }
 
 #body-con #work #work-title {
-  padding: 0px 55px 0px 55px;
+  padding: 0px 0px 0px 55px;
   text-align: center;
   height: calc(100vh - 50px);
   font-size: 3vh;
@@ -459,7 +459,7 @@ async function landingInitialAnimation() {
   }
 
   #body-con #work #work-title {
-    padding: 0px 20px 0px 20px;
+    padding: 0px 0px 0px 20px;
   }
 }
 
