@@ -205,7 +205,7 @@ async function landingInitialAnimation() {
 }
 
 
-@media only screen and (orientation: landscape) {
+@media only screen and (min-aspect-ratio: 29/18) {
   #body-con #landing-con {
     width: 100%;
   }
@@ -219,7 +219,7 @@ async function landingInitialAnimation() {
   }
 }
 
-@media only screen and (orientation: portrait) {
+@media only screen and (max-aspect-ratio: 29/18) {
   #body-con #landing-con {
     height: 100vh;
     width: 100%;
@@ -252,21 +252,21 @@ async function landingInitialAnimation() {
   font-weight: 900;
   font-size: 55px;
   color: white;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
+  text-shadow: 0 0 10px #4651EA, 0 0 20px #4651EA, 0 0 30px #1F2366, 0 0 40px #1F2366, 0 0 50px #1F2366, 0 0 60px #1F2366, 0 0 70px #1F2366;
 }
 
 .tMedS {
   font-weight: 800;
   font-size: 45px;
   color: white;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
+  text-shadow: 0 0 10px #4651EA, 0 0 20px #4651EA, 0 0 30px #1F2366, 0 0 40px #1F2366, 0 0 50px #1F2366, 0 0 60px #1F2366, 0 0 70px #1F2366;
 }
 
 .tSmallS {
   font-weight: 700;
   font-size: 40px;
   color: white;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
+  text-shadow: 0 0 10px #4651EA, 0 0 20px #4651EA, 0 0 30px #1F2366, 0 0 40px #1F2366, 0 0 50px #1F2366, 0 0 60px #1F2366, 0 0 70px #1F2366;
 }
 
 .tDefaultS {
@@ -474,6 +474,18 @@ async function landingInitialAnimation() {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .tLargeS {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
+  }
+
+  .tMedS {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
+  }
+
+  .tSmallS {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
   }
 
   .abt-me-trans {

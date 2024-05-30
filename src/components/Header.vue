@@ -30,7 +30,7 @@
   border-style: none none solid none;
   padding-bottom: 0px;
   border-width: 2px;
-  border-color: #4651EA;
+  border-color: #1F2366;
   display: grid;
   grid-template-columns: 30px 200px 1fr 80px 10px 80px 10px 80px 1fr 230px;
   backdrop-filter: blur(1000px);
@@ -38,7 +38,7 @@
 }
 
 #header-con #home-but {
-  color: #4651EA;
+  color: #1F2366;
   text-decoration: none;
   width: fit-content;
   margin: 7px;
@@ -58,7 +58,7 @@
   text-decoration: none;
   height: 40px;
   width: 100%;
-  color: #4651EA;
+  color: #1F2366;
   margin-top: 4px;
   border-radius: 5px;
   text-align: center;
@@ -70,11 +70,9 @@
 }
 
 #header-con .but:hover {
-  /* height: 40px;
-  width: 100%; */
   color: white;
   margin-top: 4px;
-  background-color: #4651EA;
+  background-color: #1F2366;
 }
 
 #header-con #about-but {
@@ -117,6 +115,25 @@
 
   #header-con {
     grid-template-columns: 1fr 45px 1fr 70px 5px 70px 5px 70px 1fr;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #header-con {
+    border-color: #4651EA;
+    color: #4651EA;
+  }
+
+  #header-con .but {
+    color: #4651EA;
+  }
+
+  #header-con .but:hover {
+    background-color: #4651EA;
+  }
+
+  #header-con #home-but {
+    color: #4651EA;
   }
 }
 </style>
