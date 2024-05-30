@@ -27,7 +27,7 @@ const projects = ref([
     name: 'Search Engine',
     link: 'https://github.com/Ariz-Kazani/Spider-Search-Engine',
     photo: searchEngineIMG,
-    description: 'This project implements a web crawler and search engine in Java(and in Python without a GUI).The crawler starts from a seed URL, collects data from web pages, and stores it for search and ranking.The search engine processes user queries, delivering relevant results using PageRank algorithms.',
+    description: 'This project implements a web crawler and search engine in Java (and one in Python without a GUI).The crawler starts from a seed URL, collects data from web pages, and stores it for search and ranking.The search engine processes user queries, delivering relevant results using PageRank algorithms.',
     id: 'search-engine',
   },
   {

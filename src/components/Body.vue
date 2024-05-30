@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import Projects from './Projects.vue';
+import Work from './Work.vue';
 
 // analytics stuff
 import { analytics } from '../firebase';
@@ -127,7 +128,8 @@ async function landingInitialAnimation() {
           <br />
           <br />
           I love tackling challenging problems and continuously learning new technologies. My technical arsenal includes
-          a variety of languages like C, Java, and PHP, and frameworks such as Next.js, Vue.js, and Larvel. When I'm not
+          a variety of languages like C, Java, and PHP, and frameworks such as Next.js, Vue.js, and Laravel. When I'm
+          not
           coding, you can find me exploring the latest in tech, experimenting with new programming languages, or sharing
           my knowledge with fellow developers.
           <br />
@@ -140,8 +142,12 @@ async function landingInitialAnimation() {
       </div>
     </div>
     <div id="work">
-      <h1 id="work-title">Some Of My Projects</h1>
-      <Projects></Projects>
+      <h1 id="work-title">My Work Experience</h1>
+      <Work />
+    </div>
+    <div id="projects">
+      <h1 id="projects-title">Some Of My Projects</h1>
+      <Projects />
     </div>
   </div>
 </template>
@@ -199,7 +205,7 @@ async function landingInitialAnimation() {
 }
 
 
-@media only screen and (orientation: landscape) {
+@media only screen and (min-aspect-ratio: 29/18) {
   #body-con #landing-con {
     width: 100%;
   }
@@ -213,7 +219,7 @@ async function landingInitialAnimation() {
   }
 }
 
-@media only screen and (orientation: portrait) {
+@media only screen and (max-aspect-ratio: 29/18) {
   #body-con #landing-con {
     height: 100vh;
     width: 100%;
@@ -246,21 +252,21 @@ async function landingInitialAnimation() {
   font-weight: 900;
   font-size: 55px;
   color: white;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
+  text-shadow: 0 0 10px #4651EA, 0 0 20px #4651EA, 0 0 30px #1F2366, 0 0 40px #1F2366, 0 0 50px #1F2366, 0 0 60px #1F2366, 0 0 70px #1F2366;
 }
 
 .tMedS {
   font-weight: 800;
   font-size: 45px;
   color: white;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
+  text-shadow: 0 0 10px #4651EA, 0 0 20px #4651EA, 0 0 30px #1F2366, 0 0 40px #1F2366, 0 0 50px #1F2366, 0 0 60px #1F2366, 0 0 70px #1F2366;
 }
 
 .tSmallS {
   font-weight: 700;
   font-size: 40px;
   color: white;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
+  text-shadow: 0 0 10px #4651EA, 0 0 20px #4651EA, 0 0 30px #1F2366, 0 0 40px #1F2366, 0 0 50px #1F2366, 0 0 60px #1F2366, 0 0 70px #1F2366;
 }
 
 .tDefaultS {
@@ -324,8 +330,6 @@ async function landingInitialAnimation() {
   display: grid;
   align-items: center;
 }
-
-
 
 .abt-me-trans {
   animation: abtMeTrans 1s;
@@ -412,10 +416,31 @@ async function landingInitialAnimation() {
 
 #body-con #work {
   margin-top: 50vh;
-  min-height: 93vh;
+  min-height: calc(100vh - 100px);
+  display: flex;
 }
 
 #body-con #work #work-title {
+  padding: 0px 0px 0px 55px;
+  text-align: center;
+  height: calc(100vh - 50px);
+  font-size: 3vh;
+  background: -webkit-linear-gradient(#000766, #000CB3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  position: sticky;
+  top: 55px;
+}
+
+#body-con #projects {
+  margin-top: 50vh;
+  min-height: 93vh;
+}
+
+#body-con #projects #projects-title {
   padding: 55px 0 55px 0;
   text-align: center;
   width: 100%;
@@ -428,11 +453,14 @@ async function landingInitialAnimation() {
 
 @media only screen and (max-width: 500px) {
 
-  #body-con #work #work-title,
+  #body-con #projects #projects-title,
   #body-con #about #about-title {
     font-size: 16vw;
   }
 
+  #body-con #work #work-title {
+    padding: 0px 0px 0px 20px;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -446,6 +474,18 @@ async function landingInitialAnimation() {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .tLargeS {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
+  }
+
+  .tMedS {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
+  }
+
+  .tSmallS {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
   }
 
   .abt-me-trans {
@@ -529,6 +569,13 @@ async function landingInitialAnimation() {
 
   a {
     color: #4651EA;
+  }
+
+  #body-con #projects #projects-title {
+    background: -webkit-linear-gradient(#8F95EE, #4651EA, #3740B8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   #body-con #work #work-title {

@@ -19,24 +19,25 @@ const an = getAnalytics();
       </a>
       <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'GitHub' });" href="https://github.com/Ariz-Kazani"
         target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-github"
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="35" fill="currentColor" class="bi bi-github"
           viewBox="0 0 16 16">
           <path
             d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8" />
         </svg>
       </a>
-      <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'stack-overflow' });"
+      <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'leet-code' });"
         href="https://leetcode.com/u/arizkazani/" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-stack-overflow"
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-code-square"
           viewBox="0 0 16 16">
-          <path d="M12.412 14.572V10.29h1.428V16H1v-5.71h1.428v4.282z" />
           <path
-            d="M3.857 13.145h7.137v-1.428H3.857zM10.254 0 9.108.852l4.26 5.727 1.146-.852zm-3.54 3.377 5.484 4.567.913-1.097L7.627 2.28l-.914 1.097zM4.922 6.55l6.47 3.013.603-1.294-6.47-3.013zm-.925 3.344 6.985 1.469.294-1.398-6.985-1.468z" />
+            d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+          <path
+            d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0m2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0" />
         </svg>
       </a>
     </div>
     <p>
-      &copy 2024 Ariz Kazani
+      &copy2023 - 2024, Ariz Kazani
     </p>
   </div>
 </template>
@@ -50,8 +51,8 @@ const an = getAnalytics();
   height: 90px;
   border-style: solid none none none;
   border-width: 2px;
-  border-color: #4651EA;
-  color: #4651EA;
+  border-color: #1F2366;
+  color: #1F2366;
   justify-items: center;
   justify-content: center;
   align-items: center;
@@ -67,13 +68,15 @@ p {
   grid-row: 1;
   grid-column: 2;
   font-size: 26px;
+  width: 170px;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 a {
   text-decoration: none;
-  color: #4651EA;
-  bottom: 0;
+  color: #1F2366;
   margin: 10px;
 }
 
@@ -86,6 +89,13 @@ a:hover {
 @media (prefers-color-scheme: dark) {
   #footer-con {
     background-color: rgba(255, 255, 255, 0.07);
+    border-color: #4651EA;
+    color: #4651EA;
   }
+
+  a {
+    color: #4651EA;
+  }
+
 }
 </style>
