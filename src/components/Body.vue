@@ -9,6 +9,7 @@ const an = getAnalytics();
 
 // landing page hover effect 
 const openingMessage = ref('');
+const openingMessageData = ref('PushingTheLimitsOfCode!');
 const oMessageStext = ref([]);
 const oMessageLtext = ref(null);
 const oMessageMtext = ref([]);
@@ -24,6 +25,7 @@ window.addEventListener("scroll", () => {
 
 onMounted(() => {
   const abtMeData = document.querySelector("#about-me-data");
+  landingInitialAnimation();
 
   const options = {
     root: null,
@@ -71,19 +73,16 @@ async function landingInitialAnimation() {
   const message = "PushingTheLimitsOfCode!";
   let i = 0;
   let interval = setInterval(() => {
-    openingMessage.value += message[i];
+    openingMessage.value += openingMessageData.value[i];
     landingMEffect(-1);
-    if (i < message.length - 1) {
+    if (i < openingMessageData.value.length - 1) {
       landingMEffect(i);
       i++;
     } else {
       clearInterval(interval);
     }
-  }, 100);
+  }, 60);
 }
-
-landingInitialAnimation();
-
 
 
 </script>
@@ -101,7 +100,9 @@ landingInitialAnimation();
         <div id="landingMCon">
           <span v-for="(char, index) in openingMessage" id="landing-message"
             :class="{ 'tLargeS': oMessageLtext == index, 'tMedS': oMessageMtext.includes(index), 'tSmallS': oMessageStext.includes(index), 'tDefaultS': !oMessageMtext.includes(index) && oMessageLtext != index && !oMessageStext.includes(index) }"
-            @mouseover="landingMEffect(index)" @mouseleave="landingMEffect(-1)" :key="index">
+            @mouseover="() => { if (openingMessage.length == openingMessageData.length) landingMEffect(index) }"
+            @mouseleave="() => { if (openingMessage.length == openingMessageData.length) landingMEffect(-1) }"
+            :key="index">
             {{ char }} </span>
           <h2 id="alt-landing-message"> {{ openingMessage }}</h2>
         </div>

@@ -15,6 +15,9 @@
     <a href="#work" class="but" id="work-but">
       <p>Work</p>
     </a>
+    <a href="#projects" class="but" id="project-but">
+      <p>Projects</p>
+    </a>
   </div>
 </template>
 
@@ -29,7 +32,7 @@
   border-width: 2px;
   border-color: #4651EA;
   display: grid;
-  grid-template-columns: 30px 200px 1fr 80px 10px 80px 1fr 230px;
+  grid-template-columns: 30px 200px 1fr 80px 10px 80px 10px 80px 1fr 230px;
   backdrop-filter: blur(1000px);
   -webkit-backdrop-filter: blur(1000px);
 }
@@ -47,15 +50,15 @@
 #header-con #home-but #home-but-s {
   display: none;
   width: 35px;
+  text-align: center;
 }
 
 
 #header-con .but {
   text-decoration: none;
   height: 40px;
-  width: 80px;
+  width: 100%;
   color: #4651EA;
-
   margin-top: 4px;
   border-radius: 5px;
   text-align: center;
@@ -67,8 +70,8 @@
 }
 
 #header-con .but:hover {
-  height: 40px;
-  width: 80px;
+  /* height: 40px;
+  width: 100%; */
   color: white;
   margin-top: 4px;
   background-color: #4651EA;
@@ -82,13 +85,17 @@
   grid-column: 6;
 }
 
-@media only screen and (max-width: 700px) {
+#header-con #project-but {
+  grid-column: 8;
+}
+
+@media only screen and (max-width: 750px) {
   #header-con {
-    grid-template-columns: 30px 200px 1fr 80px 10px 80px 1fr 30px;
+    grid-template-columns: 30px 200px 1fr 80px 10px 80px 10px 80px 1fr 30px;
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 540px) {
   #header-con #home-but #home-but-l {
     display: none;
   }
@@ -98,7 +105,18 @@
   }
 
   #header-con {
-    grid-template-columns: 1fr 35px 1fr 80px 10px 80px 1fr ;
+    grid-template-columns: 1fr 45px 1fr 80px 10px 80px 10px 80px 1fr;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  #header-con .but>p {
+    margin-top: 9px;
+    font-size: medium;
+  }
+
+  #header-con {
+    grid-template-columns: 1fr 45px 1fr 70px 5px 70px 5px 70px 1fr;
   }
 }
 </style>

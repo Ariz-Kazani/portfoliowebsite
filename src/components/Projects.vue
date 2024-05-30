@@ -24,18 +24,18 @@ const projects = ref([
     id: 'the-movie',
   },
   {
+    name: 'Search Engine',
+    link: 'https://github.com/Ariz-Kazani/Spider-Search-Engine',
+    photo: searchEngineIMG,
+    description: 'This project implements a web crawler and search engine in Java(and in Python without a GUI).The crawler starts from a seed URL, collects data from web pages, and stores it for search and ranking.The search engine processes user queries, delivering relevant results using PageRank algorithms.',
+    id: 'search-engine',
+  },
+  {
     name: 'Algorithm Visualizer',
     link: 'https://github.com/Ariz-Kazani/python-sorting-algorithm-visualizer',
     photo: sortingAlgoIMG,
     description: 'I created a sorting algorithm visualizer in python for people who are just starting to learn how to code, and don\'t quite understand how they work. Visualise algorithms like merge-sort, quick-sort and even bogo-sort. Find the source code on my GitHub!',
     id: 'algorithm-visualizer',
-  },
-  {
-    name: 'Search Engine',
-    link: 'https://github.com/Ariz-Kazani/Spider-Search-Engine',
-    photo: searchEngineIMG,
-    description: 'A java search engine & web crawler (contact for details, restricted due to Carleton Universitie\'s academic integrity policy)',
-    id: 'search-engine',
   },
   {
     name: 'Coming Soon',
