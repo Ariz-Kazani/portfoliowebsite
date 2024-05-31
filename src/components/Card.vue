@@ -68,7 +68,7 @@ function abtMPREffect() {
 
 #project-con #project-img:hover {
   #project-img-data {
-    box-shadow: 0px 0px 10px 1px #8F95EE;
+    box-shadow: 0px 0px 10px 1px #1F2366;
   }
 }
 
@@ -150,6 +150,12 @@ function abtMPREffect() {
 
   #project-con a {
     color: #4651EA;
+  }
+
+  #project-con #project-img:hover {
+    #project-img-data {
+      box-shadow: 0px 0px 10px 1px #8F95EE;
+    }
   }
 }
 </style>
