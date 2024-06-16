@@ -1,8 +1,12 @@
 <script setup>
 import { ref } from 'vue';
 import { analytics } from '../firebase';
-import { getAnalytics, logEvent } from "firebase/analytics";
-const an = getAnalytics();
+// import { getAnalytics, logEvent } from "firebase/analytics";
+// const an = getAnalytics();
+
+const an = () => {
+  console.log('analytics', false);
+}
 
 const rotateX = ref(0);
 const rotateY = ref(0);
@@ -10,7 +14,8 @@ const rotateY = ref(0);
 defineProps({
   name: String,
   description: String,
-  link: String,
+  hostingLink: String,
+  codeLink: String,
   photo: String,
   id: String,
   index: Number,
@@ -31,9 +36,23 @@ function abtMPREffect() {
 
 <template>
   <div id="project-con" :class="id" :href="link" :style="{ 'top': 100 + index * 10 + 'px' }">
-    <a @click="logEvent(an, 'Clicked A Project Link', { linkName: id });" :href="link" target="_blank">
-      <h1 id="title-con">{{ name }}</h1>
-    </a>
+    <div id="links">
+      <a @click="() => {if (hostingLink) logEvent(an, 'Clicked A Project Link', { linkName: id });}" 
+        :style="{ 'cursor': hostingLink ? 'pointer' : 'default' }" 
+        :href="hostingLink" target="_blank">
+        <h1 id="title-con">{{ name }}
+        </h1>
+      </a>
+      <a v-if="codeLink" @click="logEvent(an, 'Clicked A Project Link', { linkName: id });" :href="codeLink" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code-square"
+          viewBox="0 0 16 16">
+          <path
+            d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+          <path
+            d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0m2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0" />
+        </svg>
+      </a>
+    </div>
     <p id="description"> {{ description }}</p>
 
     <div id="project-img" @mousemove="abtMPEffect" @mouseleave="abtMPREffect()">
@@ -83,12 +102,28 @@ function abtMPREffect() {
   grid-column: 2;
 }
 
-#project-con a {
+#project-con #links {
   grid-row: 1;
   grid-column: 2;
-  color: #000766;
-  text-decoration: none;
+  display: flex;
 }
+
+#project-con #links a {
+  text-decoration: none;
+  color: #1F2366;
+  padding: 0 2px 0 2px;
+  height: full;
+}
+
+#project-con #links a svg{
+  margin: 0 5px 0 5px;
+  height: 90%;
+  width: 50%;
+  font-size: 1em;
+
+
+}
+
 
 
 @media only screen and (max-width: 890px) {
@@ -105,7 +140,7 @@ function abtMPREffect() {
     grid-row: 1 / span 2;
   }
 
-  #project-con a {
+  #project-con #links {
     grid-column: 1;
   }
 }
@@ -121,7 +156,7 @@ function abtMPREffect() {
     width: 82px;
   }
 
-  #project-con a {
+  #project-con #links {
     grid-column: 2;
     font-size: 2.8vw;
   }
@@ -137,7 +172,7 @@ function abtMPREffect() {
     height: 430px;
   }
 
-  #project-con a {
+  #project-con #links {
     font-size: 2.5vw;
   }
 }
@@ -148,7 +183,7 @@ function abtMPREffect() {
     box-shadow: 0px 0px 20px 4px #8F95EE;
   }
 
-  #project-con a {
+  #project-con #links a {
     color: #4651EA;
   }
 
