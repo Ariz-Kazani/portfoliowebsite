@@ -136,7 +136,7 @@ async function landingInitialAnimation() {
           <br />
           Feel free to check out my projects and get in touch on my <a
             @click="logEvent(an, 'Clicked A Social Link', { linkName: 'LinkedIn' });"
-            href="https://www.linkedin.com/in/arizkazani/" target="_blank">LinkedIn</a> if you'd like to work with me!
+            href="https://www.linkedin.com/in/arizkazani/" target="_blank">LinkedIn</a>, if you'd like to work with me!
         </p>
 
       </div>

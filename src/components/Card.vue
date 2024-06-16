@@ -1,12 +1,8 @@
 <script setup>
 import { ref } from 'vue';
 import { analytics } from '../firebase';
-// import { getAnalytics, logEvent } from "firebase/analytics";
-// const an = getAnalytics();
-
-const an = () => {
-  console.log('analytics', false);
-}
+import { getAnalytics, logEvent } from "firebase/analytics";
+const an = getAnalytics();
 
 const rotateX = ref(0);
 const rotateY = ref(0);
@@ -43,7 +39,7 @@ function abtMPREffect() {
         <h1 id="title-con">{{ name }}
         </h1>
       </a>
-      <a v-if="codeLink" @click="logEvent(an, 'Clicked A Project Link', { linkName: id });" :href="codeLink" target="_blank">
+      <a v-if="codeLink" @click="logEvent(an, 'Clicked A Social Link', { linkName: 'GitHub ' + id });" :href="codeLink" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code-square"
           viewBox="0 0 16 16">
           <path
