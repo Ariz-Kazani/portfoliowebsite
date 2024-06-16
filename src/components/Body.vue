@@ -25,22 +25,23 @@ window.addEventListener("scroll", () => {
 });
 
 onMounted(() => {
-  const abtMeData = document.querySelector("#about-me-data");
+  const abtMeData = document.querySelector("#about-title");
   landingInitialAnimation();
 
   const options = {
     root: null,
-    threshold: 0.1,
-    rootMargin: "",
+    threshold: 1,
+    rootMargin: "0px 0px -50% 0px",
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && entry.target.id == 'about-me-data') {
+      if (entry.isIntersecting && entry.target.id == 'about-title') {
         showAMe.value = true;
-      } else if (entry.target.id == 'about-me-data') {
-        showAMe.value = false;
-      }
+      } 
+      // else if (entry.target.id == 'about-title') {
+      //   showAMe.value = false;
+      // }
     })
   }, options);
   observer.observe(abtMeData);
@@ -343,7 +344,8 @@ async function landingInitialAnimation() {
 }
 
 @keyframes abtMeTrans {
-  0% {
+  /* 0% {
+  
     box-shadow: 0px 0px 0px 0px #1F2366;
     opacity: 0%;
   }
@@ -375,11 +377,29 @@ async function landingInitialAnimation() {
 
   100% {
     box-shadow: 0px 0px 30px 4px #1F2366;
-  }
+  } */
+
+    0% {
+      opacity: 0;
+      transform: scale(.3);
+    }
+  
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  
+    70% {
+      transform: scale(.9);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
 }
 
 @-webkit-keyframes abtMeTrans {
-  0% {
+  /* 0% {
     box-shadow: 0px 0px 0px 0px #1F2366;
   }
 
@@ -405,7 +425,25 @@ async function landingInitialAnimation() {
 
   100% {
     box-shadow: 0px 0px 30px 4px #1F2366;
-  }
+  } */
+
+    0% {
+      opacity: 0;
+      transform: scale(.3);
+    }
+  
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  
+    70% {
+      transform: scale(.9);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
 }
 
 #body-con #about #about-me-data #about-me-info {
@@ -490,72 +528,6 @@ async function landingInitialAnimation() {
 
   .abt-me-trans {
     box-shadow: 0px 0px 30px 4px #8F95EE;
-  }
-
-  @keyframes abtMeTrans {
-    0% {
-      box-shadow: 0px 0px 0px 0px #8F95EE;
-      opacity: 0%;
-    }
-
-    20% {
-      box-shadow: 0px 0px 0px 0px #8F95EE;
-      opacity: 100%;
-    }
-
-    50% {
-      box-shadow: 0px 0px 50px 6px #8F95EE;
-    }
-
-    60% {
-      box-shadow: 0px 0px 30px 4px #8F95EE;
-    }
-
-    70% {
-      box-shadow: 0px 0px 20px 3px #8F95EE;
-    }
-
-    80% {
-      box-shadow: 0px 0px 30px 4px #8F95EE;
-    }
-
-    90% {
-      box-shadow: 0px 0px 40px 5px #8F95EE;
-    }
-
-    100% {
-      box-shadow: 0px 0px 30px 4px #8F95EE;
-    }
-  }
-
-  @-webkit-keyframes abtMeTrans {
-    0% {
-      box-shadow: 0px 0px 0px 0px #8F95EE;
-    }
-
-    16.66% {
-      box-shadow: 0px 0px 50px 6px #8F95EE;
-    }
-
-    33.33% {
-      box-shadow: 0px 0px 30px 4px #8F95EE;
-    }
-
-    50% {
-      box-shadow: 0px 0px 20px 3px #8F95EE;
-    }
-
-    66.66% {
-      box-shadow: 0px 0px 30px 4px #8F95EE;
-    }
-
-    83.33% {
-      box-shadow: 0px 0px 40px 5px #8F95EE;
-    }
-
-    100% {
-      box-shadow: 0px 0px 30px 4px #8F95EE;
-    }
   }
 
   #body-con #about #about-me-data #about-me-pic {

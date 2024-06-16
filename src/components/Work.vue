@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-import Card from './Card.vue';
 
 const work = ref([
   {
