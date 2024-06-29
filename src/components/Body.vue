@@ -174,7 +174,7 @@ async function landingInitialAnimation() {
 }
 
 #body-con #landing-con-outer {
-  height: 250vh;
+  height: 300vh;
 }
 
 #body-con #landing-con {
@@ -185,6 +185,7 @@ async function landingInitialAnimation() {
   justify-content: center;
   -webkit-justify-content: center;
   position: sticky;
+  transition: 0.25s ease;
 }
 
 #body-con #landing-con #img-con #earth-img {
