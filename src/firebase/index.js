@@ -16,7 +16,13 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+
+
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+let analytics = null;
+
+if (import.meta.env.VITE_MODE !== 'dev') {
+  analytics = getAnalytics(app);
+}
 
 export { analytics };
