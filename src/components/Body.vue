@@ -25,23 +25,23 @@ window.addEventListener("scroll", () => {
 });
 
 onMounted(() => {
-  const abtMeData = document.querySelector("#about-title");
+  const abtMeData = document.querySelector("#about");
   landingInitialAnimation();
 
   const options = {
     root: null,
-    threshold: 1,
-    rootMargin: "0px 0px -50% 0px",
+    threshold: 0,
+    rootMargin: "-50% 0px -50% 0px",
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && entry.target.id == 'about-title') {
+      if (entry.isIntersecting && entry.target.id == 'about') {
         showAMe.value = true;
       } 
-      // else if (entry.target.id == 'about-title') {
-      //   showAMe.value = false;
-      // }
+      else if (entry.target.id == 'about') {
+        showAMe.value = false;
+      }
     })
   }, options);
   observer.observe(abtMeData);
@@ -154,15 +154,10 @@ async function landingInitialAnimation() {
 </template>
 
 <style scoped>
-.test {
-  background-color: pink;
-  color: aquamarine;
-}
 
 #body-con {
   width: 100%;
   min-height: 90vh;
-  /* background-color: aqua; */
 }
 
 .spacer1a {
@@ -178,7 +173,6 @@ async function landingInitialAnimation() {
 }
 
 #body-con #landing-con {
-  /* background-color: rgba(0, 9, 9, 0.5); */
   top: 50px;
   aspect-ratio: 16 / 9;
   display: grid;
@@ -309,7 +303,7 @@ async function landingInitialAnimation() {
 
 #body-con #about {
   padding: 20px 0 20px 0;
-  min-height: 400px;
+  min-height: 120vh;
   display: grid;
 }
 
@@ -341,45 +335,13 @@ async function landingInitialAnimation() {
 }
 
 .abt-me-trans-b {
+  animation: abtMeTransB 1s;
+  -webkit-animation: abtMeTransB 1s;
+  box-shadow: 0px 0px 30px 4px #1F2366;
   opacity: 0%;
 }
 
 @keyframes abtMeTrans {
-  /* 0% {
-  
-    box-shadow: 0px 0px 0px 0px #1F2366;
-    opacity: 0%;
-  }
-
-  20% {
-    box-shadow: 0px 0px 0px 0px #1F2366;
-    opacity: 100%;
-  }
-
-  50% {
-    box-shadow: 0px 0px 50px 6px #1F2366;
-  }
-
-  60% {
-    box-shadow: 0px 0px 30px 4px #1F2366;
-  }
-
-  70% {
-    box-shadow: 0px 0px 20px 3px #1F2366;
-  }
-
-  80% {
-    box-shadow: 0px 0px 30px 4px #1F2366;
-  }
-
-  90% {
-    box-shadow: 0px 0px 40px 5px #1F2366;
-  }
-
-  100% {
-    box-shadow: 0px 0px 30px 4px #1F2366;
-  } */
-
     0% {
       opacity: 0;
       transform: scale(.3);
@@ -400,34 +362,6 @@ async function landingInitialAnimation() {
 }
 
 @-webkit-keyframes abtMeTrans {
-  /* 0% {
-    box-shadow: 0px 0px 0px 0px #1F2366;
-  }
-
-  16.66% {
-    box-shadow: 0px 0px 50px 6px #1F2366;
-  }
-
-  33.33% {
-    box-shadow: 0px 0px 30px 4px #1F2366;
-  }
-
-  50% {
-    box-shadow: 0px 0px 20px 3px #1F2366;
-  }
-
-  66.66% {
-    box-shadow: 0px 0px 30px 4px #1F2366;
-  }
-
-  83.33% {
-    box-shadow: 0px 0px 40px 5px #1F2366;
-  }
-
-  100% {
-    box-shadow: 0px 0px 30px 4px #1F2366;
-  } */
-
     0% {
       opacity: 0;
       transform: scale(.3);
@@ -445,6 +379,49 @@ async function landingInitialAnimation() {
     100% {
       transform: scale(1);
     }
+}
+
+@keyframes abtMeTransB {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  50% {
+    transform: scale(.9);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  
+  100% {
+    opacity: 0;
+    transform: scale(.3);
+  }
+  
+}
+
+@-webkit-keyframes abtMeTrans {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  50% {
+    transform: scale(.9);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  
+  100% {
+    opacity: 0;
+    transform: scale(.3);
+  }
 }
 
 #body-con #about #about-me-data #about-me-info {
@@ -528,6 +505,10 @@ async function landingInitialAnimation() {
   }
 
   .abt-me-trans {
+    box-shadow: 0px 0px 30px 4px #8F95EE;
+  }
+
+  .abt-me-trans-b {
     box-shadow: 0px 0px 30px 4px #8F95EE;
   }
 

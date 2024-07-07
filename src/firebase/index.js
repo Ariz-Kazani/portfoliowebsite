@@ -21,7 +21,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 let analytics = null;
 
-if (import.meta.env.VITE_MODE !== 'dev') {
+if (import.meta.env.VITE_MODE != 'dev') {
   analytics = getAnalytics(app);
 }
 
