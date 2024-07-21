@@ -21,8 +21,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 let analytics = null;
 
-if (import.meta.env.VITE_MODE != 'dev') {
+if (import.meta.env.VITE_MODE == 'prod') {
   analytics = getAnalytics(app);
+} else if (import.meta.env.VITE_MODE == 'dev') {
+  console.log('Analytics is disabled, Website is in development mode');
+} else {
+  console.log('Analytics is disabled, Website is in an unknown mode');
 }
 
 export { analytics };
