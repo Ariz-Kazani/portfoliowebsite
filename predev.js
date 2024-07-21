@@ -17,7 +17,7 @@ const setEnvVariable = (filePath, key, value) => {
 };
 
 const requiredEnvVar = 'VITE_MODE';
-const newValue = 'prod';
+const newValue = 'dev';
 
 setEnvVariable(envPath, requiredEnvVar, newValue);
 
