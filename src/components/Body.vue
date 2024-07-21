@@ -10,7 +10,7 @@ const an = getAnalytics();
 
 // landing page hover effect 
 const openingMessage = ref('');
-const openingMessageData = ref('PushingTheLimitsOfCode!');
+const openingMessageData = ref('PushingTheLimitsOfCode! ');
 const oMessageStext = ref([]);
 const oMessageLtext = ref(null);
 const oMessageMtext = ref([]);
@@ -38,7 +38,7 @@ onMounted(() => {
     entries.forEach(entry => {
       if (entry.isIntersecting && entry.target.id == 'about') {
         showAMe.value = true;
-      } 
+      }
       else if (entry.target.id == 'about') {
         showAMe.value = false;
       }
@@ -71,8 +71,7 @@ function landingMEffect(id) {
 }
 
 async function landingInitialAnimation() {
-  await new Promise(resolve => setTimeout(resolve, 300))
-  const message = "PushingTheLimitsOfCode!";
+  await new Promise(resolve => setTimeout(resolve, 500))
   let i = 0;
   let interval = setInterval(() => {
     openingMessage.value += openingMessageData.value[i];
@@ -83,7 +82,7 @@ async function landingInitialAnimation() {
     } else {
       clearInterval(interval);
     }
-  }, 60);
+  }, 200);
 }
 
 
@@ -135,11 +134,13 @@ async function landingInitialAnimation() {
           my knowledge with fellow developers.
           <br />
           <br />
-          Feel free to check out my projects and get in touch on my <a
-            @click="logEvent(an, 'Clicked A Social Link', { linkName: 'LinkedIn' });"
-            href="https://www.linkedin.com/in/arizkazani/" target="_blank">LinkedIn</a>, if you'd like to work with me!
+          Feel free to get in touch on my
+          <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'LinkedIn' });"
+            href="https://www.linkedin.com/in/arizkazani/" target="_blank">LinkedIn</a>, if you'd like to work with me,
+          or just want to have a chat! If you want to learn more about my experiences, here is my
+          <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'resume' });"
+            href="https://drive.google.com/file/d/1W0A2GtongtZBmP2k6pdfskR4ntfJXGWu/view" target="_blank">resume</a>.
         </p>
-
       </div>
     </div>
     <div id="work">
@@ -154,7 +155,6 @@ async function landingInitialAnimation() {
 </template>
 
 <style scoped>
-
 #body-con {
   width: 100%;
   min-height: 90vh;
@@ -342,43 +342,43 @@ async function landingInitialAnimation() {
 }
 
 @keyframes abtMeTrans {
-    0% {
-      opacity: 0;
-      transform: scale(.3);
-    }
-  
-    50% {
-      opacity: 1;
-      transform: scale(1.05);
-    }
-  
-    70% {
-      transform: scale(.9);
-    }
-  
-    100% {
-      transform: scale(1);
-    }
+  0% {
+    opacity: 0;
+    transform: scale(.3);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  70% {
+    transform: scale(.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 @-webkit-keyframes abtMeTrans {
-    0% {
-      opacity: 0;
-      transform: scale(.3);
-    }
-  
-    50% {
-      opacity: 1;
-      transform: scale(1.05);
-    }
-  
-    70% {
-      transform: scale(.9);
-    }
-  
-    100% {
-      transform: scale(1);
-    }
+  0% {
+    opacity: 0;
+    transform: scale(.3);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  70% {
+    transform: scale(.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes abtMeTransB {
@@ -386,7 +386,7 @@ async function landingInitialAnimation() {
     transform: scale(1);
     opacity: 1;
   }
-  
+
   50% {
     transform: scale(.9);
   }
@@ -395,12 +395,12 @@ async function landingInitialAnimation() {
     opacity: 1;
     transform: scale(1.05);
   }
-  
+
   100% {
     opacity: 0;
     transform: scale(.3);
   }
-  
+
 }
 
 @-webkit-keyframes abtMeTrans {
@@ -408,7 +408,7 @@ async function landingInitialAnimation() {
     transform: scale(1);
     opacity: 1;
   }
-  
+
   50% {
     transform: scale(.9);
   }
@@ -417,7 +417,7 @@ async function landingInitialAnimation() {
     opacity: 1;
     transform: scale(1.05);
   }
-  
+
   100% {
     opacity: 0;
     transform: scale(.3);
