@@ -71,10 +71,11 @@ function landingMEffect(id) {
 }
 
 async function landingInitialAnimation() {
-  await new Promise(resolve => setTimeout(resolve, 500))
+  openingMessage.value = openingMessageData.value;
+  await new Promise(resolve => setTimeout(resolve, 350))
   let i = 0;
   let interval = setInterval(() => {
-    openingMessage.value += openingMessageData.value[i];
+    // openingMessage.value += openingMessageData.value[i];
     landingMEffect(-1);
     if (i < openingMessageData.value.length - 1) {
       landingMEffect(i);
@@ -82,7 +83,7 @@ async function landingInitialAnimation() {
     } else {
       clearInterval(interval);
     }
-  }, 200);
+  }, 60);
 }
 
 
