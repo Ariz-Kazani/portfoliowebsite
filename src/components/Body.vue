@@ -5,12 +5,12 @@ import Work from './Work.vue';
 
 // analytics stuff
 import { analytics } from '../firebase';
-import { logEvent } from "firebase/analytics";
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 let an = null;
 
 if (import.meta.env.VITE_MODE == 'prod') {
-  an = analytics();
+  an = getAnalytics();
 }
 
 
