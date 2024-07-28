@@ -1,7 +1,13 @@
 <script setup>
+// analytics stuff
 import { analytics } from '../firebase';
-import { getAnalytics, logEvent } from "firebase/analytics";
-const an = getAnalytics();
+import { logEvent } from "firebase/analytics";
+
+let an = null;
+
+if (import.meta.env.VITE_MODE == 'prod') {
+  an = analytics();
+}
 
 
 </script>
