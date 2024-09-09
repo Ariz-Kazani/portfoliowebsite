@@ -33,7 +33,7 @@ if (import.meta.env.VITE_MODE == 'prod') {
       </a>
     </div>
     <p>
-      &copy2023 - 2024, Ariz Kazani
+      &copy2023 - 2025, Ariz Kazani
     </p>
   </div>
 </template>

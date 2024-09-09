@@ -34,23 +34,36 @@ onMounted(() => {
   const abtMeData = document.querySelector("#about");
   landingInitialAnimation();
 
-  const options = {
+  const optionsEnter = {
     root: null,
     threshold: 0,
     rootMargin: "-50% 0px -50% 0px",
   };
 
-  const observer = new IntersectionObserver((entries, observer) => {
+  const optionsExit = {
+    root: null,
+    threshold: 0,
+    rootMargin: "15% 0px 15% 0px",
+  }
+
+  const observerEnter = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting && entry.target.id == 'about') {
         showAMe.value = true;
       }
-      else if (entry.target.id == 'about') {
+    })
+  }, optionsEnter);
+
+  const observerExit = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting && entry.target.id == 'about') {
         showAMe.value = false;
       }
     })
-  }, options);
-  observer.observe(abtMeData);
+  }, optionsExit);
+
+  observerEnter.observe(abtMeData);
+  observerExit.observe(abtMeData);
 });
 
 function landingMEffect(id) {
