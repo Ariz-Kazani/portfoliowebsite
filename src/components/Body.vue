@@ -28,7 +28,7 @@ const landingOpacity = ref(100);
 
 
 window.addEventListener("scroll", () => {
-  landingOpacity.value = Math.min(100, 100 - window.scrollY / window.innerHeight * 65);
+  landingOpacity.value = Math.min(100, 100 - window.scrollY / window.innerHeight * 25);
 });
 
 onMounted(() => {
@@ -190,7 +190,7 @@ async function landingInitialAnimation() {
 }
 
 #body-con #landing-con-outer {
-  height: 300vh;
+  height: 600vh;
 }
 
 #body-con #landing-con {

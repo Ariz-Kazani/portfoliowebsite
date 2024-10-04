@@ -33,7 +33,7 @@ const work = ref([
 const optionsEnter = {
   root: null,
   threshold: 0,
-  rootMargin: "-70% 0px -50% 0px",
+  rootMargin: "-80% 0px -50% 0px",
 };
 
 onMounted(() => {
