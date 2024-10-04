@@ -18,6 +18,14 @@ const projects = ref([
     id: 'time-copilot',
   },
   {
+    name: 'Mobile Game',
+    hostingLink: null,
+    codeLink: null,
+    photo: 'https://media.sketchfab.com/models/2afd04b26ca64c6b8392f75e217ffdb9/thumbnails/b8b7fd406e624b27bcf5d22af1857ac0/6fc6917029464e18aef80d4f82f479a4.jpeg',
+    description: `A game for iOS and android I'm currently working on. The game is a 2D indi game, with a unique art style. The game is built using Unity, and C#. The game is currently in development, stay tuned for more updates!`,
+    id: 'coming-soon',
+  },
+  {
     name: 'The Movie',
     hostingLink: 'https://the-movie-arizkazani.firebaseapp.com/',
     codeLink: 'https://github.com/Ariz-Kazani/THE-MOVIE-PUBLIC',
@@ -46,19 +54,20 @@ const projects = ref([
     hostingLink: null,
     codeLink: null,
     photo: 'https://t4.ftcdn.net/jpg/05/79/68/85/240_F_579688567_hmuT3hnFxTeDBXsyUUsmvB6Kvt0UF8Bd.webp',
-    description: 'Coming Soon, stay tuned ;)',
+    description: 'This one is a secret 🤫. Coming Soon, stay tuned ;)',
     id: 'coming-soon',
   }
 ])
 
+const size = ref(projects.value.length);
 
 </script>
 
 <template>
   <div class="project-con">
     <template v-for="(site, index) in projects">
-      <Card :name="site.name" :description="site.description" :hostingLink="site.hostingLink" :codeLink="site.codeLink" :photo="site.photo"
-        :id="site.id" :index="index" />
+      <Card :name="site.name" :description="site.description" :hostingLink="site.hostingLink" :codeLink="site.codeLink"
+        :photo="site.photo" :id="site.id" :index="index" />
     </template>
   </div>
 </template>
@@ -68,14 +77,14 @@ const projects = ref([
 .project-con {
   /* Adjust the number of projects  1 more after this*/
   /*adjust         !                !     */
-  min-height: calc(5*300px + 30px + 5*40vh);
+  min-height: calc(6*300px + 30px + 6*40vh);
 }
 
 @media only screen and (max-width: 420px) {
   .project-con {
     /* Adjust the number of projects */
     /*adjust         !                !     */
-    min-height: calc(5*430px + 30px + 5*40vh);
+    min-height: calc(6*430px + 30px + 6*40vh);
   }
 }
 </style>
