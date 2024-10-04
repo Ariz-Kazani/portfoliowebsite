@@ -36,9 +36,32 @@ input:after {
   user-select: initial;
 }
 
+
+
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1F2366;
+  margin: 3px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     color: white;
     background-color:  #121212;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #4651EA;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #8F95EE;
   }
 }
