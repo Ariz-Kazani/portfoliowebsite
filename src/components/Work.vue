@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 const work = ref([
   {
@@ -14,21 +14,59 @@ const work = ref([
     This has required a keen eye for design and a strong understanding of front-end technologies such as SASS, and Vue.js. 
     Additionally, I've been instrumental in developing a competitor analysis feature, which has entailed both back-end and front-end development.`,
     id: 'confidens',
+    isShown: false,
+  },
+  {
+    company: 'Carleton University',
+    position: 'Teaching Assistant',
+    type: 'Contract - Part Time',
+    date: 'September 2024 - Present',
+    description: `I am currently working as a Teaching Assistant at Carleton University for COMP 2401 - Introduction to Systems Programming, 
+    where I am responsible for helping students learn the ins and outs of of the C programming language. This is done through weekly labs and office hours, 
+    where I help students with their assignments, and provide guidance on how to approach and solve problems.`,
+    id: 'carleton-university',
+    isShown: false,
   },
 ])
+
+
+const optionsEnter = {
+  root: null,
+  threshold: 0,
+  rootMargin: "-70% 0px -50% 0px",
+};
+
+onMounted(() => {
+  for (let i = 0; i < work.value.length; i++) {
+    const item = document.getElementById(work.value[i].id);
+    if (item) {
+      const observerEnter = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.target.id == work.value[i].id) {
+            work.value[i].isShown = true;
+            observer.unobserve(entry.target);
+          }
+        });
+      }, optionsEnter);
+      observerEnter.observe(item);
+    }
+  }
+});
 
 </script>
 
 <template>
   <div id="work-con">
-    <div id="spacer">
-    </div>
     <template v-for="(position, index) in work" :key="position.id">
-      <div id="work-item">
-        <h1 id="work-item-comp">{{ position.company }}</h1>
-        <h2 id="work-item-pos">{{ position.position }}</h2>
-        <h4 id="work-item-aux-info">{{ position.type }} &#x2022; {{ position.date }}</h4>
-        <p>{{ position.description }}</p>
+      <div id="spacer">
+      </div>
+      <div :id="position.id">
+        <div id="work-item" :class="{ 'abt-me-trans': position.isShown, 'abt-me-trans-b': !position.isShown }">
+          <h1 id="work-item-comp">{{ position.company }}</h1>
+          <h2 id="work-item-pos">{{ position.position }}</h2>
+          <h4 id="work-item-aux-info">{{ position.type }} &#x2022; {{ position.date }}</h4>
+          <p>{{ position.description }}</p>
+        </div>
       </div>
     </template>
     <div id="spacer"></div>
@@ -39,6 +77,7 @@ const work = ref([
 #work-con {
   min-height: 230vh;
   width: 100%;
+  overflow: hidden;
 }
 
 #work-con #spacer {
@@ -75,6 +114,54 @@ const work = ref([
   font-size: 18px;
   margin-top: 10px;
   line-height: 1.5;
+}
+
+.abt-me-trans {
+  animation: abtMeTrans 1s;
+  -webkit-animation: abtMeTrans 1s;
+  box-shadow: 0px 0px 30px 4px #1F2366;
+  opacity: 100%;
+}
+
+.abt-me-trans-b {
+  animation: abtMeTransB 1s;
+  -webkit-animation: abtMeTransB 1s;
+  box-shadow: 0px 0px 30px 4px #1F2366;
+  opacity: 0%;
+}
+
+@keyframes abtMeTrans {
+  from {
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+
+  60% {
+    transform: skewX(20deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: skewX(-5deg);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes abtMeTrans {
+  from {
+    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
 }
 
 @media (prefers-color-scheme: dark) {

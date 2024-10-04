@@ -21,6 +21,7 @@ const oMessageStext = ref([]);
 const oMessageLtext = ref(null);
 const oMessageMtext = ref([]);
 const showAMe = ref(false);
+const opiningAnimationFinish = ref(false);
 
 // landing page opacity
 const landingOpacity = ref(100);
@@ -100,6 +101,7 @@ async function landingInitialAnimation() {
       landingMEffect(i);
       i++;
     } else {
+      opiningAnimationFinish.value = true;
       clearInterval(interval);
     }
   }, 60);
@@ -121,9 +123,8 @@ async function landingInitialAnimation() {
         <div id="landingMCon">
           <span v-for="(char, index) in openingMessage" id="landing-message"
             :class="{ 'tLargeS': oMessageLtext == index, 'tMedS': oMessageMtext.includes(index), 'tSmallS': oMessageStext.includes(index), 'tDefaultS': !oMessageMtext.includes(index) && oMessageLtext != index && !oMessageStext.includes(index) }"
-            @mouseover="() => { if (openingMessage.length == openingMessageData.length) landingMEffect(index) }"
-            @mouseleave="() => { if (openingMessage.length == openingMessageData.length) landingMEffect(-1) }"
-            :key="index">
+            @mouseover="opiningAnimationFinish ? landingMEffect(index) : null"
+            @mouseleave="opiningAnimationFinish ? landingMEffect(-1) : null" :key="index">
             {{ char }} </span>
           <h2 id="alt-landing-message"> {{ openingMessage }}</h2>
         </div>
@@ -423,7 +424,7 @@ async function landingInitialAnimation() {
 
 }
 
-@-webkit-keyframes abtMeTrans {
+@-webkit-keyframes abtMeTransB {
   0% {
     transform: scale(1);
     opacity: 1;
