@@ -135,7 +135,8 @@ async function landingInitialAnimation() {
       <div id="about-me-data" :class="{ 'abt-me-trans': showAMe, 'abt-me-trans-b': !showAMe }">
         <p id="about-me-info">
           Hi, I'm Ariz Kazani, a passionate Full Stack Developer currently honing my skills at Carleton University,
-          where I'm pursuing a Bachelor of Science in Computer Science, and a Minor in Statistics. I'm currently
+          where I'm pursuing a Bachelor of Science in Computer Science, and a Minor in Statistics and a Minor in
+          Economics. I'm currently
           interning at Confidens Analytics as a Full Stack Developer,
           where I contribute to building comprehensive applications that assist dentists in starting their practices.
           This experience has allowed me to apply my knowledge in real-world scenarios, enhancing my development skills
@@ -149,7 +150,7 @@ async function landingInitialAnimation() {
           <br />
           <br />
           I love tackling challenging problems and continuously learning new technologies. My technical arsenal includes
-          a variety of languages like C, Java, and PHP, and frameworks such as Next.js, Vue.js, and Laravel. When I'm
+          a variety of languages like C++, Java, and PHP, and frameworks such as Next.js, Vue.js, and Laravel. When I'm
           not
           coding, you can find me exploring the latest in tech, experimenting with new programming languages, or sharing
           my knowledge with fellow developers.
@@ -158,9 +159,11 @@ async function landingInitialAnimation() {
           Feel free to get in touch on my
           <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'LinkedIn' });"
             href="https://www.linkedin.com/in/arizkazani/" target="_blank">LinkedIn</a>, if you'd like to work with me,
-          or just want to have a chat! If you want to learn more about my experiences, here is my
-          <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'resume' });"
-            href="https://drive.google.com/file/d/1W0A2GtongtZBmP2k6pdfskR4ntfJXGWu/view" target="_blank">resume</a>.
+          or just want to have a chat!
+          <!-- ! Have to remove this trolling 🤣🤣🤣🤣
+          If you want to learn more about my experiences, here is my
+           <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'resume' });"
+            href="https://drive.google.com/file/d/1W0A2GtongtZBmP2k6pdfskR4ntfJXGWu/view" target="_blank">resume</a>. -->
         </p>
       </div>
     </div>
@@ -342,7 +345,7 @@ async function landingInitialAnimation() {
 #body-con #about #about-me-data {
   min-height: 400px;
   width: 80%;
-  border-radius: 20px;
+  border-radius: 40px;
   margin: auto;
   display: grid;
   align-items: center;

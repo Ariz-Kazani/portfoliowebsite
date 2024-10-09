@@ -88,7 +88,7 @@ onMounted(() => {
   margin: 0 auto;
   max-width: 90%;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 40px;
   box-shadow: 0px 0px 20px 4px #1F2366;
   background: white;
   margin-bottom: 20px;
