@@ -33,7 +33,7 @@
   border-color: #1F2366;
   display: grid;
   grid-template-columns: 30px 200px 1fr 80px 10px 80px 10px 80px 1fr 230px;
-  backdrop-filter: blur(1000px);
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(1000px);
 }
 
@@ -122,6 +122,7 @@
   #header-con {
     border-color: #4651EA;
     color: #4651EA;
+    text-shadow: 0px 0px 5px black;
   }
 
   #header-con .but {

@@ -29,11 +29,11 @@ const work = ref([
   },
 ])
 
-
+ 
 const optionsEnter = {
   root: null,
   threshold: 0,
-  rootMargin: "-70% 0px 0% 0px",
+  rootMargin: "0% 0px -40% 0px",
 };
 
 onMounted(() => {
@@ -51,16 +51,33 @@ onMounted(() => {
       observerEnter.observe(item);
     }
   }
+
+  window.addEventListener('scroll', function() {
+  let parallaxSection = document.querySelector('.work-con');
+  let sectionTop = parallaxSection.offsetTop;
+
+  let scrollPosition = window.scrollY;
+  if (scrollPosition > sectionTop) {
+    let relativeScrollPosition = scrollPosition - sectionTop;
+    let content = [];
+    for (let item of work.value) {
+      content.push(document.querySelector(`#${item.id}`));
+    }
+    for (let item of content) {
+      item.style.transform = 'translateY(' + relativeScrollPosition * 0.6 + 'px)';
+    }
+  }
+});
 });
 
 </script>
 
 <template>
-  <div id="work-con">
+  <div id="work-con" class="work-con">
     <template v-for="(position, index) in work" :key="position.id">
       <div id="spacer">
       </div>
-      <div :id="position.id">
+      <div :id="position.id" :class="position.id">
         <div id="work-item" :class="{ 'abt-me-trans': position.isShown, 'abt-me-trans-b': !position.isShown }">
           <h1 id="work-item-comp">{{ position.company }}</h1>
           <h2 id="work-item-pos">{{ position.position }}</h2>
@@ -75,9 +92,10 @@ onMounted(() => {
 
 <style scoped>
 #work-con {
-  min-height: 230vh;
+  min-height: 830vh;
   width: 100%;
   overflow: hidden;
+  /* background-color: aqua; */
 }
 
 #work-con #spacer {
