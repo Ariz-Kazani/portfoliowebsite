@@ -136,26 +136,30 @@ async function landingInitialAnimation() {
         <p id="about-me-info">
           Hi, I'm Ariz Kazani, a passionate Full Stack Developer currently honing my skills at Carleton University,
           where I'm pursuing a Bachelor of Science in Computer Science, and a Minor in Statistics and a Minor in
-          Economics. I'm currently
-          interning at Confidens Analytics as a Full Stack Developer,
-          where I contribute to building comprehensive applications that assist dentists in starting their practices.
-          This experience has allowed me to apply my knowledge in real-world scenarios, enhancing my development skills
-          and understanding of full stack application development.
+          Economics. Last summer (summer 2024), I interned as a Software Developer at ConfiDense Analytics, where I
+          was responsible for developing and maintaining the company's web application, and implementing new features
+          using Vue.js and Laravel. I really enjoyed leading development on the company's new feature, which allowed
+          dental offices to analyze what their competitors were up to. I'm currently working as a Teaching Assistant for
+          the introduction to Systems Programming course (COMP 2401), where I help students learn the ins and outs of
+          the C programming language.
           <br />
           <br />
-          In addition to my internship, I've worked on several projects that highlight my technical versatility. I've
-          created a productivity app with Next.js and AWS, a dynamic movie streaming website using Vue.js and Firebase,
-          and even developed a search engine with Java. These projects have not only improved my technical skills but
-          also fueled my passion.
+          In addition to my work experiences, I've worked on several projects that highlight my technical versatility.
+          I've created a productivity app with Next.js and AWS, a dynamic movie streaming website using Vue.js and
+          Firebase, and even developed a search engine with Java. These projects have not only improved my technical
+          skills but also fueled my passion.
           <br />
           <br />
           I love tackling challenging problems and continuously learning new technologies. My technical arsenal includes
           a variety of languages like C++, Java, and PHP, and frameworks such as Next.js, Vue.js, and Laravel. When I'm
-          not
-          coding, you can find me exploring the latest in tech, experimenting with new programming languages, or sharing
-          my knowledge with fellow developers.
+          not coding, you can find me exploring the latest in tech, experimenting with new programming languages, or
+          sharing my knowledge with fellow developers.
           <br />
           <br />
+          <!-- When I'm not exploring tech, I love getting a pump at the gym, playing squash, or going for hanging with the
+          boys. Recently I've 
+          <br />
+          <br /> -->
           Feel free to get in touch on my
           <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'LinkedIn' });"
             href="https://www.linkedin.com/in/arizkazani/" target="_blank">LinkedIn</a>, if you'd like to work with me,

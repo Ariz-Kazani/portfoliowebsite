@@ -6,13 +6,14 @@ const work = ref([
     company: 'ConfiDens Analytics',
     position: 'Full Stack Developer',
     type: 'Intern',
-    date: 'May 2024 - Present',
-    description: `I am currently interning at ConfiDens Analytics as a Full Stack Software Developer, 
+    date: 'May 2024 - August 2024',
+    description: `In the summer of 2024 I interned at ConfiDens Analytics as a Software Developer, 
     I've had the opportunity to work on diverse and impactful projects that have significantly enhanced my 
     technical skills and practical knowledge. One of my primary responsibilities has been improving various UI elements, 
     which has involved refining the user interface to ensure a seamless and intuitive user experience. 
     This has required a keen eye for design and a strong understanding of front-end technologies such as SASS, and Vue.js. 
-    Additionally, I've been instrumental in developing a competitor analysis feature, which has entailed both back-end and front-end development.`,
+    Additionally, I lead research and development of the competitor analysis feature, which has 
+    entailed both back-end and front-end development.`,
     id: 'confidens',
     isShown: false,
   },
@@ -29,7 +30,7 @@ const work = ref([
   },
 ])
 
- 
+
 const optionsEnter = {
   root: null,
   threshold: 0,
@@ -52,22 +53,22 @@ onMounted(() => {
     }
   }
 
-  window.addEventListener('scroll', function() {
-  let parallaxSection = document.querySelector('.work-con');
-  let sectionTop = parallaxSection.offsetTop;
+  window.addEventListener('scroll', function () {
+    let parallaxSection = document.querySelector('.work-con');
+    let sectionTop = parallaxSection.offsetTop;
 
-  let scrollPosition = window.scrollY;
-  if (scrollPosition > sectionTop) {
-    let relativeScrollPosition = scrollPosition - sectionTop;
-    let content = [];
-    for (let item of work.value) {
-      content.push(document.querySelector(`#${item.id}`));
+    let scrollPosition = window.scrollY;
+    if (scrollPosition > sectionTop) {
+      let relativeScrollPosition = scrollPosition - sectionTop;
+      let content = [];
+      for (let item of work.value) {
+        content.push(document.querySelector(`#${item.id}`));
+      }
+      for (let item of content) {
+        item.style.transform = 'translateY(' + relativeScrollPosition * 0.6 + 'px)';
+      }
     }
-    for (let item of content) {
-      item.style.transform = 'translateY(' + relativeScrollPosition * 0.6 + 'px)';
-    }
-  }
-});
+  });
 });
 
 </script>
