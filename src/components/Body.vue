@@ -132,6 +132,7 @@ async function landingInitialAnimation() {
     </div>
     <div id="about">
       <h1 id="about-title">About Me</h1>
+      this section also needs to be updated, make two sides, one for just the text and the other for tech stack
       <div id="about-me-data" :class="{ 'abt-me-trans': showAMe, 'abt-me-trans-b': !showAMe }">
         <p id="about-me-info">
           Hi, I'm Ariz Kazani, a passionate Full Stack Developer currently honing my skills at Carleton University,
@@ -348,8 +349,9 @@ async function landingInitialAnimation() {
 
 #body-con #about #about-me-data {
   min-height: 400px;
-  width: 80%;
-  border-radius: 40px;
+  width: 90%;
+  border-radius: 32px;
+  padding: 24px;
   margin: auto;
   display: grid;
   align-items: center;
@@ -454,8 +456,6 @@ async function landingInitialAnimation() {
 
 #body-con #about #about-me-data #about-me-info {
   font-size: large;
-  width: 80%;
-  margin: 10%;
 }
 
 #body-con #work {

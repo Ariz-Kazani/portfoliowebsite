@@ -69,11 +69,11 @@ function abtMPREffect() {
 #project-con {
   margin: 0px 5% 40vh 5%;
   height: 300px;
-  padding: 30px; 
+  padding: 24px; 
   display: grid;
   grid-template-columns: 427px 1fr;
-  grid-template-rows: 50px 190px;
-  border-radius: 40px;
+  grid-template-rows: 50px 202px;
+  border-radius: 32px;
   box-shadow: 0px 0px 20px 4px #1F2366;
   background-color: white;
   position: sticky;
@@ -85,19 +85,19 @@ function abtMPREffect() {
   width: 420px;
   grid-column: 1;
   grid-row: 1 / span 2;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 #project-con #project-img:hover {
   #project-img-data {
-    box-shadow: 0px 0px 10px 1px #1F2366;
+    box-shadow: 0px 0px 0px 1px #1F2366;
   }
 }
 
 #project-con #project-img #project-img-data {
   height: 100%;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 #project-con #description {

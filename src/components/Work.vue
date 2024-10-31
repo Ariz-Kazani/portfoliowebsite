@@ -106,8 +106,8 @@ onMounted(() => {
 #work-con #work-item {
   margin: 0 auto;
   max-width: 90%;
-  padding: 20px;
-  border-radius: 40px;
+  padding: 24px;
+  border-radius: 32px;
   box-shadow: 0px 0px 20px 4px #1F2366;
   background: white;
   margin-bottom: 20px;
