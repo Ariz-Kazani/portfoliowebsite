@@ -196,7 +196,7 @@ onMounted(() => {
   }
 
   #work-con #work-item #work-item-comp {
-    color: #4651EA;
+    color: var(--primary-dark-mode);
   }
 
   #work-con #work-item #work-item-pos {

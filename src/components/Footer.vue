@@ -85,12 +85,12 @@ a:hover {
 @media (prefers-color-scheme: dark) {
   #footer-con {
     background-color: rgba(255, 255, 255, 0.07);
-    border-color: #4651EA;
-    color: #4651EA;
+    border-color: var(--primary-dark-mode);
+    color: var(--primary-dark-mode);
   }
 
   a {
-    color: #4651EA;
+    color: var(--primary-dark-mode);
   }
 
 }

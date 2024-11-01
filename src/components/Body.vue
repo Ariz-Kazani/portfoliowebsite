@@ -132,44 +132,72 @@ async function landingInitialAnimation() {
     </div>
     <div id="about">
       <h1 id="about-title">About Me</h1>
-      this section also needs to be updated, make two sides, one for just the text and the other for tech stack
-      <div id="about-me-data" :class="{ 'abt-me-trans': showAMe, 'abt-me-trans-b': !showAMe }">
-        <p id="about-me-info">
-          Hi, I'm Ariz Kazani, a passionate Full Stack Developer currently honing my skills at Carleton University,
-          where I'm pursuing a Bachelor of Science in Computer Science, and a Minor in Statistics and a Minor in
-          Economics. Last summer (summer 2024), I interned as a Software Developer at ConfiDense Analytics, where I
-          was responsible for developing and maintaining the company's web application, and implementing new features
-          using Vue.js and Laravel. I really enjoyed leading development on the company's new feature, which allowed
-          dental offices to analyze what their competitors were up to. I'm currently working as a Teaching Assistant for
-          the introduction to Systems Programming course (COMP 2401), where I help students learn the ins and outs of
-          the C programming language.
-          <br />
-          <br />
-          In addition to my work experiences, I've worked on several projects that highlight my technical versatility.
-          I've created a productivity app with Next.js and AWS, a dynamic movie streaming website using Vue.js and
-          Firebase, and even developed a search engine with Java. These projects have not only improved my technical
-          skills but also fueled my passion.
-          <br />
-          <br />
-          I love tackling challenging problems and continuously learning new technologies. My technical arsenal includes
-          a variety of languages like C++, Java, and PHP, and frameworks such as Next.js, Vue.js, and Laravel. When I'm
-          not coding, you can find me exploring the latest in tech, experimenting with new programming languages, or
-          sharing my knowledge with fellow developers.
-          <br />
-          <br />
-          <!-- When I'm not exploring tech, I love getting a pump at the gym, playing squash, or going for hanging with the
+      <div id="about-test">
+        <div id="about-test-two">
+          <span>C          </span>
+          <span>Java       </span>
+          <span>Python     </span>
+          <span>R          </span>
+          <span>JavaScript </span>
+          <span>TypeScript </span>
+          <span>PHP        </span>
+          <span>HTML5      </span>
+          <span>CSS3       </span>
+          <span>SASS       </span>
+          <span>TailwindCSS</span>
+          <span>Next.js    </span>
+          <span>Vue.js     </span>
+          <span>React.js   </span>
+          <span>Laravel    </span>
+          <span>Node.js    </span>
+          <span>Deno.js    </span>
+          <span>AWS        </span>
+          <span>DynamoDB   </span>
+          <span>Firebase   </span>
+          <span>Firestore  </span>
+        </div>
+        <div id="about-me-data" :class="{ 'abt-me-trans': showAMe, 'abt-me-trans-b': !showAMe }">
+          <p id="about-me-info">
+            Hi, I'm Ariz Kazani, a passionate Full Stack Developer currently honing my skills at Carleton University,
+            where I'm pursuing a Bachelor of Science in Computer Science, and a Minor in Statistics and a Minor in
+            Economics. Last summer (summer 2024), I interned as a Software Developer at ConfiDense Analytics, where I
+            was responsible for developing and maintaining the company's web application, and implementing new features
+            using Vue.js and Laravel. I really enjoyed leading development on the company's new feature, which allowed
+            dental offices to analyze what their competitors were up to. I'm currently working as a Teaching Assistant
+            for
+            the introduction to Systems Programming course (COMP 2401), where I help students learn the ins and outs of
+            the C programming language.
+            <br />
+            <br />
+            In addition to my work experiences, I've worked on several projects that highlight my technical versatility.
+            I've created a productivity app with Next.js and AWS, a dynamic movie streaming website using Vue.js and
+            Firebase, and even developed a search engine with Java. These projects have not only improved my technical
+            skills but also fueled my passion.
+            <br />
+            <br />
+            I love tackling challenging problems and continuously learning new technologies. My technical arsenal
+            includes
+            a variety of languages like C++, Java, and PHP, and frameworks such as Next.js, Vue.js, and Laravel. When
+            I'm
+            not coding, you can find me exploring the latest in tech, experimenting with new programming languages, or
+            sharing my knowledge with fellow developers.
+            <br />
+            <br />
+            <!-- When I'm not exploring tech, I love getting a pump at the gym, playing squash, or going for hanging with the
           boys. Recently I've 
           <br />
           <br /> -->
-          Feel free to get in touch on my
-          <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'LinkedIn' });"
-            href="https://www.linkedin.com/in/arizkazani/" target="_blank">LinkedIn</a>, if you'd like to work with me,
-          or just want to have a chat!
-          <!-- ! Have to remove this trolling 🤣🤣🤣🤣
+            Feel free to get in touch on my
+            <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'LinkedIn' });"
+              href="https://www.linkedin.com/in/arizkazani/" target="_blank">LinkedIn</a>, if you'd like to work with
+            me,
+            or just want to have a chat!
+            <!-- ! Have to remove this trolling 🤣🤣🤣🤣
           If you want to learn more about my experiences, here is my
            <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'resume' });"
             href="https://drive.google.com/file/d/1W0A2GtongtZBmP2k6pdfskR4ntfJXGWu/view" target="_blank">resume</a>. -->
-        </p>
+          </p>
+        </div>
       </div>
     </div>
     <div id="work">
@@ -184,6 +212,18 @@ async function landingInitialAnimation() {
 </template>
 
 <style scoped>
+#about-test {
+  display: flex;
+  padding: 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+#about-test-two {
+  width: 100%;
+}
+
 #body-con {
   width: 100%;
   min-height: 90vh;
@@ -213,7 +253,7 @@ async function landingInitialAnimation() {
 
 #body-con #landing-con #img-con #earth-img {
   height: 100%;
-  filter: brightness(70%);
+  filter: brightness(65%);
   aspect-ratio: 16 / 9;
 }
 
@@ -275,29 +315,26 @@ async function landingInitialAnimation() {
 
 .tLargeS {
   font-weight: 900;
-  font-size: 55px;
-  color: white;
-  text-shadow: 0 0 10px #4651EA, 0 0 20px #4651EA, 0 0 30px #1F2366, 0 0 40px #1F2366, 0 0 50px #1F2366, 0 0 60px #1F2366, 0 0 70px #1F2366;
+  font-size: 60px;
+  text-shadow: 0 0 10px var(--primary-dark-mode), 0 0 20px var(--primary-dark-mode), 0 0 30px #1F2366, 0 0 40px #1F2366, 0 0 50px #1F2366, 0 0 60px #1F2366, 0 0 70px #1F2366;
 }
 
 .tMedS {
   font-weight: 800;
-  font-size: 45px;
-  color: white;
-  text-shadow: 0 0 10px #4651EA, 0 0 20px #4651EA, 0 0 30px #1F2366, 0 0 40px #1F2366, 0 0 50px #1F2366, 0 0 60px #1F2366, 0 0 70px #1F2366;
+  font-size: 56px;
+  text-shadow: 0 0 10px var(--primary-dark-mode), 0 0 20px var(--primary-dark-mode), 0 0 30px #1F2366, 0 0 40px #1F2366, 0 0 50px #1F2366, 0 0 60px #1F2366, 0 0 70px #1F2366;
 }
 
 .tSmallS {
   font-weight: 700;
-  font-size: 40px;
-  color: white;
-  text-shadow: 0 0 10px #4651EA, 0 0 20px #4651EA, 0 0 30px #1F2366, 0 0 40px #1F2366, 0 0 50px #1F2366, 0 0 60px #1F2366, 0 0 70px #1F2366;
+  font-size: 52px;
+  text-shadow: 0 0 10px var(--primary-dark-mode), 0 0 20px var(--primary-dark-mode), 0 0 30px #1F2366, 0 0 40px #1F2366, 0 0 50px #1F2366, 0 0 60px #1F2366, 0 0 70px #1F2366;
 }
 
 .tDefaultS {
   font-weight: 600;
-  font-size: 35px;
-  color: white;
+  font-size: 48px;
+  text-shadow: 0px 1px 4px black;
 }
 
 #body-con #landing-con #landingMCon {
@@ -310,6 +347,10 @@ async function landingInitialAnimation() {
 
 #body-con #landing-con #landingMCon #landing-message {
   margin: auto;
+  color: white;
+
+  /* TODO: update the color here */
+  /* -webkit-text-stroke: 0.01px rgb(116, 116, 150); */
 }
 
 #body-con #landing-con #landingMCon #alt-landing-message {
@@ -489,7 +530,7 @@ async function landingInitialAnimation() {
   text-align: center;
   width: 100%;
   font-size: 80px;
-  background: -webkit-linear-gradient(#4651EA, #1F2366, #000766);
+  background: -webkit-linear-gradient(var(--primary-dark-mode), #1F2366, #000766);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -550,18 +591,18 @@ async function landingInitialAnimation() {
   }
 
   a {
-    color: #4651EA;
+    color: var(--primary-dark-mode);
   }
 
   #body-con #projects #projects-title {
-    background: -webkit-linear-gradient(#8F95EE, #4651EA, #3740B8);
+    background: -webkit-linear-gradient(#8F95EE, var(--primary-dark-mode), #3740B8);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   #body-con #work #work-title {
-    background: -webkit-linear-gradient(#8F95EE, #4651EA, #3740B8);
+    background: -webkit-linear-gradient(#8F95EE, var(--primary-dark-mode), #3740B8);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

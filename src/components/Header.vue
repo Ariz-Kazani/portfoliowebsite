@@ -73,16 +73,16 @@
 
 @media (prefers-color-scheme: dark) {
   #header-con {
-    border-color: #4651EA;
+    border-color: var(--primary-dark-mode);
     text-shadow: 0px 0px 5px black;
   }
 
   #header-con .but {
-    color: #4651EA;
+    color: var(--primary-dark-mode);
   }
 
   #header-con .but:hover {
-    border-color: #4651EA;
+    border-color: var(--primary-dark-mode);
   }
 }
 </style>

@@ -187,7 +187,7 @@ function abtMPREffect() {
   }
 
   #project-con #links a {
-    color: #4651EA;
+    color: var(--primary-dark-mode);
   }
 
   #project-con #project-img:hover {

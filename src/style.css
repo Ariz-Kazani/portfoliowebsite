@@ -16,6 +16,10 @@
   /* scrollbar-width: none; */
 }
 
+:root {
+  --primary-dark-mode: #787AE8;
+}
+
 /* *::-webkit-scrollbar {
   display: none;
 } */
@@ -58,7 +62,7 @@ input:after {
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #4651EA;
+    background-color: var(--primary-dark-mode);
   }
   
   ::-webkit-scrollbar-track {
