@@ -71,3 +71,19 @@ input:after {
     box-shadow: inset 0 0 5px #8F95EE;
   }
 }
+
+/* TODO: update ui/ux for light mode */
+@media (prefers-color-scheme: light) {
+  body {
+    color: white;
+    background-color:  var(--dark-mode-background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary-dark-mode);
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #8F95EE;
+  }
+}

@@ -207,4 +207,24 @@ onMounted(() => {
     color: #656de0;
   }
 }
+
+/* TODO: update ui/ux for light mode */
+@media (prefers-color-scheme: light) {
+  #work-con #work-item {
+    background-color: var(--dark-mode-foreground);
+    box-shadow: 0px 0px 20px 4px #8F95EE;
+  }
+
+  #work-con #work-item #work-item-comp {
+    color: var(--primary-dark-mode);
+  }
+
+  #work-con #work-item #work-item-pos {
+    color: #515bdb;
+  }
+
+  #work-con #work-item #work-item-aux-info {
+    color: #656de0;
+  }
+}
 </style>

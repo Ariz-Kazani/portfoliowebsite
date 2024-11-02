@@ -196,4 +196,22 @@ function abtMPREffect() {
     }
   }
 }
+
+/* TODO: update ui/ux for light mode */
+@media (prefers-color-scheme: light) {
+  #project-con {
+    background-color: var(--dark-mode-foreground);
+    box-shadow: 0px 0px 20px 4px #8F95EE;
+  }
+
+  #project-con #links a {
+    color: var(--primary-dark-mode);
+  }
+
+  #project-con #project-img:hover {
+    #project-img-data {
+      box-shadow: 0px 0px 10px 1px #8F95EE;
+    }
+  }
+}
 </style>

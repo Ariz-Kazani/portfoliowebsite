@@ -598,4 +598,66 @@ async function landingInitialAnimation() {
     -webkit-text-fill-color: transparent;
   }
 }
+
+/* TODO: update ui/ux for light mode */
+@media (prefers-color-scheme: light) {
+  #body-con #about #about-me-data {
+    color: white;
+    background-color: var(--dark-mode-foreground);
+  }
+
+  #body-con #about #about-title {
+    background: var(--primary-dark-mode);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .tLargeS {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
+  }
+
+  .tMedS {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
+  }
+
+  .tSmallS {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
+  }
+
+  .abt-me-trans {
+    box-shadow: 0px 0px 16px 2px #8F95EE;
+  }
+
+  .abt-me-trans-b {
+    box-shadow: 0px 0px 16px 2px #8F95EE;
+  }
+
+  #body-con #about #about-me-data #about-me-pic {
+    box-shadow: 0px 0px 10px 1px #8F95EE;
+
+  }
+
+  #body-con #about #about-me-data #about-me-pic:hover {
+    box-shadow: 0px 0px 20px 2px #8F95EE;
+  }
+
+  a {
+    color: var(--primary-dark-mode);
+  }
+
+  #body-con #projects #projects-title {
+    background: var(--primary-dark-mode);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  #body-con #work #work-title {
+    background: var(--primary-dark-mode);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
 </style>style

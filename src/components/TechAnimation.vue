@@ -65,7 +65,7 @@ setInterval(pickRandomTech, 500);
   pointer-events: none;
   background-image: linear-gradient(to top, rgba(255, 255, 255, 0), var(--dark-mode-background) 90%);
   width: 100%;
-  height: 10em;
+  height: 12em;
 }
 
 #tech-an-main-con::after {
@@ -75,9 +75,9 @@ setInterval(pickRandomTech, 500);
   bottom: 0;
   left: 0;
   pointer-events: none;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--dark-mode-background) 90%);
+  background-image: linear-gradient(to bottom, transparent, var(--dark-mode-background) 90%);
   width: 100%;
-  height: 10em;
+  height: 12em;
 }
 
 #un-focused-tech {

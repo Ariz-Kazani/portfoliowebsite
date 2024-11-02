@@ -86,4 +86,20 @@
     border-color: var(--primary-dark-mode);
   }
 }
+
+/* TODO: update ui/ux for light mode */
+@media (prefers-color-scheme: light) {
+  #header-con {
+    border-color: var(--primary-dark-mode);
+    text-shadow: 0px 0px 5px black;
+  }
+
+  #header-con .but {
+    color: var(--primary-dark-mode);
+  }
+
+  #header-con .but:hover {
+    border-color: var(--primary-dark-mode);
+  }
+}
 </style>

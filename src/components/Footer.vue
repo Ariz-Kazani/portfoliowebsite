@@ -94,4 +94,18 @@ a:hover {
   }
 
 }
+
+/* TODO: update ui/ux for light mode */
+@media (prefers-color-scheme: light) {
+  #footer-con {
+    background-color: var(--dark-mode-foreground);
+    border-color: var(--primary-dark-mode);
+    color: var(--primary-dark-mode);
+  }
+
+  a {
+    color: var(--primary-dark-mode);
+  }
+
+}
 </style>
