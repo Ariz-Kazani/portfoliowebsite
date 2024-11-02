@@ -84,13 +84,27 @@ a:hover {
 
 @media (prefers-color-scheme: dark) {
   #footer-con {
-    background-color: rgba(255, 255, 255, 0.07);
-    border-color: #4651EA;
-    color: #4651EA;
+    background-color: var(--dark-mode-foreground);
+    border-color: var(--primary-dark-mode);
+    color: var(--primary-dark-mode);
   }
 
   a {
-    color: #4651EA;
+    color: var(--primary-dark-mode);
+  }
+
+}
+
+/* TODO: update ui/ux for light mode */
+@media (prefers-color-scheme: light) {
+  #footer-con {
+    background-color: var(--dark-mode-foreground);
+    border-color: var(--primary-dark-mode);
+    color: var(--primary-dark-mode);
+  }
+
+  a {
+    color: var(--primary-dark-mode);
   }
 
 }

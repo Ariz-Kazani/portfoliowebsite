@@ -106,8 +106,8 @@ onMounted(() => {
 #work-con #work-item {
   margin: 0 auto;
   max-width: 90%;
-  padding: 20px;
-  border-radius: 40px;
+  padding: 24px;
+  border-radius: 32px;
   box-shadow: 0px 0px 20px 4px #1F2366;
   background: white;
   margin-bottom: 20px;
@@ -191,12 +191,32 @@ onMounted(() => {
 
 @media (prefers-color-scheme: dark) {
   #work-con #work-item {
-    background-color: rgb(52, 52, 52);
+    background-color: var(--dark-mode-foreground);
     box-shadow: 0px 0px 20px 4px #8F95EE;
   }
 
   #work-con #work-item #work-item-comp {
-    color: #4651EA;
+    color: var(--primary-dark-mode);
+  }
+
+  #work-con #work-item #work-item-pos {
+    color: #515bdb;
+  }
+
+  #work-con #work-item #work-item-aux-info {
+    color: #656de0;
+  }
+}
+
+/* TODO: update ui/ux for light mode */
+@media (prefers-color-scheme: light) {
+  #work-con #work-item {
+    background-color: var(--dark-mode-foreground);
+    box-shadow: 0px 0px 20px 4px #8F95EE;
+  }
+
+  #work-con #work-item #work-item-comp {
+    color: var(--primary-dark-mode);
   }
 
   #work-con #work-item #work-item-pos {

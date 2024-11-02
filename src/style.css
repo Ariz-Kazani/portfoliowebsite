@@ -16,7 +16,13 @@
   /* scrollbar-width: none; */
 }
 
-/* *::-webkit-scrollbar {
+:root {
+  --primary-dark-mode: #787AE8;
+  --dark-mode-background: #121212;
+  --dark-mode-foreground: #343434;
+}
+
+/* ::-webkit-scrollbar {
   display: none;
 } */
 
@@ -54,11 +60,27 @@ input:after {
 @media (prefers-color-scheme: dark) {
   body {
     color: white;
-    background-color:  #121212;
+    background-color:  var(--dark-mode-background);
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #4651EA;
+    background-color: var(--primary-dark-mode);
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #8F95EE;
+  }
+}
+
+/* TODO: update ui/ux for light mode */
+@media (prefers-color-scheme: light) {
+  body {
+    color: white;
+    background-color:  var(--dark-mode-background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary-dark-mode);
   }
   
   ::-webkit-scrollbar-track {

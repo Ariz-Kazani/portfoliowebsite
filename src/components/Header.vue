@@ -5,136 +5,101 @@
 
 <template>
   <div id="header-con">
-    <a href="/" id="home-but">
-      <h2 id="home-but-l">Ariz Kazani</h2>
-      <h2 id="home-but-s">AK</h2>
-    </a>
-    <a href="#about" class="but" id="about-but">
-      <p>About</p>
-    </a>
-    <a href="#work" class="but" id="work-but">
-      <p>Work</p>
-    </a>
-    <a href="#projects" class="but" id="project-but">
-      <p>Projects</p>
-    </a>
+    <div id="header-button-con">
+      <a href="#about" class="but">
+        <p>About</p>
+      </a>
+      <a href="#work" class="but">
+        <p>Career</p>
+      </a>
+      <a href="#projects" class="but">
+        <p>Projects</p>
+      </a>
+    </div>
   </div>
 </template>
 
 <style scoped>
 #header-con {
   width: 100%;
-  height: 50px;
+  height: 70px;
   position: fixed;
   top: 0px;
   border-style: none none solid none;
-  padding-bottom: 0px;
   border-width: 2px;
   border-color: #1F2366;
   display: grid;
-  grid-template-columns: 30px 200px 1fr 80px 10px 80px 10px 80px 1fr 230px;
+  overflow: hidden;
+  place-items: center;
+  place-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(1000px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10;
 }
 
-#header-con #home-but {
-  color: #1F2366;
-  text-decoration: none;
-  width: fit-content;
-  margin: 7px;
+#header-con #header-button-con {
   grid-column: 2;
-  width: 200px;
-  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
 }
-
-#header-con #home-but #home-but-s {
-  display: none;
-  width: 35px;
-  text-align: center;
-}
-
 
 #header-con .but {
   text-decoration: none;
-  height: 40px;
-  width: 100%;
+  height: 30px;
   color: #1F2366;
-  margin-top: 4px;
-  border-radius: 5px;
+  border-bottom: 2px solid transparent;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #header-con .but>p {
-  margin-top: 7px;
   font-size: larger;
 }
 
 #header-con .but:hover {
-  color: white;
-  margin-top: 4px;
-  background-color: #1F2366;
-}
-
-#header-con #about-but {
-  grid-column: 4;
-}
-
-#header-con #work-but {
-  grid-column: 6;
-}
-
-#header-con #project-but {
-  grid-column: 8;
-}
-
-@media only screen and (max-width: 750px) {
-  #header-con {
-    grid-template-columns: 30px 200px 1fr 80px 10px 80px 10px 80px 1fr 30px;
-  }
-}
-
-@media only screen and (max-width: 540px) {
-  #header-con #home-but #home-but-l {
-    display: none;
-  }
-
-  #header-con #home-but #home-but-s {
-    display: revert;
-  }
-
-  #header-con {
-    grid-template-columns: 1fr 45px 1fr 80px 10px 80px 10px 80px 1fr;
-  }
+  border-color: #1F2366;
 }
 
 @media only screen and (max-width: 340px) {
   #header-con .but>p {
-    margin-top: 9px;
     font-size: medium;
-  }
-
-  #header-con {
-    grid-template-columns: 1fr 45px 1fr 70px 5px 70px 5px 70px 1fr;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   #header-con {
-    border-color: #4651EA;
-    color: #4651EA;
+    border-color: var(--primary-dark-mode);
     text-shadow: 0px 0px 5px black;
   }
 
   #header-con .but {
-    color: #4651EA;
+    color: var(--primary-dark-mode);
   }
 
   #header-con .but:hover {
-    background-color: #4651EA;
+    border-color: var(--primary-dark-mode);
+  }
+}
+
+/* TODO: update ui/ux for light mode */
+@media (prefers-color-scheme: light) {
+  #header-con {
+    border-color: var(--primary-dark-mode);
+    text-shadow: 0px 0px 5px black;
   }
 
-  #header-con #home-but {
-    color: #4651EA;
+  #header-con .but {
+    color: var(--primary-dark-mode);
+  }
+
+  #header-con .but:hover {
+    border-color: var(--primary-dark-mode);
   }
 }
 </style>
