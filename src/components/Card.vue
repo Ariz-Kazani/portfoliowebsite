@@ -182,7 +182,7 @@ function abtMPREffect() {
 
 @media (prefers-color-scheme: dark) {
   #project-con {
-    background-color: rgb(52, 52, 52);
+    background-color: var(--dark-mode-foreground);
     box-shadow: 0px 0px 20px 4px #8F95EE;
   }
 

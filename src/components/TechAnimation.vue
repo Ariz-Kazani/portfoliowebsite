@@ -1,30 +1,50 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+
+const techs = ref([
+  'C', 'C#', 'C++', 'Java', 'Python', 'R', 'JavaScript', 'TypeScript', 'PHP', 'HTML5', 'CSS', 'SASS', 'TailwindCSS', 'Next.js', 'Vue.js', 'React.js', 'Laravel', 'Node.js', 'Deno.js', 'AWS', 'DynamoDB', 'Firebase', 'Firestore'
+]);
+
+const randomTech = ref(null);
+
+function pickRandomTech() {
+  const randomTechItem = Math.floor(Math.random() * techs.value.length);
+  const randomIndex = Math.floor(Math.random() * 21) + 1;
+  randomTech.value = techs.value[randomTechItem] + randomIndex;
+  setTimeout(() => {
+    randomTech.value = null;
+  }, 10);
+}
+
+setInterval(pickRandomTech, 500);
+
+</script>
 <template>
   <div id="tech-an-main-con">
     <template v-for="i in 23">
-      <span>C</span>
-      <span>C#</span>
-      <span>C++</span>
-      <span>Java</span>
-      <span>Python</span>
-      <span>R</span>
-      <span>JavaScript</span>
-      <span>TypeScript</span>
-      <span>PHP</span>
-      <span>HTML5</span>
-      <span>CSS</span>
-      <span>SASS</span>
-      <span>TailwindCSS</span>
-      <span>Next.js</span>
-      <span>Vue.js</span>
-      <span>React.js</span>
-      <span>Laravel</span>
-      <span>Node.js</span>
-      <span>Deno.js</span>
-      <span>AWS</span>
-      <span>DynamoDB</span>
-      <span>Firebase</span>
-      <span>Firestore</span>
+      <span :class="randomTech == 'C' + i ? '' : 'foused-tech'" id="un-focused-tech">C</span>
+      <span :class="randomTech == 'C#' + i ? '' : 'foused-tech'" id="un-focused-tech">C#</span>
+      <span :class="randomTech == 'C++' + i ? '' : 'foused-tech'" id="un-focused-tech">C++</span>
+      <span :class="randomTech == 'Java' + i ? '' : 'foused-tech'" id="un-focused-tech">Java</span>
+      <span :class="randomTech == 'Python' + i ? '' : 'foused-tech'" id="un-focused-tech">Python</span>
+      <span :class="randomTech == 'R' + i ? '' : 'foused-tech'" id="un-focused-tech">R</span>
+      <span :class="randomTech == 'JavaScript' + i ? '' : 'foused-tech'" id="un-focused-tech">JavaScript</span>
+      <span :class="randomTech == 'TypeScript' + i ? '' : 'foused-tech'" id="un-focused-tech">TypeScript</span>
+      <span :class="randomTech == 'PHP' + i ? '' : 'foused-tech'" id="un-focused-tech">PHP</span>
+      <span :class="randomTech == 'HTML5' + i ? '' : 'foused-tech'" id="un-focused-tech">HTML5</span>
+      <span :class="randomTech == 'CSS' + i ? '' : 'foused-tech'" id="un-focused-tech">CSS</span>
+      <span :class="randomTech == 'SASS' + i ? '' : 'foused-tech'" id="un-focused-tech">SASS</span>
+      <span :class="randomTech == 'TailwindCSS' + i ? '' : 'foused-tech'" id="un-focused-tech">TailwindCSS</span>
+      <span :class="randomTech == 'Next.js' + i ? '' : 'foused-tech'" id="un-focused-tech">Next.js</span>
+      <span :class="randomTech == 'Vue.js' + i ? '' : 'foused-tech'" id="un-focused-tech">Vue.js</span>
+      <span :class="randomTech == 'React.js' + i ? '' : 'foused-tech'" id="un-focused-tech">React.js</span>
+      <span :class="randomTech == 'Laravel' + i ? '' : 'foused-tech'" id="un-focused-tech">Laravel</span>
+      <span :class="randomTech == 'Node.js' + i ? '' : 'foused-tech'" id="un-focused-tech">Node.js</span>
+      <span :class="randomTech == 'Deno.js' + i ? '' : 'foused-tech'" id="un-focused-tech">Deno.js</span>
+      <span :class="randomTech == 'AWS' + i ? '' : 'foused-tech'" id="un-focused-tech">AWS</span>
+      <span :class="randomTech == 'DynamoDB' + i ? '' : 'foused-tech'" id="un-focused-tech">DynamoDB</span>
+      <span :class="randomTech == 'Firebase' + i ? '' : 'foused-tech'" id="un-focused-tech">Firebase</span>
+      <span :class="randomTech == 'Firestore' + i ? '' : 'foused-tech'" id="un-focused-tech">Firestore</span>
     </template>
   </div>
 </template>
@@ -43,7 +63,7 @@
   top: 0;
   left: 0;
   pointer-events: none;
-  background-image: linear-gradient(to top, rgba(255,255,255,0), var(--dark-mode-background) 90%);
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), var(--dark-mode-background) 90%);
   width: 100%;
   height: 10em;
 }
@@ -55,19 +75,39 @@
   bottom: 0;
   left: 0;
   pointer-events: none;
-  background-image: linear-gradient(to bottom, rgba(255,255,255,0), var(--dark-mode-background) 90%);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--dark-mode-background) 90%);
   width: 100%;
   height: 10em;
 }
 
-span {
+#un-focused-tech {
   white-space: normal;
   overflow-wrap: break-word;
   color: rgb(30, 30, 30);
-  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: color 1s ease;
 }
 
-span:hover {
+#un-focused-tech:hover {
   color: var(--primary-dark-mode);
+  transition: none;
+}
+
+#tech-an-main-con .foused-tech {
+  animation: tech-animation 3s;
+}
+
+@keyframes tech-animation {
+  0% {
+    color: var(--primary-dark-mode);
+  }
+
+  50% {
+    color: var(--primary-dark-mode);
+  }
+
+  100% {
+    color: rgb(30, 30, 30);
+  }
+
 }
 </style>

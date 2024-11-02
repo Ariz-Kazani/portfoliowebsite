@@ -84,7 +84,7 @@ a:hover {
 
 @media (prefers-color-scheme: dark) {
   #footer-con {
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color: var(--dark-mode-foreground);
     border-color: var(--primary-dark-mode);
     color: var(--primary-dark-mode);
   }

@@ -19,9 +19,10 @@
 :root {
   --primary-dark-mode: #787AE8;
   --dark-mode-background: #121212;
+  --dark-mode-foreground: #343434;
 }
 
-/* *::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
 } */
 

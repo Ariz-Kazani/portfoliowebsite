@@ -207,6 +207,13 @@ async function landingInitialAnimation() {
   overflow: hidden;
 }
 
+@media screen and (max-width: 800px) {
+  #about-test-two {
+    display: none;
+  }
+  
+}
+
 #body-con {
   width: 100%;
   min-height: 90vh;
@@ -365,7 +372,7 @@ async function landingInitialAnimation() {
   text-align: center;
   width: 100%;
   font-size: 80px;
-  background: -webkit-linear-gradient(#000000, #000CB3);
+  background: var(--primary-dark-mode);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -384,14 +391,14 @@ async function landingInitialAnimation() {
 .abt-me-trans {
   animation: abtMeTrans 1s;
   -webkit-animation: abtMeTrans 1s;
-  box-shadow: 0px 0px 30px 4px #1F2366;
+  box-shadow: 0px 0px 2px 4px #1F2366;
   opacity: 100%;
 }
 
 .abt-me-trans-b {
   animation: abtMeTransB 1s;
   -webkit-animation: abtMeTransB 1s;
-  box-shadow: 0px 0px 30px 4px #1F2366;
+  box-shadow: 0px 0px 2px 4px #1F2366;
   opacity: 0%;
 }
 
@@ -493,7 +500,7 @@ async function landingInitialAnimation() {
   text-align: center;
   height: calc(100vh - 50px);
   font-size: 3vh;
-  background: -webkit-linear-gradient(#000766, #000CB3);
+  background: var(--primary-dark-mode);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -513,7 +520,7 @@ async function landingInitialAnimation() {
   text-align: center;
   width: 100%;
   font-size: 80px;
-  background: -webkit-linear-gradient(var(--primary-dark-mode), #1F2366, #000766);
+  background: var(--primary-dark-mode);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -534,11 +541,11 @@ async function landingInitialAnimation() {
 @media (prefers-color-scheme: dark) {
   #body-con #about #about-me-data {
     color: white;
-    background-color: rgba(255, 255, 255, 0.14);
+    background-color: var(--dark-mode-foreground);
   }
 
   #body-con #about #about-title {
-    background: -webkit-linear-gradient(#20256B, #3740B8);
+    background: var(--primary-dark-mode);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -557,11 +564,11 @@ async function landingInitialAnimation() {
   }
 
   .abt-me-trans {
-    box-shadow: 0px 0px 30px 4px #8F95EE;
+    box-shadow: 0px 0px 16px 2px #8F95EE;
   }
 
   .abt-me-trans-b {
-    box-shadow: 0px 0px 30px 4px #8F95EE;
+    box-shadow: 0px 0px 16px 2px #8F95EE;
   }
 
   #body-con #about #about-me-data #about-me-pic {
@@ -578,14 +585,14 @@ async function landingInitialAnimation() {
   }
 
   #body-con #projects #projects-title {
-    background: -webkit-linear-gradient(#8F95EE, var(--primary-dark-mode), #3740B8);
+    background: var(--primary-dark-mode);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   #body-con #work #work-title {
-    background: -webkit-linear-gradient(#8F95EE, var(--primary-dark-mode), #3740B8);
+    background: var(--primary-dark-mode);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
