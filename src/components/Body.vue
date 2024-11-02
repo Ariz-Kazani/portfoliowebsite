@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import Projects from './Projects.vue';
 import Work from './Work.vue';
+import TechAnimation from './TechAnimation.vue';
 
 // analytics stuff
 import { analytics } from '../firebase';
@@ -134,27 +135,7 @@ async function landingInitialAnimation() {
       <h1 id="about-title">About Me</h1>
       <div id="about-test">
         <div id="about-test-two">
-          <span>C          </span>
-          <span>Java       </span>
-          <span>Python     </span>
-          <span>R          </span>
-          <span>JavaScript </span>
-          <span>TypeScript </span>
-          <span>PHP        </span>
-          <span>HTML5      </span>
-          <span>CSS3       </span>
-          <span>SASS       </span>
-          <span>TailwindCSS</span>
-          <span>Next.js    </span>
-          <span>Vue.js     </span>
-          <span>React.js   </span>
-          <span>Laravel    </span>
-          <span>Node.js    </span>
-          <span>Deno.js    </span>
-          <span>AWS        </span>
-          <span>DynamoDB   </span>
-          <span>Firebase   </span>
-          <span>Firestore  </span>
+          <TechAnimation />
         </div>
         <div id="about-me-data" :class="{ 'abt-me-trans': showAMe, 'abt-me-trans-b': !showAMe }">
           <p id="about-me-info">
@@ -218,10 +199,12 @@ async function landingInitialAnimation() {
   justify-content: center;
   align-items: center;
   gap: 32px;
+  overflow: hidden;
 }
 
 #about-test-two {
   width: 100%;
+  overflow: hidden;
 }
 
 #body-con {

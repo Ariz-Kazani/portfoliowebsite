@@ -18,6 +18,7 @@
 
 :root {
   --primary-dark-mode: #787AE8;
+  --dark-mode-background: #121212;
 }
 
 /* *::-webkit-scrollbar {
@@ -58,7 +59,7 @@ input:after {
 @media (prefers-color-scheme: dark) {
   body {
     color: white;
-    background-color:  #121212;
+    background-color:  var(--dark-mode-background);
   }
 
   ::-webkit-scrollbar-thumb {

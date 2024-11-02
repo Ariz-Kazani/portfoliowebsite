@@ -35,6 +35,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  z-index: 10;
 }
 
 #header-con #header-button-con {
