@@ -16,7 +16,7 @@ function pickRandomTech() {
   }, 10);
 }
 
-setInterval(pickRandomTech, 500);
+setInterval(pickRandomTech, 700);
 
 </script>
 <template>
