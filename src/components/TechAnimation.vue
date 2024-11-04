@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 
 const techs = ref([
-  'C', 'C#', 'C++', 'Java', 'Python', 'R', 'JavaScript', 'TypeScript', 'PHP', 'HTML5', 'CSS', 'SASS', 'TailwindCSS', 'Next.js', 'Vue.js', 'React.js', 'Laravel', 'Node.js', 'Deno.js', 'AWS', 'DynamoDB', 'Firebase', 'Firestore'
+  'C', 'C#', 'C++', 'Java', 'Python', 'R', 'JavaScript', 'TypeScript', 'PHP', 'HTML5', 'CSS', 'SASS', 'TailwindCSS', 'Next.js', 'Vue.js', 'React.js', 'Laravel', 'Node.js', 'Deno.js', 'AWS', 'DynamoDB', 'Firebase', 'Firestore', 'Unity', 'Git', 'SQL'
 ]);
 
 const randomTech = ref(null);
@@ -21,20 +21,23 @@ setInterval(pickRandomTech, 700);
 </script>
 <template>
   <div id="tech-an-main-con">
-    <template v-for="i in 23">
+    <template v-for="i in 22">
+      <span :class="randomTech == 'TailwindCSS' + i ? '' : 'foused-tech'" id="un-focused-tech">TailwindCSS</span>
       <span :class="randomTech == 'C' + i ? '' : 'foused-tech'" id="un-focused-tech">C</span>
-      <span :class="randomTech == 'C#' + i ? '' : 'foused-tech'" id="un-focused-tech">C#</span>
-      <span :class="randomTech == 'C++' + i ? '' : 'foused-tech'" id="un-focused-tech">C++</span>
       <span :class="randomTech == 'Java' + i ? '' : 'foused-tech'" id="un-focused-tech">Java</span>
       <span :class="randomTech == 'Python' + i ? '' : 'foused-tech'" id="un-focused-tech">Python</span>
       <span :class="randomTech == 'R' + i ? '' : 'foused-tech'" id="un-focused-tech">R</span>
       <span :class="randomTech == 'JavaScript' + i ? '' : 'foused-tech'" id="un-focused-tech">JavaScript</span>
+      <span :class="randomTech == 'C#' + i ? '' : 'foused-tech'" id="un-focused-tech">C#</span>
       <span :class="randomTech == 'TypeScript' + i ? '' : 'foused-tech'" id="un-focused-tech">TypeScript</span>
       <span :class="randomTech == 'PHP' + i ? '' : 'foused-tech'" id="un-focused-tech">PHP</span>
       <span :class="randomTech == 'HTML5' + i ? '' : 'foused-tech'" id="un-focused-tech">HTML5</span>
       <span :class="randomTech == 'CSS' + i ? '' : 'foused-tech'" id="un-focused-tech">CSS</span>
+      <span :class="randomTech == 'Unity' + i ? '' : 'foused-tech'" id="un-focused-tech">Unity</span>
+      <span :class="randomTech == 'Git' + i ? '' : 'foused-tech'" id="un-focused-tech">Git</span>
       <span :class="randomTech == 'SASS' + i ? '' : 'foused-tech'" id="un-focused-tech">SASS</span>
-      <span :class="randomTech == 'TailwindCSS' + i ? '' : 'foused-tech'" id="un-focused-tech">TailwindCSS</span>
+      <span :class="randomTech == 'SQL' + i ? '' : 'foused-tech'" id="un-focused-tech">SQL</span>
+      <span :class="randomTech == 'C++' + i ? '' : 'foused-tech'" id="un-focused-tech">C++</span>
       <span :class="randomTech == 'Next.js' + i ? '' : 'foused-tech'" id="un-focused-tech">Next.js</span>
       <span :class="randomTech == 'Vue.js' + i ? '' : 'foused-tech'" id="un-focused-tech">Vue.js</span>
       <span :class="randomTech == 'React.js' + i ? '' : 'foused-tech'" id="un-focused-tech">React.js</span>

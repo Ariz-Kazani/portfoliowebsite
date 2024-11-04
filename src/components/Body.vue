@@ -182,11 +182,11 @@ async function landingInitialAnimation() {
       </div>
     </div>
     <div id="work">
-      <h1 id="work-title">My Work Experience</h1>
+      <h1 id="about-title">My Experiences</h1>
       <Work />
     </div>
     <div id="projects">
-      <h1 id="projects-title">Some Of My Projects</h1>
+      <h1 id="projects-title">My Projects</h1>
       <Projects />
     </div>
   </div>
@@ -367,7 +367,7 @@ async function landingInitialAnimation() {
   display: grid;
 }
 
-#body-con #about #about-title {
+#about-title {
   margin: 55px 0 55px 0;
   text-align: center;
   width: 100%;
@@ -492,22 +492,7 @@ async function landingInitialAnimation() {
 #body-con #work {
   margin-top: 50vh;
   min-height: calc(100vh - 100px);
-  display: flex;
-}
-
-#body-con #work #work-title {
-  padding: 0px 0px 0px 55px;
-  text-align: center;
-  height: calc(100vh - 50px);
-  font-size: 3vh;
-  background: var(--primary-dark-mode);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-  position: sticky;
-  top: 55px;
+  /* display: flex; */
 }
 
 #body-con #projects {
@@ -529,12 +514,8 @@ async function landingInitialAnimation() {
 @media only screen and (max-width: 500px) {
 
   #body-con #projects #projects-title,
-  #body-con #about #about-title {
+  #about-title {
     font-size: 16vw;
-  }
-
-  #body-con #work #work-title {
-    padding: 0px 0px 0px 20px;
   }
 }
 
@@ -544,7 +525,7 @@ async function landingInitialAnimation() {
     background-color: var(--dark-mode-foreground);
   }
 
-  #body-con #about #about-title {
+  #about-title {
     background: var(--primary-dark-mode);
     background-clip: text;
     -webkit-background-clip: text;
@@ -591,12 +572,6 @@ async function landingInitialAnimation() {
     -webkit-text-fill-color: transparent;
   }
 
-  #body-con #work #work-title {
-    background: var(--primary-dark-mode);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
 }
 
 /* TODO: update ui/ux for light mode */
@@ -606,7 +581,7 @@ async function landingInitialAnimation() {
     background-color: var(--dark-mode-foreground);
   }
 
-  #body-con #about #about-title {
+  #about-title {
     background: var(--primary-dark-mode);
     background-clip: text;
     -webkit-background-clip: text;
@@ -647,13 +622,6 @@ async function landingInitialAnimation() {
   }
 
   #body-con #projects #projects-title {
-    background: var(--primary-dark-mode);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  #body-con #work #work-title {
     background: var(--primary-dark-mode);
     background-clip: text;
     -webkit-background-clip: text;

@@ -75,9 +75,8 @@ onMounted(() => {
 
 <template>
   <div id="work-con" class="work-con">
+    <div id="spacer"></div>
     <template v-for="(position, index) in work" :key="position.id">
-      <div id="spacer">
-      </div>
       <div :id="position.id" :class="position.id">
         <div id="work-item" :class="{ 'abt-me-trans': position.isShown, 'abt-me-trans-b': !position.isShown }">
           <h1 id="work-item-comp">{{ position.company }}</h1>
@@ -86,21 +85,22 @@ onMounted(() => {
           <p>{{ position.description }}</p>
         </div>
       </div>
+      <div id="spacer"></div>
     </template>
-    <div id="spacer"></div>
   </div>
 </template>
 
 <style scoped>
 #work-con {
-  min-height: 830vh;
+  min-height: 650vh;
   width: 100%;
   overflow: hidden;
+  padding-top: 32px;
   /* background-color: aqua; */
 }
 
 #work-con #spacer {
-  height: 95vh;
+  height: 85vh;
 }
 
 #work-con #work-item {
