@@ -55,7 +55,9 @@ setInterval(pickRandomTech, 700);
 <style scoped>
 #tech-an-main-con {
   white-space: initial;
-  overflow-wrap: break-word;
+  word-break: break-all !important; 
+  word-break: break-word !important; 
+  overflow-wrap: break-word !important;
   position: relative;
 }
 
