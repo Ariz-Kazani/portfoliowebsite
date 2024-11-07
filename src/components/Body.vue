@@ -492,13 +492,13 @@ async function landingInitialAnimation() {
 }
 
 #body-con #work {
-  margin-top: 50vh;
+  margin-top: 40vh;
   min-height: calc(100vh - 100px);
   /* display: flex; */
 }
 
 #body-con #projects {
-  margin-top: 50vh;
+  margin-top: 40vh;
   min-height: 93vh;
 }
 

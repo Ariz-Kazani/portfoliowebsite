@@ -1,6 +1,14 @@
 <script setup>
 import { onMounted, ref } from 'vue';
-import searchEngineIMG from '../assets/laravel.svg';
+import vuejs from '../assets/technologies/vuejs.svg';
+import sass from '../assets/technologies/sass.svg';
+import css from '../assets/technologies/css.svg';
+import laravel from '../assets/technologies/laravel.svg';
+import mysql from '../assets/technologies/mysql.svg';
+import git from '../assets/technologies/git.svg';
+import c from '../assets/technologies/c.svg';
+import bash from '../assets/technologies/bash.svg';
+import linux from '../assets/technologies/linux.svg';
 
 const work = ref([
   {
@@ -8,13 +16,13 @@ const work = ref([
     position: 'Software Developer Intern',
     type: '',
     date: 'May 2024 - August 2024',
+    technologies: [laravel, vuejs, sass, css, mysql, git],
     description: `In the summer of 2024 I interned at ConfiDens Analytics as a Software Developer, 
     I've had the opportunity to work on diverse and impactful projects that have significantly enhanced my 
-    technical skills and practical knowledge. One of my primary responsibilities has been improving various UI elements, 
-    which has involved refining the user interface to ensure a seamless and intuitive user experience. 
+    technical skills and practical knowledge. One of my primary responsibilities was to create the competitor analysis feature. 
     This has required a keen eye for design and a strong understanding of front-end technologies such as SASS, and Vue.js. 
-    Additionally, I lead research and development of the competitor analysis feature, which has 
-    entailed both back-end and front-end development.`,
+    Additionally, I lead research and development of the competitor analysis feature which has exposed me to both back-end 
+    and front-end development.`,
     id: 'confidens',
     isShown: false,
   },
@@ -23,9 +31,11 @@ const work = ref([
     position: 'Teaching Assistant',
     type: '',
     date: 'September 2024 - Present',
+    technologies: [c, bash, linux],
     description: `I am currently working as a Teaching Assistant at Carleton University for COMP 2401 - Introduction to Systems Programming, 
     where I am responsible for helping students learn the ins and outs of of the C programming language. This is done through weekly labs and office hours, 
-    where I help students with their assignments, and provide guidance on how to approach and solve problems.`,
+    where I help students with their assignments, and provide guidance on how to approach and solve problems. The most comon questions I get are about pointers, 
+    memory management, and how to use the Linux command line.`,
     id: 'carleton-university',
     isShown: false,
   },
@@ -40,8 +50,10 @@ const work = ref([
         <h1 id="work-item-comp">{{ position.company }}</h1>
         <h2 id="work-item-pos">{{ position.position }}</h2>
         <h4 id="work-item-aux-info">{{ position.type }} {{ position.date }}</h4>
-        <!-- <p>{{ position.description }}</p> -->
-        <img src="../assets/laravel.svg" alt="Laravel" />
+        <template v-for="tech in position.technologies" :key="tech">
+          <img :src="tech" alt="" />
+        </template>
+        <p>{{ position.description }}</p>
       </div>
 
     </template>
@@ -49,6 +61,15 @@ const work = ref([
 </template>
 
 <style scoped>
+h1 {
+  color: var(--primary-dark-mode);
+}
+
+img {
+  width: 20px;
+  height: 20px;
+}
+
 #work-con {
   min-height: 20vh;
   width: 100%;
@@ -56,21 +77,33 @@ const work = ref([
   padding: 32px 0 32px 0;
   display: flex;
   justify-content: space-evenly;
-  color: black;
 }
 
 #work-con #work-item {
   padding: 24px;
   border-radius: 32px;
-  box-shadow: 0px 0px 20px 4px #1F2366;
+  box-shadow: 0px 0px 20px 4px #8F95EE;
   background: white;
   width: 40vw;
+  background-color: var(--dark-mode-foreground);
 }
 
-@media (prefers-color-scheme: dark) {
+@media screen and (max-width: 850px) {
+  #work-con {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #work-con #work-item {
+    width: 80vw;
+    margin: 0 0 128px 0;
+  }
+  
 }
+
+@media (prefers-color-scheme: dark) {}
 
 /* TODO: update ui/ux for light mode */
-@media (prefers-color-scheme: light) {
-}
+@media (prefers-color-scheme: light) {}
 </style>
