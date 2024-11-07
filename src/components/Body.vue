@@ -345,9 +345,11 @@ async function landingInitialAnimation() {
 
 #body-con #landing-con #landingMCon #alt-landing-message {
   display: none;
+  text-shadow: 0px 1px 4px black;
+
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 650px) {
   #body-con #landing-con #landingMCon #landing-message {
     display: none;
   }
@@ -490,13 +492,13 @@ async function landingInitialAnimation() {
 }
 
 #body-con #work {
-  margin-top: 50vh;
+  margin-top: 40vh;
   min-height: calc(100vh - 100px);
   /* display: flex; */
 }
 
 #body-con #projects {
-  margin-top: 50vh;
+  margin-top: 40vh;
   min-height: 93vh;
 }
 
