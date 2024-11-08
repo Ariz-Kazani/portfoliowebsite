@@ -9,6 +9,9 @@ import git from '../assets/technologies/git.svg';
 import c from '../assets/technologies/c.svg';
 import bash from '../assets/technologies/bash.svg';
 import linux from '../assets/technologies/linux.svg';
+import javascript from '../assets/technologies/javascript.svg';
+import html from '../assets/technologies/html.svg';
+import php from '../assets/technologies/php.svg';
 
 const work = ref([
   {
@@ -16,7 +19,7 @@ const work = ref([
     position: 'Software Developer Intern',
     type: '',
     date: 'May 2024 - August 2024',
-    technologies: [laravel, vuejs, sass, css, mysql, git],
+    technologies: [laravel, php, vuejs, javascript, html, sass, css, mysql, git],
     description: `In the summer of 2024 I interned at ConfiDens Analytics as a Software Developer, 
     I've had the opportunity to work on diverse and impactful projects that have significantly enhanced my 
     technical skills and practical knowledge. One of my primary responsibilities was to create the competitor analysis feature. 
@@ -66,6 +69,8 @@ h1 {
 }
 
 img {
+  margin: 1px;
+  margin-top: 8px;
   width: 20px;
   height: 20px;
 }

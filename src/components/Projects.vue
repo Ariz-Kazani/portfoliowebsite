@@ -13,6 +13,7 @@ const projects = ref([
     name: 'Time-CoPilot',
     hostingLink: 'https://time-copilot.com',
     codeLink: null,
+    technologies: ["nextjs", "reactjs", "typescript", "tailwindcss", "aws", "git"],
     photo: timecopilotIMG,
     description: `Time-CoPilot is a productivity app that will take your productivity to the next level. Uses AWS, React (with Next.js), Typescript, TailwindCSS and Shadcn. Time-CoPilot allows users to plan their day, and track their progress. Users can also create, notes, todo's and much much more!`,
     id: 'time-copilot',
@@ -21,6 +22,7 @@ const projects = ref([
     name: 'Mobile Game',
     hostingLink: null,
     codeLink: null,
+    technologies: ["unity", "csharp"],
     photo: 'https://media.sketchfab.com/models/2afd04b26ca64c6b8392f75e217ffdb9/thumbnails/b8b7fd406e624b27bcf5d22af1857ac0/6fc6917029464e18aef80d4f82f479a4.jpeg',
     description: `A game for iOS and android I'm currently working on. The game is a 2D indi game, with a unique art style. The game is built using Unity, and C#. The game is currently in development, stay tuned for more updates!`,
     id: 'coming-soon',
@@ -29,6 +31,7 @@ const projects = ref([
     name: 'The Movie',
     hostingLink: 'https://the-movie-arizkazani.firebaseapp.com/',
     codeLink: 'https://github.com/Ariz-Kazani/THE-MOVIE-PUBLIC',
+    technologies: ["nuxtjs", "vuejs", "html", "css", "javascript", "firebase", "git"],
     photo: theMovieIMG,
     description: `Disclaimer: The Movie 2.0 is currently being built, stay tuned ;). Feel free to visit the current version of The Movie. The Movie is a web app that allows users to search for movies, and view their details. The Movie uses the TMDb API, Vue.js, Firebase.`,
     id: 'the-movie',
@@ -37,6 +40,7 @@ const projects = ref([
     name: 'Search Engine',
     hostingLink: null,
     codeLink: 'https://github.com/Ariz-Kazani/Spider-Search-Engine',
+    technologies: ["java", "python", "git"],
     photo: searchEngineIMG,
     description: 'This project implements a web crawler and search engine in Java (and one in Python without a GUI).The crawler starts from a seed URL, collects data from web pages, and stores it for search and ranking.The search engine processes user queries, delivering relevant results using PageRank algorithms.',
     id: 'search-engine',
@@ -45,6 +49,7 @@ const projects = ref([
     name: 'Algorithms',
     hostingLink: null,
     codeLink: 'https://github.com/Ariz-Kazani/python-sorting-algorithm-visualizer',
+    technologies: ["python", "git"],
     photo: sortingAlgoIMG,
     description: 'I created a sorting algorithm visualizer in python for people who are just starting to learn how to code, and don\'t quite understand how they work. Visualise algorithms like merge-sort, quick-sort and even bogo-sort. Find the source code on my GitHub!',
     id: 'algorithm-visualizer',
@@ -53,6 +58,7 @@ const projects = ref([
     name: 'Coming Soon',
     hostingLink: null,
     codeLink: null,
+    technologies: ["cpp"],
     photo: 'https://t4.ftcdn.net/jpg/05/79/68/85/240_F_579688567_hmuT3hnFxTeDBXsyUUsmvB6Kvt0UF8Bd.webp',
     description: 'This one is a secret 🤫. Coming Soon, stay tuned ;)',
     id: 'coming-soon',
@@ -66,7 +72,7 @@ const size = ref(projects.value.length);
 <template>
   <div class="project-con">
     <template v-for="(site, index) in projects">
-      <Card :name="site.name" :description="site.description" :hostingLink="site.hostingLink" :codeLink="site.codeLink"
+      <Card :name="site.name" :description="site.description" :hostingLink="site.hostingLink" :codeLink="site.codeLink" :technologies="site.technologies"
         :photo="site.photo" :id="site.id" :index="index" />
     </template>
   </div>

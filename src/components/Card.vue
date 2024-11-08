@@ -5,6 +5,56 @@ import { ref } from 'vue';
 import { analytics } from '../firebase';
 import { getAnalytics, logEvent } from "firebase/analytics";
 
+import vuejs from '../assets/technologies/vuejs.svg';
+import sass from '../assets/technologies/sass.svg';
+import css from '../assets/technologies/css.svg';
+import laravel from '../assets/technologies/laravel.svg';
+import mysql from '../assets/technologies/mysql.svg';
+import git from '../assets/technologies/git.svg';
+import c from '../assets/technologies/c.svg';
+import bash from '../assets/technologies/bash.svg';
+import linux from '../assets/technologies/linux.svg';
+import nextjs from '../assets/technologies/nextjs.svg';
+import reactjs from '../assets/technologies/reactjs.svg';
+import typescript from '../assets/technologies/typescript.svg';
+import tailwindcss from '../assets/technologies/tailwindcss.svg';
+import awssvg from '../assets/technologies/awssvg.svg';
+import csharp from '../assets/technologies/csharp.svg';
+import unity from '../assets/technologies/unity.svg';
+import html from '../assets/technologies/html.svg';
+import javascript from '../assets/technologies/javascript.svg';
+import firebasesvg from '../assets/technologies/firebasesvg.svg'; 
+import java from '../assets/technologies/java.svg';
+import python from '../assets/technologies/python.svg';
+import nuxtjs from '../assets/technologies/nuxtjs.svg';
+import cplusplus from '../assets/technologies/cplusplus.svg';
+
+const techList = {
+  "vuejs": vuejs,
+  "sass": sass,
+  "css": css,
+  "laravel": laravel,
+  "mysql": mysql,
+  "git": git,
+  "c": c,
+  "bash": bash,
+  "linux": linux,
+  "nextjs": nextjs,
+  "reactjs": reactjs,
+  "typescript": typescript,
+  "tailwindcss": tailwindcss,
+  "aws": awssvg,
+  "csharp": csharp,
+  "unity": unity,
+  "html": html,
+  "javascript": javascript,
+  "firebase": firebasesvg,
+  "java": java,
+  "python": python,
+  "nuxtjs": nuxtjs,
+  "cpp": cplusplus,
+}
+
 let an = null;
 
 if (import.meta.env.VITE_MODE == 'prod') {
@@ -21,6 +71,7 @@ defineProps({
   codeLink: String,
   photo: String,
   id: String,
+  technologies: Array,
   index: Number,
 });
 
@@ -55,8 +106,14 @@ function abtMPREffect() {
             d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0m2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0" />
         </svg>
       </a>
-    </div>
-    <p id="description"> {{ description }}</p>
+    </div> 
+    <p id="description"> 
+      <template v-for="tech of technologies" :key="tech">
+        <img id="tech-item" :src="techList[tech]" alt="" />
+      </template>
+      <br>
+      {{ description }}
+    </p>
 
     <div id="project-img" @mousemove="abtMPEffect" @mouseleave="abtMPREffect()">
       <img id="project-img-data" :src="photo" alt="Coming Soon"
@@ -66,6 +123,12 @@ function abtMPREffect() {
 </template>
 
 <style scoped>
+#tech-item {
+  width: 20px;
+  height: 20px;
+  margin: 1px 1px 1px 1px;
+}
+
 #project-con {
   margin: 0px 5% 40vh 5%;
   height: 300px;
