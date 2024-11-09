@@ -84,6 +84,7 @@ const size = ref(projects.value.length);
   /* Adjust the number of projects  1 more after this*/
   /*adjust         !                !     */
   min-height: calc(6*300px + 30px + 6*40vh);
+  padding: 32px 0;
 }
 
 @media only screen and (max-width: 420px) {

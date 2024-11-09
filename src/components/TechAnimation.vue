@@ -21,7 +21,7 @@ setInterval(pickRandomTech, 700);
 </script>
 <template>
   <div id="tech-an-main-con">
-    <template v-for="i in 20">
+    <template v-for="i in 18">
       <span :class="randomTech == 'TailwindCSS' + i ? '' : 'foused-tech'" id="un-focused-tech">TailwindCSS</span>
       <span :class="randomTech == 'C' + i ? '' : 'foused-tech'" id="un-focused-tech">C</span>
       <span :class="randomTech == 'Java' + i ? '' : 'foused-tech'" id="un-focused-tech">Java</span>

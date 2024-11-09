@@ -367,7 +367,6 @@ a {
 }
 
 #about-title {
-  margin: 55px 0 55px 0;
   text-align: center;
   width: 100%;
   font-size: 80px;
@@ -496,7 +495,6 @@ a {
 }
 
 #body-con #projects #projects-title {
-  padding: 55px 0 55px 0;
   text-align: center;
   width: 100%;
   font-size: 80px;
