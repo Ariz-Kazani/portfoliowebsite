@@ -65,7 +65,7 @@ const work = ref([
 
 <style scoped>
 h1 {
-  color: var(--primary-dark-mode);
+  color: var(--primary);
 }
 
 img {
@@ -78,7 +78,6 @@ img {
 #work-con {
   min-height: 20vh;
   width: 100%;
-  /* overflow: hidden; */
   padding: 32px 0 32px 0;
   display: flex;
   justify-content: space-evenly;
@@ -87,10 +86,8 @@ img {
 #work-con #work-item {
   padding: 24px;
   border-radius: 32px;
-  box-shadow: 0px 0px 20px 4px #8F95EE;
-  background: white;
   width: 40vw;
-  background-color: var(--dark-mode-foreground);
+  background-color: var(--foreground);
 }
 
 @media screen and (max-width: 850px) {
@@ -106,9 +103,4 @@ img {
   }
   
 }
-
-@media (prefers-color-scheme: dark) {}
-
-/* TODO: update ui/ux for light mode */
-@media (prefers-color-scheme: light) {}
 </style>

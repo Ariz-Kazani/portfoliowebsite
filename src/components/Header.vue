@@ -27,7 +27,8 @@
   top: 0px;
   border-style: none none solid none;
   border-width: 2px;
-  border-color: #1F2366;
+  border-color: var(--primary);
+  text-shadow: 0px 0px 5px black;
   display: grid;
   overflow: hidden;
   place-items: center;
@@ -50,7 +51,7 @@
 #header-con .but {
   text-decoration: none;
   height: 30px;
-  color: #1F2366;
+  color: var(--primary);
   border-bottom: 2px solid transparent;
   text-align: center;
   display: flex;
@@ -63,43 +64,12 @@
 }
 
 #header-con .but:hover {
-  border-color: #1F2366;
+  border-color: var(--primary);
 }
 
 @media only screen and (max-width: 340px) {
   #header-con .but>p {
     font-size: medium;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  #header-con {
-    border-color: var(--primary-dark-mode);
-    text-shadow: 0px 0px 5px black;
-  }
-
-  #header-con .but {
-    color: var(--primary-dark-mode);
-  }
-
-  #header-con .but:hover {
-    border-color: var(--primary-dark-mode);
-  }
-}
-
-/* TODO: update ui/ux for light mode */
-@media (prefers-color-scheme: light) {
-  #header-con {
-    border-color: var(--primary-dark-mode);
-    text-shadow: 0px 0px 5px black;
-  }
-
-  #header-con .but {
-    color: var(--primary-dark-mode);
-  }
-
-  #header-con .but:hover {
-    border-color: var(--primary-dark-mode);
   }
 }
 </style>

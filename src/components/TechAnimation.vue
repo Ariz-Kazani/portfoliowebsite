@@ -9,7 +9,7 @@ const randomTech = ref(null);
 
 function pickRandomTech() {
   const randomTechItem = Math.floor(Math.random() * techs.value.length);
-  const randomIndex = Math.floor(Math.random() * 21) + 1;
+  const randomIndex = Math.floor(Math.random() * 19) + 1;
   randomTech.value = techs.value[randomTechItem] + randomIndex;
   setTimeout(() => {
     randomTech.value = null;
@@ -21,7 +21,7 @@ setInterval(pickRandomTech, 700);
 </script>
 <template>
   <div id="tech-an-main-con">
-    <template v-for="i in 22">
+    <template v-for="i in 20">
       <span :class="randomTech == 'TailwindCSS' + i ? '' : 'foused-tech'" id="un-focused-tech">TailwindCSS</span>
       <span :class="randomTech == 'C' + i ? '' : 'foused-tech'" id="un-focused-tech">C</span>
       <span :class="randomTech == 'Java' + i ? '' : 'foused-tech'" id="un-focused-tech">Java</span>
@@ -56,7 +56,6 @@ setInterval(pickRandomTech, 700);
 #tech-an-main-con {
   white-space: initial;
   word-break: break-all !important; 
-  /* word-break: break-word !important;  */
   overflow-wrap: break-word !important;
   position: relative;
 }
@@ -68,7 +67,7 @@ setInterval(pickRandomTech, 700);
   top: 0;
   left: 0;
   pointer-events: none;
-  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), var(--dark-mode-background) 90%);
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), var(--background) 90%);
   width: 100%;
   height: 12em;
 }
@@ -80,7 +79,7 @@ setInterval(pickRandomTech, 700);
   bottom: 0;
   left: 0;
   pointer-events: none;
-  background-image: linear-gradient(to bottom, transparent, var(--dark-mode-background) 90%);
+  background-image: linear-gradient(to bottom, transparent, var(--background) 90%);
   width: 100%;
   height: 12em;
 }
@@ -93,7 +92,7 @@ setInterval(pickRandomTech, 700);
 }
 
 #un-focused-tech:hover {
-  color: var(--primary-dark-mode);
+  color: var(--primary);
   transition: none;
 }
 
@@ -103,11 +102,11 @@ setInterval(pickRandomTech, 700);
 
 @keyframes tech-animation {
   0% {
-    color: var(--primary-dark-mode);
+    color: var(--primary);
   }
 
   50% {
-    color: var(--primary-dark-mode);
+    color: var(--primary);
   }
 
   100% {

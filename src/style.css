@@ -4,7 +4,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
   -moz-user-select: none;
@@ -13,18 +15,78 @@
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
-  /* scrollbar-width: none; */
 }
 
 :root {
   --primary-dark-mode: #787AE8;
-  --dark-mode-background: #121212;
-  --dark-mode-foreground: #343434;
+  --background-dark-mode: #121212;
+  --foreground-dark-mode: #343434;
+  --primary-dark-mode: #BB86FC;
+  --primary-variant-dark-mode: #3700B3;
+  --secondary-dark-mode: #37DAC6;
+  --secondary-variant-dark-mode: #37DAC6;
+  --surface-dark-mode: #121212;
+  --error-dark-mode: #CF6679;
+  --on-primary-dark-mode: #000000;
+  --on-secondary-dark-mode: #000000;
+  --on-background-dark-mode: #FFFFFF;
+  --on-surface-dark-mode: #FFFFFF;
+  --on-error-dark-mode: #000000;
+
+  --primary-light-mode: #787AE8;
+  --background-light-mode: #121212;
+  --foreground-light-mode: #343434;
+  --primary-light-mode: #BB86FC;
+  --primary-variant-light-mode: #3700B3;
+  --secondary-light-mode: #37DAC6;
+  --secondary-variant-light-mode: #37DAC6;
+  --surface-light-mode: #121212;
+  --error-light-mode: #CF6679;
+  --on-primary-light-mode: #000000;
+  --on-secondary-light-mode: #000000;
+  --on-background-light-mode: #FFFFFF;
+  --on-surface-light-mode: #FFFFFF;
+  --on-error-light-mode: #000000;
 }
 
-/* ::-webkit-scrollbar {
-  display: none;
-} */
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary: var(--primary-light-mode);
+    --background: var(--background-light-mode);
+    --foreground: var(--foreground-light-mode);
+    --primary: var(--primary-light-mode);
+    --primary-variant: var(--primary-variant-light-mode);
+    --secondary: var(--secondary-light-mode);
+    --secondary-variant: var(--secondary-variant-light-mode);
+    --surface: var(--surface-light-mode);
+    --error: var(--error-light-mode);
+    --on-primary: var(--on-primary-light-mode);
+    --on-secondary: var(--on-secondary-light-mode);
+    --on-background: var(--on-background-light-mode);
+    --on-surface: var(--on-surface-light-mode);
+    --on-error: var(--on-error-light-mode);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: var(--primary-dark-mode);
+    --background: var(--background-dark-mode);
+    --foreground: var(--foreground-dark-mode);
+    --primary: var(--primary-dark-mode);
+    --primary-variant: var(--primary-variant-dark-mode);
+    --secondary: var(--secondary-dark-mode);
+    --secondary-variant: var(--secondary-variant-dark-mode);
+    --surface: var(--surface-dark-mode);
+    --error: var(--error-dark-mode);
+    --on-primary: var(--on-primary-dark-mode);
+    --on-secondary: var(--on-secondary-dark-mode);
+    --on-background: var(--on-background-dark-mode);
+    --on-surface: var(--on-surface-dark-mode);
+    --on-error: var(--on-error-dark-mode);
+  }
+}
+
 
 img {
   pointer-events: none;
@@ -42,48 +104,21 @@ input:after {
   user-select: initial;
 }
 
-
+body {
+  color: var(--on-background);
+  background-color: var(--background);
+}
 
 ::-webkit-scrollbar {
   width: 11px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #1F2366;
+  background-color: var(--primary);
   margin: 3px;
+
 }
 
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    color: white;
-    background-color:  var(--dark-mode-background);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: var(--primary-dark-mode);
-  }
-  
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px #8F95EE;
-  }
-}
-
-/* TODO: update ui/ux for light mode */
-@media (prefers-color-scheme: light) {
-  body {
-    color: white;
-    background-color:  var(--dark-mode-background);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: var(--primary-dark-mode);
-  }
-  
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px #8F95EE;
-  }
+  box-shadow: inset 0 0 5px #8F95EE;
 }

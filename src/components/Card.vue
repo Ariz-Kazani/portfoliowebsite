@@ -137,8 +137,8 @@ function abtMPREffect() {
   grid-template-columns: 427px 1fr;
   grid-template-rows: 50px 202px;
   border-radius: 32px;
-  box-shadow: 0px 0px 20px 4px #1F2366;
-  background-color: white;
+  box-shadow: 0px 0px 4px 1px var(--surface);
+  background-color: var(--foreground);
   position: sticky;
   overflow: hidden;
 }
@@ -149,18 +149,15 @@ function abtMPREffect() {
   grid-column: 1;
   grid-row: 1 / span 2;
   border-radius: 8px;
-}
 
-#project-con #project-img:hover {
-  #project-img-data {
-    box-shadow: 0px 0px 0px 1px #1F2366;
-  }
 }
 
 #project-con #project-img #project-img-data {
   height: 100%;
   width: 100%;
   border-radius: 8px;
+  box-shadow: 0px 0px 4px 1px var(--surface);
+
 }
 
 #project-con #description {
@@ -176,8 +173,8 @@ function abtMPREffect() {
 
 #project-con #links a {
   text-decoration: none;
-  color: #1F2366;
-  padding: 0 2px 0 2px;
+  color: var(--primary);
+  padding: 0 0px 0 0px;
   height: full;
 }
 
@@ -189,8 +186,6 @@ function abtMPREffect() {
 
 
 }
-
-
 
 @media only screen and (max-width: 890px) {
   #project-con {
@@ -241,40 +236,5 @@ function abtMPREffect() {
   #project-con #links {
     font-size: 2.5vw;
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  #project-con {
-    background-color: var(--dark-mode-foreground);
-    box-shadow: 0px 0px 20px 4px #8F95EE;
-  }
-
-  #project-con #links a {
-    color: var(--primary-dark-mode);
-  }
-
-  #project-con #project-img:hover {
-    #project-img-data {
-      box-shadow: 0px 0px 10px 1px #8F95EE;
-    }
-  }
-}
-
-/* TODO: update ui/ux for light mode */
-@media (prefers-color-scheme: light) {
-  #project-con {
-    background-color: var(--dark-mode-foreground);
-    box-shadow: 0px 0px 20px 4px #8F95EE;
-  }
-
-  #project-con #links a {
-    color: var(--primary-dark-mode);
-  }
-
-  #project-con #project-img:hover {
-    #project-img-data {
-      box-shadow: 0px 0px 10px 1px #8F95EE;
-    }
-  }
-}
+} 
 </style>

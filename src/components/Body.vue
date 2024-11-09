@@ -132,7 +132,7 @@ async function landingInitialAnimation() {
       </div>
     </div>
     <div id="about">
-      <h1 id="about-title">About Me</h1>
+      <h1 id="about-title">About</h1>
       <div id="about-test">
         <div id="about-test-two">
           <TechAnimation />
@@ -182,17 +182,21 @@ async function landingInitialAnimation() {
       </div>
     </div>
     <div id="work">
-      <h1 id="about-title">My Experiences</h1>
+      <h1 id="about-title">Career</h1>
       <Work />
     </div>
     <div id="projects">
-      <h1 id="projects-title">My Projects</h1>
+      <h1 id="projects-title">Projects</h1>
       <Projects />
     </div>
   </div>
 </template>
 
 <style scoped>
+a {
+  color: var(--primary);
+}
+
 #about-test {
   display: flex;
   padding: 32px;
@@ -211,7 +215,6 @@ async function landingInitialAnimation() {
   #about-test-two {
     display: none;
   }
-  
 }
 
 #body-con {
@@ -306,25 +309,25 @@ async function landingInitialAnimation() {
 .tLargeS {
   font-weight: 900;
   font-size: 60px;
-  text-shadow: 0 0 10px var(--primary-dark-mode), 0 0 20px var(--primary-dark-mode), 0 0 30px #1F2366, 0 0 40px #1F2366, 0 0 50px #1F2366, 0 0 60px #1F2366, 0 0 70px #1F2366;
+  text-shadow: 0 0 10px var(--primary-dark-mode), 0 2px 20px var(--primary-dark-mode);
 }
 
 .tMedS {
   font-weight: 800;
   font-size: 56px;
-  text-shadow: 0 0 10px var(--primary-dark-mode), 0 0 20px var(--primary-dark-mode), 0 0 30px #1F2366, 0 0 40px #1F2366, 0 0 50px #1F2366, 0 0 60px #1F2366, 0 0 70px #1F2366;
+  text-shadow: 0 0 10px var(--primary-dark-mode), 0 1px 20px var(--primary-dark-mode);
 }
 
 .tSmallS {
   font-weight: 700;
   font-size: 52px;
-  text-shadow: 0 0 10px var(--primary-dark-mode), 0 0 20px var(--primary-dark-mode), 0 0 30px #1F2366, 0 0 40px #1F2366, 0 0 50px #1F2366, 0 0 60px #1F2366, 0 0 70px #1F2366;
+  text-shadow: 0 0 10px var(--primary-dark-mode), 0 0 20px var(--primary-dark-mode);
 }
 
 .tDefaultS {
   font-weight: 600;
   font-size: 48px;
-  text-shadow: 0px 1px 4px black;
+  text-shadow: 0px 2px 4px black;
 }
 
 #body-con #landing-con #landingMCon {
@@ -337,16 +340,11 @@ async function landingInitialAnimation() {
 
 #body-con #landing-con #landingMCon #landing-message {
   margin: auto;
-  color: white;
-
-  /* TODO: update the color here */
-  /* -webkit-text-stroke: 0.01px rgb(116, 116, 150); */
 }
 
 #body-con #landing-con #landingMCon #alt-landing-message {
   display: none;
   text-shadow: 0px 1px 4px black;
-
 }
 
 @media only screen and (max-width: 650px) {
@@ -358,7 +356,6 @@ async function landingInitialAnimation() {
     display: revert;
     font-weight: 600;
     font-size: 7vmin;
-    color: white;
   }
 }
 
@@ -374,10 +371,7 @@ async function landingInitialAnimation() {
   text-align: center;
   width: 100%;
   font-size: 80px;
-  background: var(--primary-dark-mode);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--primary);
 }
 
 #body-con #about #about-me-data {
@@ -388,19 +382,19 @@ async function landingInitialAnimation() {
   margin: auto;
   display: grid;
   align-items: center;
+  color: var(--on-surface);
+  background-color: var(--foreground);
 }
 
 .abt-me-trans {
   animation: abtMeTrans 1s;
   -webkit-animation: abtMeTrans 1s;
-  box-shadow: 0px 0px 2px 4px #1F2366;
   opacity: 100%;
 }
 
 .abt-me-trans-b {
   animation: abtMeTransB 1s;
   -webkit-animation: abtMeTransB 1s;
-  box-shadow: 0px 0px 2px 4px #1F2366;
   opacity: 0%;
 }
 
@@ -494,7 +488,6 @@ async function landingInitialAnimation() {
 #body-con #work {
   margin-top: 40vh;
   min-height: calc(100vh - 100px);
-  /* display: flex; */
 }
 
 #body-con #projects {
@@ -507,10 +500,7 @@ async function landingInitialAnimation() {
   text-align: center;
   width: 100%;
   font-size: 80px;
-  background: var(--primary-dark-mode);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--primary);
 }
 
 @media only screen and (max-width: 500px) {
@@ -518,116 +508,6 @@ async function landingInitialAnimation() {
   #body-con #projects #projects-title,
   #about-title {
     font-size: 16vw;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  #body-con #about #about-me-data {
-    color: white;
-    background-color: var(--dark-mode-foreground);
-  }
-
-  #about-title {
-    background: var(--primary-dark-mode);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .tLargeS {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
-  }
-
-  .tMedS {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
-  }
-
-  .tSmallS {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
-  }
-
-  .abt-me-trans {
-    box-shadow: 0px 0px 16px 2px #8F95EE;
-  }
-
-  .abt-me-trans-b {
-    box-shadow: 0px 0px 16px 2px #8F95EE;
-  }
-
-  #body-con #about #about-me-data #about-me-pic {
-    box-shadow: 0px 0px 10px 1px #8F95EE;
-
-  }
-
-  #body-con #about #about-me-data #about-me-pic:hover {
-    box-shadow: 0px 0px 20px 2px #8F95EE;
-  }
-
-  a {
-    color: var(--primary-dark-mode);
-  }
-
-  #body-con #projects #projects-title {
-    background: var(--primary-dark-mode);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-}
-
-/* TODO: update ui/ux for light mode */
-@media (prefers-color-scheme: light) {
-  #body-con #about #about-me-data {
-    color: white;
-    background-color: var(--dark-mode-foreground);
-  }
-
-  #about-title {
-    background: var(--primary-dark-mode);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .tLargeS {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
-  }
-
-  .tMedS {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
-  }
-
-  .tSmallS {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000fe6, 0 0 40px #000fe6, 0 0 50px #000fe6, 0 0 60px #000fe6, 0 0 70px #000fe6;
-  }
-
-  .abt-me-trans {
-    box-shadow: 0px 0px 16px 2px #8F95EE;
-  }
-
-  .abt-me-trans-b {
-    box-shadow: 0px 0px 16px 2px #8F95EE;
-  }
-
-  #body-con #about #about-me-data #about-me-pic {
-    box-shadow: 0px 0px 10px 1px #8F95EE;
-
-  }
-
-  #body-con #about #about-me-data #about-me-pic:hover {
-    box-shadow: 0px 0px 20px 2px #8F95EE;
-  }
-
-  a {
-    color: var(--primary-dark-mode);
-  }
-
-  #body-con #projects #projects-title {
-    background: var(--primary-dark-mode);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 }
 </style>style

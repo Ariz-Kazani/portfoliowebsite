@@ -47,8 +47,9 @@ if (import.meta.env.VITE_MODE == 'prod') {
   height: 90px;
   border-style: solid none none none;
   border-width: 2px;
-  border-color: #1F2366;
-  color: #1F2366;
+  background-color: var(--background);
+  border-color: var(--primary);
+  color: var(--primary);
   justify-items: center;
   justify-content: center;
   align-items: center;
@@ -72,7 +73,7 @@ p {
 
 a {
   text-decoration: none;
-  color: #1F2366;
+  color: var(--primary);
   margin: 10px;
 }
 
@@ -80,32 +81,5 @@ a:hover {
   transition-timing-function: ease-in;
   transition: 0.2s;
   transform: scale(1.1);
-}
-
-@media (prefers-color-scheme: dark) {
-  #footer-con {
-    background-color: var(--dark-mode-background);
-    border-color: var(--primary-dark-mode);
-    color: var(--primary-dark-mode);
-  }
-
-  a {
-    color: var(--primary-dark-mode);
-  }
-
-}
-
-/* TODO: update ui/ux for light mode */
-@media (prefers-color-scheme: light) {
-  #footer-con {
-    background-color: var(--dark-mode-foreground);
-    border-color: var(--primary-dark-mode);
-    color: var(--primary-dark-mode);
-  }
-
-  a {
-    color: var(--primary-dark-mode);
-  }
-
 }
 </style>
