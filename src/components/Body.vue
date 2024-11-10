@@ -14,7 +14,6 @@ if (import.meta.env.VITE_MODE == 'prod') {
   an = getAnalytics();
 }
 
-
 // landing page hover effect 
 const openingMessage = ref('');
 const openingMessageData = ref('PushingTheLimitsOfCode! ');
@@ -227,6 +226,9 @@ a {
   height: 50px;
   position: sticky;
   top: 0;
+  /**
+  * ! This is the only color that can/is not a variable
+  */
   background-color: rgb(5, 5, 5);
 }
 
