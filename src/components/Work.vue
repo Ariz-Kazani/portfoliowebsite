@@ -87,8 +87,16 @@ img {
   padding: 24px;
   border-radius: 32px;
   width: 40vw;
-  background-color: var(--foreground);
+  background-color: var(--foreground-2);
+  box-shadow: 0px 0px 4px 1px var(--surface);
 }
+
+#work-con #work-item:hover {
+  background-color: var(--foreground-3);
+  box-shadow: 0px 0px 8px 2px var(--surface);
+}
+
+
 
 @media screen and (max-width: 850px) {
   #work-con {

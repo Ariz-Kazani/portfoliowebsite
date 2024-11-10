@@ -382,7 +382,13 @@ a {
   display: grid;
   align-items: center;
   color: var(--on-surface);
-  background-color: var(--foreground);
+  background-color: var(--foreground-2);
+  box-shadow: 0px 0px 4px 1px var(--surface);
+}
+
+#body-con #about #about-me-data:hover {
+  background-color: var(--foreground-3);
+  box-shadow: 0px 0px 8px 2px var(--surface);
 }
 
 .abt-me-trans {

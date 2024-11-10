@@ -87,7 +87,7 @@ setInterval(pickRandomTech, 700);
 #un-focused-tech {
   white-space: normal;
   overflow-wrap: break-word;
-  color: rgb(30, 30, 30);
+  color: var(--foreground-1);
   transition: color 1s ease;
 }
 
@@ -110,7 +110,7 @@ setInterval(pickRandomTech, 700);
   }
 
   100% {
-    color: rgb(30, 30, 30);
+    color: var(--foreground-1);
   }
 
 }

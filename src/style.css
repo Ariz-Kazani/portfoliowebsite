@@ -20,7 +20,9 @@
 :root {
   --primary-dark-mode: #787AE8;
   --background-dark-mode: #121212;
-  --foreground-dark-mode: #343434;
+  --foreground-1-dark-mode: #1e1e1e;
+  --foreground-2-dark-mode: #222222;
+  --foreground-3-dark-mode: #252525;
   --primary-dark-mode: #BB86FC;
   --primary-variant-dark-mode: #3700B3;
   --secondary-dark-mode: #37DAC6;
@@ -35,7 +37,9 @@
 
   --primary-light-mode: #787AE8;
   --background-light-mode: #121212;
-  --foreground-light-mode: #343434;
+  --foreground-1-light-mode: #1e1e1e;
+  --foreground-2-light-mode: #222222;
+  --foreground-3-light-mode: #252525;
   --primary-light-mode: #BB86FC;
   --primary-variant-light-mode: #3700B3;
   --secondary-light-mode: #37DAC6;
@@ -53,7 +57,9 @@
   :root {
     --primary: var(--primary-light-mode);
     --background: var(--background-light-mode);
-    --foreground: var(--foreground-light-mode);
+    --foreground-1: var(--foreground-1-light-mode);
+    --foreground-2: var(--foreground-2-light-mode);
+    --foreground-3: var(--foreground-3-light-mode);
     --primary: var(--primary-light-mode);
     --primary-variant: var(--primary-variant-light-mode);
     --secondary: var(--secondary-light-mode);
@@ -72,7 +78,9 @@
   :root {
     --primary: var(--primary-dark-mode);
     --background: var(--background-dark-mode);
-    --foreground: var(--foreground-dark-mode);
+    --foreground-1: var(--foreground-1-dark-mode);
+    --foreground-2: var(--foreground-2-dark-mode);
+    --foreground-3: var(--foreground-3-dark-mode);
     --primary: var(--primary-dark-mode);
     --primary-variant: var(--primary-variant-dark-mode);
     --secondary: var(--secondary-dark-mode);
