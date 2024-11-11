@@ -9,7 +9,7 @@ const randomTech = ref(null);
 
 function pickRandomTech() {
   const randomTechItem = Math.floor(Math.random() * techs.value.length);
-  const randomIndex = Math.floor(Math.random() * 19) + 1;
+  const randomIndex = Math.floor(Math.random() * 19) + 2;
   randomTech.value = techs.value[randomTechItem] + randomIndex;
   setTimeout(() => {
     randomTech.value = null;

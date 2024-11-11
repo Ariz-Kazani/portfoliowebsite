@@ -69,17 +69,17 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 16px;
 }
 
 a {
   text-decoration: none;
   color: var(--primary);
-  margin: 10px;
+  margin: 10px 0;
 }
 
 a:hover {
-  transition-timing-function: ease-in;
-  transition: 0.2s;
+  transition: 0.2s ease-in;
   transform: scale(1.1);
 }
 </style>

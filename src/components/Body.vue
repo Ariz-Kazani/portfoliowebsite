@@ -193,7 +193,8 @@ async function landingInitialAnimation() {
 
 <style scoped>
 a {
-  color: var(--primary);
+  color: var(--secondary);
+  text-decoration: none;
 }
 
 #about-test {
