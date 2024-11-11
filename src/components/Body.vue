@@ -131,7 +131,7 @@ async function landingInitialAnimation() {
       </div>
     </div>
     <div id="about">
-      <h1 id="about-title">About</h1>
+      <h1 id="title">About</h1>
       <div id="about-test">
         <div id="about-test-two">
           <TechAnimation />
@@ -181,11 +181,11 @@ async function landingInitialAnimation() {
       </div>
     </div>
     <div id="work">
-      <h1 id="about-title">Career</h1>
+      <h1 id="title">Career</h1>
       <Work />
     </div>
     <div id="projects">
-      <h1 id="projects-title">Projects</h1>
+      <h1 id="title">Projects</h1>
       <Projects />
     </div>
   </div>
@@ -368,11 +368,12 @@ a {
   display: grid;
 }
 
-#about-title {
+#title {
   text-align: center;
   width: 100%;
   font-size: 80px;
   color: var(--primary);
+  font-weight: 600;
 }
 
 #body-con #about #about-me-data {
@@ -502,17 +503,9 @@ a {
   min-height: 93vh;
 }
 
-#body-con #projects #projects-title {
-  text-align: center;
-  width: 100%;
-  font-size: 80px;
-  color: var(--primary);
-}
-
 @media only screen and (max-width: 500px) {
 
-  #body-con #projects #projects-title,
-  #about-title {
+  #title {
     font-size: 16vw;
   }
 }

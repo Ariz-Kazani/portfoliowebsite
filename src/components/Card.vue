@@ -182,7 +182,7 @@ function abtMPREffect() {
 
 #project-con #links a {
   text-decoration: none;
-  color: var(--primary);
+  color: var(--secondary);
   height: full;
   display: flex;
   align-items: center;
@@ -191,7 +191,7 @@ function abtMPREffect() {
 }
 
 #project-con #links #title-con {
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 
