@@ -2,11 +2,12 @@
 import { ref } from 'vue';
 import theMovieIMG from '../assets/themovie.jpg';
 import sortingAlgoIMG from '../assets/sortingalgo.jpg';
-import timecopilotIMG from '../assets/time-copilot2.jpg';
+import timecopilotIMG from '../assets/time-copilot3.jpg';
 import searchEngineIMG from '../assets/searchengine.jpg';
+import stocksIMG from '../assets/stocks.jpg';
 import Card from './Card.vue';
 
-
+ 
 // Add projects here in the format below 
 const projects = ref([
   {
@@ -59,7 +60,7 @@ const projects = ref([
     hostingLink: null,
     codeLink: null,
     technologies: ["cpp"],
-    photo: 'https://t4.ftcdn.net/jpg/05/79/68/85/240_F_579688567_hmuT3hnFxTeDBXsyUUsmvB6Kvt0UF8Bd.webp',
+    photo: stocksIMG,
     description: 'This one is a secret 🤫. Coming Soon, stay tuned ;)',
     id: 'coming-soon',
   }
