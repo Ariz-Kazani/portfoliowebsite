@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import vuejs from '../assets/technologies/vuejs.svg';
 import sass from '../assets/technologies/sass.svg';
 import css from '../assets/technologies/css.svg';
@@ -20,12 +20,7 @@ const work = ref([
     type: '',
     date: 'May 2024 - August 2024',
     technologies: [laravel, php, vuejs, javascript, html, sass, css, mysql, git],
-    description: `In the summer of 2024 I interned at ConfiDens Analytics as a Software Developer, 
-    I've had the opportunity to work on diverse and impactful projects that have significantly enhanced my 
-    technical skills and practical knowledge. One of my primary responsibilities was to create the competitor analysis feature. 
-    This has required a keen eye for design and a strong understanding of front-end technologies such as SASS, and Vue.js. 
-    Additionally, I lead research and development of the competitor analysis feature which has exposed me to both back-end 
-    and front-end development.`,
+    description: `In the summer of 2024 I interned at ConfiDens Analytics as a Software Developer, I've had the opportunity to work on diverse and impactful projects that have significantly enhanced my technical skills and practical knowledge. One of my primary responsibilities was to create the competitor analysis feature. This has required a keen eye for design and a strong understanding of front-end technologies such as SASS, and Vue.js. Additionally, I lead research and development of the competitor analysis feature which has exposed me to both back-end and front-end development.`,
     id: 'confidens',
     isShown: false,
   },
@@ -35,10 +30,7 @@ const work = ref([
     type: '',
     date: 'September 2024 - Present',
     technologies: [c, bash, linux],
-    description: `I am currently working as a Teaching Assistant at Carleton University for COMP 2401 - Introduction to Systems Programming, 
-    where I am responsible for helping students learn the ins and outs of of the C programming language. This is done through weekly labs and office hours, 
-    where I help students with their assignments, and provide guidance on how to approach and solve problems. The most comon questions I get are about pointers, 
-    memory management, and how to use the Linux command line.`,
+    description: `I am currently working as a Teaching Assistant at Carleton University for COMP 2401 - Introduction to Systems Programming, where I am responsible for helping students learn the ins and outs of the C programming language. This is done through weekly labs and office hours, where I help students with their assignments, and provide guidance on how to approach and solve problems. The most comon questions I get are about pointers, memory management, and how to use the Linux command line.`,
     id: 'carleton-university',
     isShown: false,
   },
@@ -69,7 +61,7 @@ h1 {
 }
 
 img {
-  margin: 1px;
+  margin: 2px;
   margin-top: 8px;
   width: 20px;
   height: 20px;

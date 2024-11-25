@@ -4,6 +4,7 @@ import theMovieIMG from '../assets/themovie.jpg';
 import sortingAlgoIMG from '../assets/sortingalgo.jpg';
 import timecopilotIMG from '../assets/time-copilot3.jpg';
 import searchEngineIMG from '../assets/searchengine.jpg';
+import carletonSchedular from '../assets/carletonschedular.jpg';
 import stocksIMG from '../assets/stocks.jpg';
 import Card from './Card.vue';
 
@@ -26,6 +27,15 @@ const projects = ref([
     technologies: ["unity", "csharp"],
     photo: 'https://media.sketchfab.com/models/2afd04b26ca64c6b8392f75e217ffdb9/thumbnails/b8b7fd406e624b27bcf5d22af1857ac0/6fc6917029464e18aef80d4f82f479a4.jpeg',
     description: `A game for iOS and android I'm currently working on. The game is a 2D indi game, with a unique art style. The game is built using Unity, and C#. The game is currently in development, stay tuned for more updates!`,
+    id: 'coming-soon',
+  },
+  {
+    name: 'Auto Scheduler',
+    hostingLink: null,
+    codeLink: null,
+    technologies: ["vuejs", "html", "css", "go", "sqlite", "git"],
+    photo: carletonSchedular,
+    description: `What is the most annoying thing Carleton students have to do? It's to figure out what courses they have to take. This is a time consuming process that takes hours to even find a schedule. What if this was done for you? Look no further!`,
     id: 'coming-soon',
   },
   {

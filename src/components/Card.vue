@@ -28,6 +28,8 @@ import java from '../assets/technologies/java.svg';
 import python from '../assets/technologies/python.svg';
 import nuxtjs from '../assets/technologies/nuxtjs.svg';
 import cplusplus from '../assets/technologies/cplusplus.svg';
+import sqlite from '../assets/technologies/sqlite.svg';
+import go from '../assets/technologies/go.svg';
 
 const techList = {
   "vuejs": vuejs,
@@ -53,6 +55,8 @@ const techList = {
   "python": python,
   "nuxtjs": nuxtjs,
   "cpp": cplusplus,
+  "sqlite": sqlite,
+  "go": go,
 }
 
 let an = null;
@@ -130,7 +134,7 @@ function abtMPREffect() {
 #tech-item {
   width: 20px;
   height: 20px;
-  margin: 1px 1px 1px 1px;
+  margin: 1px 2px 1px 2px;
 }
 
 #project-con {
