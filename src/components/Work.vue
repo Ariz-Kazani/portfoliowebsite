@@ -42,6 +42,7 @@ const work = ref([
   <div id="work-con" class="work-con">
     <template v-for="(position, index) in work" :key="position.id">
       <div id="test">
+        <div id="test-child-line"></div>
         <div id="test-child" :class="{ 'test-child-right': index % 2 == 0, 'test-child-left': index % 2 != 0}">
           <div id="work-item">
             <h1 id="work-item-comp">{{ position.company }}</h1>
@@ -53,8 +54,8 @@ const work = ref([
             <p>{{ position.description }}</p>
           </div>
         </div>
+        <div id="test-child-line"></div>
       </div>
-
     </template>
   </div>
 </template>
@@ -73,25 +74,31 @@ img {
 
 #test {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 4px 1fr;
   justify-items: center;
   /* background-color: aqua; */
+}
+
+#test-child-line {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary);
+  grid-column: 2;
 }
 
 #test-child {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin: 32px 0 32px 0;
 }
 
 .test-child-right {
-  grid-column: 2;
-  border-left: 1px solid pink;
+  grid-column: 3;
 }
 
 .test-child-left {
   grid-column: 1;
-  border-right: 1px solid pink;
 }
 
 #work-con {
@@ -128,9 +135,33 @@ img {
   }
 
   #work-con #work-item {
-    width: 80vw;
+    width: 80%;
     margin: 0 0 128px 0;
   }
+
+  #test {
+    grid-template-columns: 1fr;
+    width: 100%;
+    align-items: center;
+  }
+
+  #test-child-line {
+    display: none;
+  }
+
+  #test-child {
+    width: 100%;
+  }
+
+  .test-child-right {
+    grid-column: 1;
+  }
+
+  .test-child-left {
+    grid-column: 1;
+  }
+
+
 
 }
 </style>
