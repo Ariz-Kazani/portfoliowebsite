@@ -20,7 +20,7 @@ const work = ref([
     type: '',
     date: 'September 2024 - December 2024',
     technologies: [c, bash, linux],
-    description: `In the fall term of 2024, I was working as a Teaching Assistant at Carleton University for COMP 2401 - Introduction to Systems Programming, where I am responsible for helping students learn the ins and outs of the C programming language. This is done through weekly labs and office hours, where I help students with their assignments, and provide guidance on how to approach and solve problems. The most comon questions I get are about pointers, memory management, and how to use the Linux command line.`,
+    description: `In the fall term of 2024, I was working as a Teaching Assistant at Carleton University for COMP 2401 - Introduction to Systems Programming, where I am responsible for helping over 100 students learn the ins and outs of the C programming language. This is done through weekly labs and office hours, where I help students with their assignments, and provide guidance on how to approach and solve problems. The most comon questions I get are about pointers, memory management, and how to use the Linux command line.`,
     id: 'carleton-university',
     isShown: false,
   },
@@ -42,8 +42,10 @@ const work = ref([
   <div id="work-con" class="work-con">
     <template v-for="(position, index) in work" :key="position.id">
       <div id="test">
-        <div v-if="index % 2 == 0" id="test-child-line" :class="{'test-line-first': index == 0}"></div>
-        <div v-if="index % 2 == 0" id="test-line-connect" class="test-line-connect-right"></div>
+        <div id="test-child-line">
+          <div :class=" index == 0? 'test-child-line-inner-first' : index == work.length - 1 ? 'test-child-line-inner-last' :'test-child-line-inner'"></div>
+        </div>
+        <div id="test-line-connect" :class="index % 2 == 0 ? 'test-line-connect-right' : 'test-line-connect-left'"></div>
         <div id="test-child" :class="{ 'test-child-right': index % 2 == 0, 'test-child-left': index % 2 != 0}">
           <div id="work-item">
             <h1 id="work-item-comp">{{ position.company }}</h1>
@@ -55,8 +57,6 @@ const work = ref([
             <p>{{ position.description }}</p>
           </div>
         </div>
-        <div v-if="index % 2 != 0" id="test-line-connect" class="test-line-connect-left" ></div>
-        <div v-if="index % 2 != 0" id="test-child-line" :style="{height: index == work.length - 1 ? 'calc(50% + 2px)':' ' }"></div>
       </div>
     </template>
   </div>
@@ -77,15 +77,36 @@ img {
 #test {
   display: grid;
   grid-template-columns: 1fr 5% 4px 5% 1fr;
+  grid-template-rows: 1fr;
   justify-items: center;
-  /* background-color: aqua; */
 }
 
 #test-child-line {
   width: 100%;
   height: 100%;
-  background-color: var(--primary);
   grid-column: 3;
+  grid-row: 1;
+  display: flex;
+}
+
+#test-child-line .test-child-line-inner {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary);
+}
+
+#test-child-line .test-child-line-inner-first {
+  width: 100%;
+  background-color: var(--primary);
+  height: calc(50% + 2px);
+  align-self: end;
+}
+
+#test-child-line .test-child-line-inner-last {
+  width: 100%;
+  background-color: var(--primary);
+  height: calc(50% + 2px);
+  align-self: start;
 }
 
 #test-child {
@@ -110,6 +131,7 @@ img {
   height: 4px;
   width: 100%;
   align-self: center;
+  grid-row: 1;
 }
 
 #test .test-line-connect-left {
@@ -118,11 +140,6 @@ img {
 
 #test .test-line-connect-right {
   grid-column: 4;
-}
-
-#test .test-line-first {
-  background-color: aqua;
-  background: linear-gradient(to bottom, transparent 49.15%, var(--primary) 50%);
 }
 
 #work-con {
