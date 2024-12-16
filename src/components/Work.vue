@@ -12,8 +12,19 @@ import linux from '../assets/technologies/linux.svg';
 import javascript from '../assets/technologies/javascript.svg';
 import html from '../assets/technologies/html.svg';
 import php from '../assets/technologies/php.svg';
+import java from '../assets/technologies/java.svg';
 
 const work = ref([
+  // {
+  //   company: 'Carleton University',
+  //   position: 'Teaching Assistant',
+  //   type: '',
+  //   date: 'January 2025 - Present',
+  //   technologies: [java],
+  //   description: `Incoming TA for COMP 1406, Introduction to Computer Science II`,
+  //   id: 'carleton-university-winter-2025',
+  //   isShown: false,
+  // },
   {
     company: 'Carleton University',
     position: 'Teaching Assistant',
@@ -21,7 +32,7 @@ const work = ref([
     date: 'September 2024 - December 2024',
     technologies: [c, bash, linux],
     description: `In the fall term of 2024, I was working as a Teaching Assistant at Carleton University for COMP 2401 - Introduction to Systems Programming, where I am responsible for helping over 100 students learn the ins and outs of the C programming language. This is done through weekly labs and office hours, where I help students with their assignments, and provide guidance on how to approach and solve problems. The most comon questions I get are about pointers, memory management, and how to use the Linux command line.`,
-    id: 'carleton-university',
+    id: 'carleton-university-fall-2024',
     isShown: false,
   },
   {
@@ -41,12 +52,12 @@ const work = ref([
 <template>
   <div id="work-con" class="work-con">
     <template v-for="(position, index) in work" :key="position.id">
-      <div id="test">
-        <div id="test-child-line">
-          <div :class=" index == 0? 'test-child-line-inner-first' : index == work.length - 1 ? 'test-child-line-inner-last' :'test-child-line-inner'"></div>
+      <div id="work-child">
+        <div id="timeline-main">
+          <div :class=" index == 0? 'timeline-main-inner-first' : index == work.length - 1 ? 'timeline-main-inner-last' :'timeline-main-inner'"></div>
         </div>
-        <div id="test-line-connect" :class="index % 2 == 0 ? 'test-line-connect-right' : 'test-line-connect-left'"></div>
-        <div id="test-child" :class="{ 'test-child-right': index % 2 == 0, 'test-child-left': index % 2 != 0}">
+        <div id="timeline-connecting-line" :class="index % 2 == 0 ? 'timeline-connecting-line-right' : 'timeline-connecting-line-left'"></div>
+        <div id="work-place-child" :class="{ 'work-place-child-right': index % 2 == 0, 'work-place-child-left': index % 2 != 0}">
           <div id="work-item">
             <h1 id="work-item-comp">{{ position.company }}</h1>
             <h2 id="work-item-pos">{{ position.position }}</h2>
@@ -74,14 +85,14 @@ img {
   height: 20px;
 }
 
-#test {
+#work-child {
   display: grid;
   grid-template-columns: 1fr 5% 4px 5% 1fr;
   grid-template-rows: 1fr;
   justify-items: center;
 }
 
-#test-child-line {
+#timeline-main {
   width: 100%;
   height: 100%;
   grid-column: 3;
@@ -89,44 +100,44 @@ img {
   display: flex;
 }
 
-#test-child-line .test-child-line-inner {
+#timeline-main .timeline-main-inner {
   width: 100%;
   height: 100%;
   background-color: var(--primary);
 }
 
-#test-child-line .test-child-line-inner-first {
+#timeline-main .timeline-main-inner-first {
   width: 100%;
   background-color: var(--primary);
   height: calc(50% + 2px);
   align-self: end;
 }
 
-#test-child-line .test-child-line-inner-last {
+#timeline-main .timeline-main-inner-last {
   width: 100%;
   background-color: var(--primary);
   height: calc(50% + 2px);
   align-self: start;
 }
 
-#test-child {
+#work-place-child {
   width: 100%;
   display: flex;
   justify-content: center;
   margin: 32px 0 32px 0;
 }
 
-.test-child-right {
+.work-place-child-right {
   grid-column: 5;
   padding-right: 10%;
 }
 
-.test-child-left {
+.work-place-child-left {
   grid-column: 1;
   padding-left: 10%;
 }
 
-#test #test-line-connect {
+#work-child #timeline-connecting-line {
   background-color: var(--primary);
   height: 4px;
   width: 100%;
@@ -134,11 +145,11 @@ img {
   grid-row: 1;
 }
 
-#test .test-line-connect-left {
+#work-child .timeline-connecting-line-left {
   grid-column: 2;
 }
 
-#test .test-line-connect-right {
+#work-child .timeline-connecting-line-right {
   grid-column: 4;
 }
 
@@ -174,26 +185,26 @@ img {
     margin: 0 0 128px 0;
   }
 
-  #test {
+  #work-child {
     grid-template-columns: 1fr;
     width: 100%;
     align-items: center;
   }
 
-  #test-child-line {
+  #timeline-main {
     display: none;
   }
 
-  #test-child {
+  #work-place-child {
     width: 100%;
   }
 
-  .test-child-right {
+  .work-place-child-right {
     grid-column: 1;
     padding: 0;
   }
 
-  .test-child-left {
+  .work-place-child-left {
     grid-column: 1;
     padding: 0;
   }
