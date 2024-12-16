@@ -33,7 +33,7 @@ const projects = ref([
     name: 'Auto Scheduler',
     hostingLink: null,
     codeLink: null,
-    technologies: ["nuxtjs", "vuejs", "html", "css", "javascript", "go", "sqlite", "git"],
+    technologies: ["nuxtjs", "vuejs", "html", "css", "javascript", "python", "go", "sqlite", "git"],
     photo: carletonSchedular,
     description: `What is the most annoying thing Carleton students have to do? It's to figure out what courses they have to take. This is a time consuming process that takes hours to even find a schedule. What if this was done for you? Look no further!`,
     id: 'coming-soon',
