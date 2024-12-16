@@ -18,9 +18,9 @@ const work = ref([
     company: 'Carleton University',
     position: 'Teaching Assistant',
     type: '',
-    date: 'September 2024 - Present',
+    date: 'September 2024 - December 2024',
     technologies: [c, bash, linux],
-    description: `I am currently working as a Teaching Assistant at Carleton University for COMP 2401 - Introduction to Systems Programming, where I am responsible for helping students learn the ins and outs of the C programming language. This is done through weekly labs and office hours, where I help students with their assignments, and provide guidance on how to approach and solve problems. The most comon questions I get are about pointers, memory management, and how to use the Linux command line.`,
+    description: `In the fall term of 2024, I was working as a Teaching Assistant at Carleton University for COMP 2401 - Introduction to Systems Programming, where I am responsible for helping students learn the ins and outs of the C programming language. This is done through weekly labs and office hours, where I help students with their assignments, and provide guidance on how to approach and solve problems. The most comon questions I get are about pointers, memory management, and how to use the Linux command line.`,
     id: 'carleton-university',
     isShown: false,
   },
@@ -42,7 +42,8 @@ const work = ref([
   <div id="work-con" class="work-con">
     <template v-for="(position, index) in work" :key="position.id">
       <div id="test">
-        <div id="test-child-line"></div>
+        <div v-if="index % 2 == 0" id="test-child-line" :class="{'test-line-first': index == 0}"></div>
+        <div v-if="index % 2 == 0" id="test-line-connect" class="test-line-connect-right"></div>
         <div id="test-child" :class="{ 'test-child-right': index % 2 == 0, 'test-child-left': index % 2 != 0}">
           <div id="work-item">
             <h1 id="work-item-comp">{{ position.company }}</h1>
@@ -54,7 +55,8 @@ const work = ref([
             <p>{{ position.description }}</p>
           </div>
         </div>
-        <div id="test-child-line"></div>
+        <div v-if="index % 2 != 0" id="test-line-connect" class="test-line-connect-left" ></div>
+        <div v-if="index % 2 != 0" id="test-child-line" :style="{height: index == work.length - 1 ? 'calc(50% + 2px)':' ' }"></div>
       </div>
     </template>
   </div>
@@ -74,7 +76,7 @@ img {
 
 #test {
   display: grid;
-  grid-template-columns: 1fr 4px 1fr;
+  grid-template-columns: 1fr 5% 4px 5% 1fr;
   justify-items: center;
   /* background-color: aqua; */
 }
@@ -83,7 +85,7 @@ img {
   width: 100%;
   height: 100%;
   background-color: var(--primary);
-  grid-column: 2;
+  grid-column: 3;
 }
 
 #test-child {
@@ -94,11 +96,33 @@ img {
 }
 
 .test-child-right {
-  grid-column: 3;
+  grid-column: 5;
+  padding-right: 10%;
 }
 
 .test-child-left {
   grid-column: 1;
+  padding-left: 10%;
+}
+
+#test #test-line-connect {
+  background-color: var(--primary);
+  height: 4px;
+  width: 100%;
+  align-self: center;
+}
+
+#test .test-line-connect-left {
+  grid-column: 2;
+}
+
+#test .test-line-connect-right {
+  grid-column: 4;
+}
+
+#test .test-line-first {
+  background-color: aqua;
+  background: linear-gradient(to bottom, transparent 49.15%, var(--primary) 50%);
 }
 
 #work-con {
@@ -106,26 +130,20 @@ img {
   width: 100%;
   padding: 32px 0 32px 0;
   display: grid;
-  /* gap: 32px; */
-  /* justify-content: space-evenly; */
 }
 
 #work-con #work-item {
   padding: 24px;
   border-radius: 32px;
-  width: 40vw;
+  width: 100%;
   background-color: var(--foreground-2);
   box-shadow: 0px 0px 4px 1px var(--surface);
-  /* background-color: pink; */
-
 }
 
 #work-con #work-item:hover {
   background-color: var(--foreground-3);
   box-shadow: 0px 0px 8px 2px var(--surface);
 }
-
-
 
 @media screen and (max-width: 850px) {
   #work-con {
@@ -155,13 +173,12 @@ img {
 
   .test-child-right {
     grid-column: 1;
+    padding: 0;
   }
 
   .test-child-left {
     grid-column: 1;
+    padding: 0;
   }
-
-
-
 }
 </style>
