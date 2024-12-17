@@ -15,20 +15,20 @@ import php from '../assets/technologies/php.svg';
 import java from '../assets/technologies/java.svg';
 
 const work = ref([
-  // {
-  //   company: 'Carleton University',
-  //   position: 'Teaching Assistant',
-  //   type: '',
-  //   date: 'January 2025 - Present',
-  //   technologies: [java],
-  //   description: `Incoming TA for COMP 1406, Introduction to Computer Science II`,
-  //   id: 'carleton-university-winter-2025',
-  //   isShown: false,
-  // },
   {
     company: 'Carleton University',
     position: 'Teaching Assistant',
-    type: '',
+    type: 'TA for COMP 1406:',
+    date: 'January 2025 - Present',
+    technologies: [java],
+    description: `Incoming TA for COMP 1406, Introduction to Computer Science II`,
+    id: 'carleton-university-winter-2025',
+    isShown: false,
+  },
+  {
+    company: 'Carleton University',
+    position: 'Teaching Assistant',
+    type: 'TA for COMP 2401:',
     date: 'September 2024 - December 2024',
     technologies: [c, bash, linux],
     description: `In the fall term of 2024, I was working as a Teaching Assistant at Carleton University for COMP 2401 - Introduction to Systems Programming, where I am responsible for helping over 100 students learn the ins and outs of the C programming language. This is done through weekly labs and office hours, where I help students with their assignments, and provide guidance on how to approach and solve problems. The most comon questions I get are about pointers, memory management, and how to use the Linux command line.`,
