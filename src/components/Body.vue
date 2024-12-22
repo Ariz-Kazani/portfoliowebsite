@@ -343,6 +343,7 @@ a {
 
 #body-con #landing-con #landingMCon #landing-message {
   margin: auto;
+  color: var(--on-surface-dark-mode);
 }
 
 #body-con #landing-con #landingMCon #alt-landing-message {
