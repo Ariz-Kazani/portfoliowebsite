@@ -193,7 +193,7 @@ async function landingInitialAnimation() {
 
 <style scoped>
 a {
-  color: var(--secondary);
+  color: var(--secondary-variant);
   text-decoration: none;
 }
 

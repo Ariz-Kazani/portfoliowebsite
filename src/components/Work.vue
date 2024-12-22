@@ -75,7 +75,7 @@ const work = ref([
 
 <style scoped>
 h1 {
-  color: var(--secondary);
+  color: var(--secondary-variant);
 }
 
 img {
