@@ -30,6 +30,8 @@ import nuxtjs from '../assets/technologies/nuxtjs.svg';
 import cplusplus from '../assets/technologies/cplusplus.svg';
 import sqlite from '../assets/technologies/sqlite.svg';
 import go from '../assets/technologies/go.svg';
+import android from '../assets/technologies/android.svg';
+import ios from '../assets/technologies/ios.svg';
 
 const techList = {
   "vuejs": vuejs,
@@ -57,6 +59,8 @@ const techList = {
   "cpp": cplusplus,
   "sqlite": sqlite,
   "go": go,
+  "android": android,
+  "ios": ios,
 }
 
 let an = null;

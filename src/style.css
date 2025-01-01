@@ -68,7 +68,7 @@
   --on-error: var(--on-error-dark-mode);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --primary: var(--primary-light-mode);
     --background: var(--background-light-mode);
@@ -86,7 +86,7 @@
     --on-surface: var(--on-surface-light-mode);
     --on-error: var(--on-error-light-mode);
   }
-}
+} */
 
 /* @media (prefers-color-scheme: dark) {
   :root {
