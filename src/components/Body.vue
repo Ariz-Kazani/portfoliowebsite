@@ -145,8 +145,8 @@ async function landingInitialAnimation() {
             using Vue.js and Laravel. I really enjoyed leading development on the company's new feature, which allowed
             dental offices to analyze what their competitors were up to. I'm currently working as a Teaching Assistant
             for
-            the introduction to Systems Programming course (COMP 2401), where I help students learn the ins and outs of
-            the C programming language.
+            the Introduction to CS II course (COMP 1406), where I help students learn the ins and outs of
+            the Java programming language.
             <br />
             <br />
             In addition to my work experiences, I've worked on several projects that highlight my technical versatility.
