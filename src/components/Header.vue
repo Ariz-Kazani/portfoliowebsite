@@ -55,7 +55,7 @@ if (import.meta.env.VITE_MODE == 'prod') {
   border-style: none none solid none;
   border-width: 2px;
   border-color: var(--primary);
-  text-shadow: 0px 0px 5px black;
+  /* text-shadow: 0px 0px 5px var(--primary); */
   display: grid;
   overflow: hidden;
   place-items: center;

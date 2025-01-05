@@ -150,7 +150,7 @@ function abtMPREffect() {
   grid-template-rows: 50px 202px;
   border-radius: 32px;
   background-color: var(--foreground-2);
-  box-shadow: 0px 0px 4px 1px var(--surface);
+  box-shadow: var(--shadow-lg);
   position: sticky;
   overflow: hidden;
   gap: 0px 24px;
@@ -158,7 +158,7 @@ function abtMPREffect() {
 
 #project-con:hover {
   background-color: var(--foreground-3);
-  box-shadow: 0px 0px 8px 2px var(--surface);
+  box-shadow: var(--shadow-xl);
 }
 
 #project-con #project-img {
@@ -174,7 +174,7 @@ function abtMPREffect() {
   height: 100%;
   width: 100%;
   border-radius: 8px;
-  box-shadow: 0px 0px 4px 1px var(--surface);
+  box-shadow: var(--shadow-md);
 
 }
 

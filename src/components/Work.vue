@@ -21,7 +21,7 @@ const work = ref([
     type: 'TA for COMP 1406:',
     date: 'January 2025 - Present',
     technologies: [java],
-    description: `Incoming TA for COMP 1406, Introduction to Computer Science II`,
+    description: `I am currently working as a TA for COMP 1406, Introduction to Computer Science II`,
     id: 'carleton-university-winter-2025',
     isShown: false,
   },
@@ -165,12 +165,12 @@ img {
   border-radius: 32px;
   width: 100%;
   background-color: var(--foreground-2);
-  box-shadow: 0px 0px 4px 1px var(--surface);
+  box-shadow: var(--shadow-lg);
 }
 
 #work-con #work-item:hover {
   background-color: var(--foreground-3);
-  box-shadow: 0px 0px 8px 2px var(--surface);
+  box-shadow: var(--shadow-xl);
 }
 
 @media screen and (max-width: 850px) {

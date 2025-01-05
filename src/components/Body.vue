@@ -388,12 +388,12 @@ a {
   align-items: center;
   color: var(--on-surface);
   background-color: var(--foreground-2);
-  box-shadow: 0px 0px 4px 1px var(--surface);
+  box-shadow: var(--shadow-lg);
 }
 
 #body-con #about #about-me-data:hover {
   background-color: var(--foreground-3);
-  box-shadow: 0px 0px 8px 2px var(--surface);
+  box-shadow: var(--shadow-xl);
 }
 
 .abt-me-trans {

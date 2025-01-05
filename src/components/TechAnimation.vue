@@ -53,6 +53,13 @@ setInterval(pickRandomTech, 700);
 </template>
 
 <style scoped>
+span {
+  font-family: "Azeret Mono", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 #tech-an-main-con {
   white-space: initial;
   word-break: break-all !important; 
@@ -87,7 +94,7 @@ setInterval(pickRandomTech, 700);
 #un-focused-tech {
   white-space: normal;
   overflow-wrap: break-word;
-  color: var(--foreground-1);
+  color: var(--foreground-2);
   transition: color 1s ease;
 }
 
@@ -110,7 +117,7 @@ setInterval(pickRandomTech, 700);
   }
 
   100% {
-    color: var(--foreground-1);
+    color: var(--foreground-2);
   }
 
 }
