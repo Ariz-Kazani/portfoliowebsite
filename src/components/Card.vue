@@ -32,6 +32,7 @@ import sqlite from '../assets/technologies/sqlite.svg';
 import go from '../assets/technologies/go.svg';
 import android from '../assets/technologies/android.svg';
 import ios from '../assets/technologies/ios.svg';
+import docker from '../assets/technologies/docker.svg';
 
 const techList = {
   "vuejs": vuejs,
@@ -61,6 +62,7 @@ const techList = {
   "go": go,
   "android": android,
   "ios": ios,
+  "docker": docker,
 }
 
 let an = null;
