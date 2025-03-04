@@ -35,44 +35,36 @@ onMounted(() => {
   const abtMeData = document.querySelector("#about");
   landingInitialAnimation();
 
-  const optionsEnter = {
+  const observerCallback = (entries) => {
+    entries.forEach(entry => {
+      if (entry.target.id == 'about') {
+        showAMe.value = entry.isIntersecting;
+      }
+    });
+  };
+
+  const observerEnter = new IntersectionObserver(observerCallback, {
     root: null,
     threshold: 0,
     rootMargin: "-50% 0px -50% 0px",
-  };
+  });
 
-  const optionsExit = {
+  const observerExit = new IntersectionObserver(observerCallback, {
     root: null,
     threshold: 0,
     rootMargin: "15% 0px 15% 0px",
-  }
-
-  const observerEnter = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && entry.target.id == 'about') {
-        showAMe.value = true;
-      }
-    })
-  }, optionsEnter);
-
-  const observerExit = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting && entry.target.id == 'about') {
-        showAMe.value = false;
-      }
-    })
-  }, optionsExit);
+  });
 
   observerEnter.observe(abtMeData);
   observerExit.observe(abtMeData);
 });
 
 function landingMEffect(id) {
-  if (id == -1) {
-    oMessageStext.value = [];
-    oMessageMtext.value = [];
-    oMessageLtext.value = null;
-  } else {
+  oMessageStext.value = [];
+  oMessageMtext.value = [];
+  oMessageLtext.value = null;
+
+  if (id !== -1) {
     oMessageLtext.value = id;
     if (id > 0) {
       oMessageMtext.value.push(id - 1);
@@ -92,12 +84,11 @@ function landingMEffect(id) {
 
 async function landingInitialAnimation() {
   openingMessage.value = openingMessageData.value;
-  await new Promise(resolve => setTimeout(resolve, 350))
+  await new Promise(resolve => setTimeout(resolve, 350));
   let i = 0;
-  let interval = setInterval(() => {
-    // openingMessage.value += openingMessageData.value[i];
+  const interval = setInterval(() => {
     landingMEffect(-1);
-    if (i < openingMessageData.value.length - 1) {
+    if (i < openingMessageData.value.length) {
       landingMEffect(i);
       i++;
     } else {
