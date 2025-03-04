@@ -1,8 +1,11 @@
 <script setup>
 import { ref, onMounted } from 'vue'
+
 import Projects from './Projects.vue';
 import Work from './Work.vue';
 import TechAnimation from './TechAnimation.vue';
+
+import createGlobe from 'cobe';
 
 // analytics stuff
 import { analytics } from '../firebase';
@@ -23,6 +26,9 @@ const oMessageMtext = ref([]);
 const showAMe = ref(false);
 const opiningAnimationFinish = ref(false);
 
+const el = ref();
+const phi = ref(0);
+
 // landing page opacity
 const landingOpacity = ref(100);
 
@@ -32,6 +38,29 @@ window.addEventListener("scroll", () => {
 });
 
 onMounted(() => {
+  const globe = createGlobe(el.value, {
+    devicePixelRatio: 1,
+    width: 1400,
+    height: 1400,
+    scale: 1,
+    phi: 0,
+    theta: 0,
+    dark: 1,
+    diffuse: 1.2,
+    mapSamples: 10000,
+    mapBrightness: 6,
+    baseColor: [0.3, 0.3, 0.3],
+    markerColor: [0.1, 0.8, 1],
+    glowColor: [1, 1, 1],
+    markers: [],
+    onRender: (state) => {
+      // Called on every animation frame.
+      // `state` will be an empty object, return updated params.
+      state.phi = phi.value;
+      phi.value += 0.006;
+    },
+  });
+
   const abtMeData = document.querySelector("#about");
   landingInitialAnimation();
 
@@ -107,8 +136,8 @@ async function landingInitialAnimation() {
       <div class="spacer1a" :style="{ 'opacity': landingOpacity + '%' }"></div>
       <div id="landing-con" :style="{ 'opacity': landingOpacity + '%' }">
         <div id="img-con">
-          <div id="img-style-con">
-            <img src="../assets/earth.jpg" alt="" id="earth-img">
+          <div id="earth-con">
+            <canvas id="earth" ref="el"></canvas>
           </div>
         </div>
         <div id="landingMCon">
@@ -183,6 +212,22 @@ async function landingInitialAnimation() {
 </template>
 
 <style scoped>
+#earth {
+  width: 1400px;
+  height: 1400px;
+  /* margin-top: 50vh; */
+  /* scale: 3; */
+}
+
+
+#earth-con {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
 a {
   color: var(--secondary-variant);
   text-decoration: none;
@@ -238,15 +283,11 @@ a {
   transition: 0.25s ease;
 }
 
-#body-con #landing-con #img-con #earth-img {
-  height: 100%;
-  filter: brightness(65%);
-  aspect-ratio: 16 / 9;
-}
-
 
 #body-con #landing-con #img-con {
   position: absolute;
+  width: 100%;
+  height: 100%;
   z-index: -1;
 }
 
@@ -254,50 +295,6 @@ a {
   width: 100%;
   z-index: -1;
   overflow: hidden;
-}
-
-
-@media only screen and (min-aspect-ratio: 29/18) {
-  #body-con #landing-con {
-    width: 100%;
-  }
-
-  #body-con #landing-con #img-con {
-    width: 100%;
-  }
-
-  #body-con #landing-con #img-con #img-style-con {
-    aspect-ratio: 16 / 9;
-  }
-}
-
-@media only screen and (max-aspect-ratio: 29/18) {
-  #body-con #landing-con {
-    height: 100vh;
-    width: 100%;
-  }
-
-  #body-con #landing-con #img-con {
-    height: 100vh;
-    display: grid;
-    -webkit-display: grid;
-    justify-content: center;
-    -webkit-justify-content: center;
-  }
-
-  #body-con #landing-con #img-con #img-style-con {
-    width: 100%;
-    overflow: hidden;
-    -webkit-overflow: hidden;
-    display: grid;
-    -webkit-display: grid;
-    justify-content: center;
-    -webkit-justify-content: center;
-  }
-
-  #body-con #landing-con #img-con #img-style-con #earth-img {
-    height: 100vh;
-  }
 }
 
 .tLargeS {
