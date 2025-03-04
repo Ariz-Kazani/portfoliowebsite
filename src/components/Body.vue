@@ -4,6 +4,8 @@ import Projects from './Projects.vue';
 import Work from './Work.vue';
 import TechAnimation from './TechAnimation.vue';
 
+import createGlobe from 'cobe';
+
 // analytics stuff
 import { analytics } from '../firebase';
 import { getAnalytics, logEvent } from "firebase/analytics";
@@ -23,6 +25,9 @@ const oMessageMtext = ref([]);
 const showAMe = ref(false);
 const opiningAnimationFinish = ref(false);
 
+const el = ref(null);
+const phi = ref(0);
+
 // landing page opacity
 const landingOpacity = ref(100);
 
@@ -32,6 +37,18 @@ window.addEventListener("scroll", () => {
 });
 
 onMounted(() => {
+  let globeWidth = 0
+
+  const onResize = () => {
+    if (el.value) {
+      globeWidth = el.value.offsetWidth
+    }
+  }
+  
+  window.addEventListener('resize', onResize)
+  onResize()
+
+
   const abtMeData = document.querySelector("#about");
   landingInitialAnimation();
 
@@ -65,6 +82,33 @@ onMounted(() => {
 
   observerEnter.observe(abtMeData);
   observerExit.observe(abtMeData);
+
+  const globe = createGlobe(el.value, {
+    devicePixelRatio: 2,
+    width: globeWidth * 2,
+    height:  globeWidth * 2 * 0.4,
+    phi: 0,
+    theta: 0,
+    dark: 1,
+    diffuse: 1.2,
+    mapSamples: 16000,
+    mapBrightness: 6,
+    baseColor: [0.3, 0.3, 0.3],
+    markerColor: [0.1, 0.8, 1],
+    glowColor: [1, 1, 1],
+    markers: [
+      // longitude latitude
+      // { location: [37.7595, -122.4367], size: 0.03 },
+      // { location: [40.7128, -74.006], size: 0.1 },
+    ],
+    onRender: (state) => {
+      // Called on every animation frame.
+      // `state` will be an empty object, return updated params.
+      state.phi = phi.value;
+      phi.value += 0.01;
+    },
+  });
+
 });
 
 function landingMEffect(id) {
@@ -117,7 +161,9 @@ async function landingInitialAnimation() {
       <div id="landing-con" :style="{ 'opacity': landingOpacity + '%' }">
         <div id="img-con">
           <div id="img-style-con">
-            <img src="../assets/earth.jpg" alt="" id="earth-img">
+            <div id="globe-con">
+              <canvas id="globe" ref="el"></canvas>
+            </div>
           </div>
         </div>
         <div id="landingMCon">
@@ -192,6 +238,17 @@ async function landingInitialAnimation() {
 </template>
 
 <style scoped>
+#globe {
+  width: 100%;
+  height: 100%;
+}
+
+#globe-con {
+  width: 100%;
+  aspect-ratio: 1 / 0.4;
+  position: relative;
+}
+
 a {
   color: var(--secondary-variant);
   text-decoration: none;
