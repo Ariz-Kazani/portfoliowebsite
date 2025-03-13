@@ -5,6 +5,7 @@ import sortingAlgoIMG from '../assets/sortingalgo.jpg';
 import timecopilotIMG from '../assets/time-copilot3.jpg';
 import searchEngineIMG from '../assets/searchengine.jpg';
 import carletonSchedular from '../assets/carletonschedular.jpg';
+import herbImage from '../assets/HERB.jpg';
 import stocksIMG from '../assets/stocks.jpg';
 import Card from './Card.vue';
 
@@ -19,6 +20,15 @@ const projects = ref([
     photo: timecopilotIMG,
     description: `Time-CoPilot is an AI driven productivity app that will take your productivity to the next level. Uses AWS, React (with Next.js), Typescript, TailwindCSS and Shadcn. Time-CoPilot allows users to plan their day, and track their progress. Users can also create, notes, todo's and much much more!`,
     id: 'time-copilot',
+  },
+  {
+    name: 'HERB',
+    hostingLink: null,
+    codeLink: "https://github.com/Ariz-Kazani/uOttaHack7",
+    technologies: ["python", "qnx", "rasberrypi"],
+    photo: herbImage,
+    description: `HERB was built to access and provide aid in situations where it is too dangerous for emergency personnel. We made "breakthrough after breakthrough" and ended up securing a 3rd place finish at the uOttaHack 7 hackathon!`,
+    id: 'coming-soon',
   },
   {
     name: 'Mobile Game',

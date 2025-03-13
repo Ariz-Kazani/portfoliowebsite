@@ -14,15 +14,28 @@ import html from '../assets/technologies/html.svg';
 import php from '../assets/technologies/php.svg';
 import java from '../assets/technologies/java.svg';
 import bitbucket from '../assets/technologies/bitbucket.svg';
+import react from '../assets/technologies/reactjs.svg';
+import nodejs from '../assets/technologies/nodejs.svg';
+
 
 const work = ref([
+  {
+    company: 'ReInvestWealth',
+    position: 'Full-Stack Software Developer Intern',
+    type: '',
+    date: 'Future',
+    technologies: [react, javascript, html, css, git, nodejs],
+    description: `Incoming Full-Stack Software Developer Intern at ReInvestWealth for the summer of 2025.`,
+    id: 'ReInvestWealth-summer-2025',
+    isShown: false,
+  },
   {
     company: 'Carleton University',
     position: 'Teaching Assistant',
     type: 'TA for COMP 1406:',
-    date: 'January 2025 - Present',
+    date: 'January 2025 - April 2025',
     technologies: [java],
-    description: `I am currently working as a TA for COMP 1406, Introduction to Computer Science II`,
+    description: `In the winter term of 2025, I was working as a Teaching Assistant at Carleton University for COMP 1406 - Introduction to Computer Science II, where I was responsible for helping over 300 students learn the basics of Java programming. This is done through weekly labs, where I help students with their assignments, and provide guidance on how to approach and solve problems. The most common questions I get are about object-oriented programming, data structures, and algorithms.`,
     id: 'carleton-university-winter-2025',
     isShown: false,
   },
@@ -41,7 +54,7 @@ const work = ref([
     position: 'Software Developer Intern',
     type: '',
     date: 'May 2024 - August 2024',
-    technologies: [laravel, php, vuejs, javascript, html, sass, css, mysql, bitbucket,git],
+    technologies: [laravel, php, vuejs, javascript, html, sass, css, mysql, bitbucket, git],
     description: `In the summer of 2024 I interned at ConfiDens Analytics as a Software Developer, I've had the opportunity to work on diverse and impactful projects that have significantly enhanced my technical skills and practical knowledge. One of my primary responsibilities was to create the competitor analysis feature. This has required a keen eye for design and a strong understanding of front-end technologies such as SASS, and Vue.js. Additionally, I lead research and development of the competitor analysis feature which has exposed me to both back-end and front-end development.`,
     id: 'confidens',
     isShown: false,
@@ -55,10 +68,14 @@ const work = ref([
     <template v-for="(position, index) in work" :key="position.id">
       <div id="work-child">
         <div id="timeline-main">
-          <div :class=" index == 0? 'timeline-main-inner-first' : index == work.length - 1 ? 'timeline-main-inner-last' :'timeline-main-inner'"></div>
+          <div
+            :class="index == 0 ? 'timeline-main-inner-first' : index == work.length - 1 ? 'timeline-main-inner-last' : 'timeline-main-inner'">
+          </div>
         </div>
-        <div id="timeline-connecting-line" :class="index % 2 == 0 ? 'timeline-connecting-line-right' : 'timeline-connecting-line-left'"></div>
-        <div id="work-place-child" :class="{ 'work-place-child-right': index % 2 == 0, 'work-place-child-left': index % 2 != 0}">
+        <div id="timeline-connecting-line"
+          :class="index % 2 == 0 ? 'timeline-connecting-line-right' : 'timeline-connecting-line-left'"></div>
+        <div id="work-place-child"
+          :class="{ 'work-place-child-right': index % 2 == 0, 'work-place-child-left': index % 2 != 0 }">
           <div id="work-item">
             <h1 id="work-item-comp">{{ position.company }}</h1>
             <h2 id="work-item-pos">{{ position.position }}</h2>

@@ -33,6 +33,8 @@ import go from '../assets/technologies/go.svg';
 import android from '../assets/technologies/android.svg';
 import ios from '../assets/technologies/ios.svg';
 import docker from '../assets/technologies/docker.svg';
+import rasberrypi from '../assets/technologies/rasberrypi.svg';
+import qnx from '../assets/qnx.png';
 
 const techList = {
   "vuejs": vuejs,
@@ -63,6 +65,8 @@ const techList = {
   "android": android,
   "ios": ios,
   "docker": docker,
+  "rasberrypi": rasberrypi,
+  "qnx": qnx,
 }
 
 let an = null;
