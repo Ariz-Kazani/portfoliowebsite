@@ -50,7 +50,7 @@ const projects = ref([
   },
   {
     name: 'The Movie',
-    hostingLink: 'https://the-movie-arizkazani.firebaseapp.com/',
+    hostingLink: 'https://themovie.arizkazani.com/',
     codeLink: 'https://github.com/Ariz-Kazani/THE-MOVIE-PUBLIC',
     technologies: ["vuejs", "html", "css", "javascript", "firebase", "git"],
     photo: theMovieIMG,

@@ -22,8 +22,9 @@ const work = ref([
   {
     company: 'ReInvestWealth',
     position: 'Full-Stack Software Developer Intern',
+    companyLink: 'https://www.reinvestwealth.com/',
     type: '',
-    date: 'Future',
+    date: 'May 2025 - Present',
     technologies: [react, javascript, html, css, git, nodejs],
     description: `Incoming Full-Stack Software Developer Intern at ReInvestWealth for the summer of 2025.`,
     id: 'ReInvestWealth-summer-2025',
@@ -32,6 +33,7 @@ const work = ref([
   {
     company: 'Carleton University',
     position: 'Teaching Assistant',
+    companyLink: 'https://carleton.ca/',
     type: 'TA for COMP 1406:',
     date: 'January 2025 - April 2025',
     technologies: [java],
@@ -42,6 +44,7 @@ const work = ref([
   {
     company: 'Carleton University',
     position: 'Teaching Assistant',
+    companyLink: 'https://carleton.ca/',
     type: 'TA for COMP 2401:',
     date: 'September 2024 - December 2024',
     technologies: [c, bash, linux],
@@ -52,6 +55,7 @@ const work = ref([
   {
     company: 'ConfiDens Analytics',
     position: 'Software Developer Intern',
+    companyLink: 'https://confidensanalytics.com/',
     type: '',
     date: 'May 2024 - August 2024',
     technologies: [laravel, php, vuejs, javascript, html, sass, css, mysql, bitbucket, git],
@@ -77,7 +81,11 @@ const work = ref([
         <div id="work-place-child"
           :class="{ 'work-place-child-right': index % 2 == 0, 'work-place-child-left': index % 2 != 0 }">
           <div id="work-item">
-            <h1 id="work-item-comp">{{ position.company }}</h1>
+            <h1 id="work-item-comp">
+              <a id="work-item-comp" :href="position.companyLink" target="_blank">
+                {{ position.company }}
+              </a>
+            </h1>
             <h2 id="work-item-pos">{{ position.position }}</h2>
             <h4 id="work-item-aux-info">{{ position.type }} {{ position.date }}</h4>
             <template v-for="tech in position.technologies" :key="tech">
@@ -93,6 +101,12 @@ const work = ref([
 
 <style scoped>
 h1 {
+  color: var(--secondary-variant);
+}
+
+a {
+  text-decoration: none;
+  /* color: var(--secondary-variant); */
   color: var(--secondary-variant);
 }
 
