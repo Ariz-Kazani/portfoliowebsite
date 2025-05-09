@@ -16,6 +16,10 @@ import java from '../assets/technologies/java.svg';
 import bitbucket from '../assets/technologies/bitbucket.svg';
 import react from '../assets/technologies/reactjs.svg';
 import nodejs from '../assets/technologies/nodejs.svg';
+import typescript from '../assets/technologies/typescript.svg';
+import nestjs from '../assets/technologies/nestjs.svg';
+import docker from '../assets/technologies/docker.svg';
+import firebase from '../assets/technologies/firebasesvg.svg';
 
 
 const work = ref([
@@ -25,8 +29,8 @@ const work = ref([
     companyLink: 'https://www.reinvestwealth.com/',
     type: '',
     date: 'May 2025 - Present',
-    technologies: [react, javascript, html, css, git, nodejs],
-    description: `Incoming Full-Stack Software Developer Intern at ReInvestWealth for the summer of 2025.`,
+    technologies: [react, nestjs, typescript, html, css, docker, firebase, git],
+    description: `At ReInvestWealth, I'm working as a Full-Stack Developer on their AI-powered accounting platform for small business owners. I'm building features across the stack using React, NestJS, and even dabbling in AI/ML. Since I'm one of the first engineers outside the founding team, I've had a lot of freedom to take ownership and help shape parts of the product. It's been a great way to learn more about fintech, automation, and what it's like working in a fast-moving startup.`,
     id: 'ReInvestWealth-summer-2025',
     isShown: false,
   },
