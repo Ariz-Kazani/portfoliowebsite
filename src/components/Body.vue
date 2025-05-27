@@ -131,13 +131,19 @@ async function landingInitialAnimation() {
           <p id="about-me-info">
             Hi, I'm Ariz Kazani, a passionate Full Stack Developer currently honing my skills at Carleton University,
             where I'm pursuing a Bachelor of Science in Computer Science, and a Minor in Statistics and a Minor in
-            Economics. Last summer (summer 2024), I interned as a Software Developer at ConfiDense Analytics, where I
-            was responsible for developing and maintaining the company's web application, and implementing new features
-            using Vue.js and Laravel. I really enjoyed leading development on the company's new feature, which allowed
-            dental offices to analyze what their competitors were up to. I'm currently working as a Teaching Assistant
-            for
-            the Introduction to CS II course (COMP 1406), where I help students learn the ins and outs of
-            the Java programming language.
+            Economics. At ReInvestWealth, I'm working as a Full-Stack Developer on their AI-powered accounting platform
+            for small business owners. I'm building features across the stack using React, NestJS, and even dabbling in
+            AI/ML. Since I'm one of the first engineers outside the founding team, I've had a lot of freedom to take
+            ownership and help shape parts of the product. It's been a great way to learn more about fintech,
+            automation, and what it's like working in a fast-moving startup.
+            <br />
+            <br />
+            One of my proudest achievements at ReInvestWealth was spearheading the development of our real-time
+            collaboration feature. I led the design and implementation, enabling multiple users to work together
+            seamlessly on financial documents and reports. This involved architecting a robust backend with NestJS and
+            integrating real-time updates on the frontend with React, ensuring data consistency and a smooth user
+            experience. The feature has significantly improved team productivity for our users and was a key milestone
+            for the product.
             <br />
             <br />
             In addition to my work experiences, I've worked on several projects that highlight my technical versatility.
@@ -348,9 +354,11 @@ a {
   }
 
   #body-con #landing-con #landingMCon #alt-landing-message {
-    display: revert;
+    display: block;
     font-weight: 600;
+    color: white;
     font-size: 7vmin;
+    text-shadow: 0px 1px 4px black;
   }
 }
 
