@@ -127,7 +127,32 @@ async function landingInitialAnimation() {
         <div id="about-test-two">
           <TechAnimation />
         </div>
-        <div id="about-me-data" :class="{ 'abt-me-trans': showAMe, 'abt-me-trans-b': !showAMe }">
+
+        <div id="about-me-data">
+          Hi, I'm Ariz Kazani, a dedicated Full Stack Developer studying Computer Science at Carleton University. I have
+          hands-on experience building scalable web applications, currently working at ReInvestWealth on their
+          AI-powered accounting platform. My technical toolkit includes Vue.js, React, NestJS, and AWS, and I enjoy
+          tackling complex problems and learning new technologies.
+
+          At ReInvestWealth, I've contributed to developing features across the stack, from designing robust backend
+          APIs to creating intuitive user interfaces. One of my proudest achievements was leading the implementation of
+          a real-time collaboration feature, which allowed multiple users to work together seamlessly on financial
+          documents. This experience taught me a lot about teamwork, system architecture, and delivering value in a
+          fast-paced startup environment.
+
+          Beyond my professional work, I've built several personal projects, including a productivity app with Next.js
+          and AWS, a dynamic movie streaming website using Vue.js and Firebase, and even a custom search engine in Java.
+          These projects have helped me strengthen my problem-solving skills and deepen my passion for software
+          development.
+
+          Outside of coding, I love exploring new tech trends, experimenting with programming languages, and sharing
+          knowledge with fellow developers. I'm always eager to connect with others in the tech community, so feel free
+          to reach out on
+          LinkedInF
+          to chat or collaborate!
+        </div>
+
+        <!-- <div id="about-me-data" :class="{ 'abt-me-trans': showAMe, 'abt-me-trans-b': !showAMe }">
           <p id="about-me-info">
             Hi, I'm Ariz Kazani, a passionate Full Stack Developer currently honing my skills at Carleton University,
             where I'm pursuing a Bachelor of Science in Computer Science, and a Minor in Statistics and a Minor in
@@ -160,21 +185,14 @@ async function landingInitialAnimation() {
             sharing my knowledge with fellow developers.
             <br />
             <br />
-            <!-- When I'm not exploring tech, I love getting a pump at the gym, playing squash, or going for hanging with the
-          boys. Recently I've 
-          <br />
-          <br /> -->
+
             Feel free to get in touch on my
             <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'LinkedIn' });"
               href="https://www.linkedin.com/in/arizkazani/" target="_blank">LinkedIn</a>, if you'd like to work with
             me,
             or just want to have a chat!
-            <!-- ! Have to remove this trolling 🤣🤣🤣🤣
-          If you want to learn more about my experiences, here is my
-           <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'resume' });"
-            href="https://drive.google.com/file/d/1W0A2GtongtZBmP2k6pdfskR4ntfJXGWu/view" target="_blank">resume</a>. -->
           </p>
-        </div>
+        </div> -->
       </div>
     </div>
     <div id="work">
@@ -378,20 +396,25 @@ a {
 }
 
 #body-con #about #about-me-data {
+  position: absolute;
   min-height: 400px;
-  width: 90%;
+  width: 40%;
   border-radius: 32px;
   padding: 24px;
-  margin: auto;
-  display: grid;
+  /* margin: auto; */
+  right: 10%;
+  left: auto;
+  display: flex;
   align-items: center;
   color: var(--on-surface);
-  background-color: var(--foreground-1);
+  background-color: --foreground-4;
   box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 #body-con #about #about-me-data:hover {
-  background-color: var(--foreground-2);
+  background-color: var(--foreground-5);
   box-shadow: var(--shadow-xl);
 }
 

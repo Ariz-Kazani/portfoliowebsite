@@ -42,6 +42,8 @@
   --foreground-1-dark-mode: #1e1e1e;
   --foreground-2-dark-mode: #222222;
   --foreground-3-dark-mode: #252525;
+  --foreground-4-dark-mode: rgba(30, 30, 30, 0.1);
+  --foreground-5-dark-mode: rgba(34, 34, 34, 0.1);
 
   --primary-light-mode: #6200EE;
   --primary-variant-light-mode: #3700B3;
@@ -58,12 +60,16 @@
   --foreground-1-light-mode: #FFFFFF;
   --foreground-2-light-mode: #F3F4F6;
   --foreground-3-light-mode: #E5E7EB;
+  --foreground-4-light-mode: rgba(255, 255, 255, 0.1);
+  --foreground-5-light-mode: rgba(243, 244, 246, 0.1);
 
   --primary: var(--primary-dark-mode);
   --background: var(--background-dark-mode);
   --foreground-1: var(--foreground-1-dark-mode);
   --foreground-2: var(--foreground-2-dark-mode);
   --foreground-3: var(--foreground-3-dark-mode);
+  --foreground-4: var(--foreground-4-dark-mode);
+  --foreground-5: var(--foreground-5-dark-mode);
   --primary-variant: var(--primary-variant-dark-mode);
   --secondary: var(--secondary-dark-mode);
   --secondary-variant: var(--secondary-variant-dark-mode);
@@ -74,6 +80,7 @@
   --on-background: var(--on-background-dark-mode);
   --on-surface: var(--on-surface-dark-mode);
   --on-error: var(--on-error-dark-mode);
+
 }
 
 @media (prefers-color-scheme: light) {
@@ -83,6 +90,8 @@
     --foreground-1: var(--foreground-1-light-mode);
     --foreground-2: var(--foreground-2-light-mode);
     --foreground-3: var(--foreground-3-light-mode);
+    --foreground-4: var(--foreground-4-light-mode);
+    --foreground-5: var(--foreground-5-light-mode);
     --primary-variant: var(--primary-variant-light-mode);
     --secondary: var(--secondary-light-mode);
     --secondary-variant: var(--secondary-variant-light-mode);

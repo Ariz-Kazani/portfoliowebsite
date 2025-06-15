@@ -2,14 +2,16 @@
 import { ref } from 'vue';
 
 const techs = ref([
-  'C', 'C#', 'C++', 'Java', 'Python', 'R', 'JavaScript', 'TypeScript', 'PHP', 'HTML5', 'CSS', 'SASS', 'TailwindCSS', 'Next.js', 'Vue.js', 'React.js', 'Laravel', 'Node.js', 'Deno.js', 'AWS', 'DynamoDB', 'Firebase', 'Firestore', 'Unity', 'Git', 'SQL', 'Bitbucket', 'Nuxt.js', 'SQLite', 'Go', 'Android', 'iOS', 'Docker', 'MySQL'
+  'C', 'C#', 'C++', 'Java', 'Python', 'R', 'JavaScript', 'TypeScript', 'PHP', 'HTML5', 'CSS', 'SASS', 'TailwindCSS', 'Next.js', 'Vue.js', 'React.js', 'Laravel', 'Node.js', 'Deno.js', 'AWS', 'DynamoDB', 'Firebase', 'Firestore', 'Unity', 'Git', 'SQL', 'Bitbucket', 'Nuxt.js', 'SQLite', 'Go', 'Android', 'Nest.js', 'iOS', 'Docker', 'MySQL'
 ]);
+
+const rows = ref(30);
 
 const randomTech = ref(null);
 
 function pickRandomTech() {
   const randomTechItem = Math.floor(Math.random() * techs.value.length);
-  const randomIndex = Math.floor(Math.random() * 10) + 2;
+  const randomIndex = Math.floor(Math.random() * rows.value - 4) + 2;
   randomTech.value = techs.value[randomTechItem] + randomIndex;
   setTimeout(() => {
     randomTech.value = null;
@@ -21,7 +23,7 @@ setInterval(pickRandomTech, 700);
 </script>
 <template>
   <div id="tech-an-main-con">
-    <template v-for="i in 14">
+    <template v-for="i in rows" :key="i">
       <span :class="randomTech == 'TailwindCSS' + i ? '' : 'foused-tech'" id="un-focused-tech">TailwindCSS</span>
       <span :class="randomTech == 'C' + i ? '' : 'foused-tech'" id="un-focused-tech">C</span>
       <span :class="randomTech == 'Java' + i ? '' : 'foused-tech'" id="un-focused-tech">Java</span>
@@ -52,6 +54,7 @@ setInterval(pickRandomTech, 700);
       <span :class="randomTech == 'Nuxt.js' + i ? '' : 'foused-tech'" id="un-focused-tech">Nuxt.js</span>
       <span :class="randomTech == 'SQLite' + i ? '' : 'foused-tech'" id="un-focused-tech">SQLite</span>
       <span :class="randomTech == 'Go' + i ? '' : 'foused-tech'" id="un-focused-tech">Go</span>
+      <span :class="randomTech == 'Nest.js' + i ? '' : 'foused-tech'" id="un-focused-tech">Nest.js</span>
       <span :class="randomTech == 'Android' + i ? '' : 'foused-tech'" id="un-focused-tech">Android</span>
       <span :class="randomTech == 'iOS' + i ? '' : 'foused-tech'" id="un-focused-tech">iOS</span>
       <span :class="randomTech == 'Docker' + i ? '' : 'foused-tech'" id="un-focused-tech">Docker</span>
@@ -69,7 +72,7 @@ span {
 
 #tech-an-main-con {
   white-space: initial;
-  word-break: break-all !important; 
+  word-break: break-all !important;
   overflow-wrap: break-word !important;
   position: relative;
 }
