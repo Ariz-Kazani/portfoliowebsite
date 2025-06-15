@@ -128,7 +128,7 @@ async function landingInitialAnimation() {
           <TechAnimation />
         </div>
 
-        <div id="about-me-data">
+        <div id="about-me-data" :class="{ 'abt-me-trans': showAMe, 'abt-me-trans-b': !showAMe }">
           Hi, I'm Ariz Kazani, a dedicated Full Stack Developer studying Computer Science at Carleton University. I have
           hands-on experience building scalable web applications, currently working at ReInvestWealth on their
           AI-powered accounting platform. My technical toolkit includes Vue.js, React, NestJS, and AWS, and I enjoy
@@ -151,48 +151,6 @@ async function landingInitialAnimation() {
           LinkedInF
           to chat or collaborate!
         </div>
-
-        <!-- <div id="about-me-data" :class="{ 'abt-me-trans': showAMe, 'abt-me-trans-b': !showAMe }">
-          <p id="about-me-info">
-            Hi, I'm Ariz Kazani, a passionate Full Stack Developer currently honing my skills at Carleton University,
-            where I'm pursuing a Bachelor of Science in Computer Science, and a Minor in Statistics and a Minor in
-            Economics. At ReInvestWealth, I'm working as a Full-Stack Developer on their AI-powered accounting platform
-            for small business owners. I'm building features across the stack using React, NestJS, and even dabbling in
-            AI/ML. Since I'm one of the first engineers outside the founding team, I've had a lot of freedom to take
-            ownership and help shape parts of the product. It's been a great way to learn more about fintech,
-            automation, and what it's like working in a fast-moving startup.
-            <br />
-            <br />
-            One of my proudest achievements at ReInvestWealth was spearheading the development of our real-time
-            collaboration feature. I led the design and implementation, enabling multiple users to work together
-            seamlessly on financial documents and reports. This involved architecting a robust backend with NestJS and
-            integrating real-time updates on the frontend with React, ensuring data consistency and a smooth user
-            experience. The feature has significantly improved team productivity for our users and was a key milestone
-            for the product.
-            <br />
-            <br />
-            In addition to my work experiences, I've worked on several projects that highlight my technical versatility.
-            I've created a productivity app with Next.js and AWS, a dynamic movie streaming website using Vue.js and
-            Firebase, and even developed a search engine with Java. These projects have not only improved my technical
-            skills but also fueled my passion.
-            <br />
-            <br />
-            I love tackling challenging problems and continuously learning new technologies. My technical arsenal
-            includes
-            a variety of languages like C++, Java, and PHP, and frameworks such as Next.js, Vue.js, and Laravel. When
-            I'm
-            not coding, you can find me exploring the latest in tech, experimenting with new programming languages, or
-            sharing my knowledge with fellow developers.
-            <br />
-            <br />
-
-            Feel free to get in touch on my
-            <a @click="logEvent(an, 'Clicked A Social Link', { linkName: 'LinkedIn' });"
-              href="https://www.linkedin.com/in/arizkazani/" target="_blank">LinkedIn</a>, if you'd like to work with
-            me,
-            or just want to have a chat!
-          </p>
-        </div> -->
       </div>
     </div>
     <div id="work">
@@ -224,12 +182,6 @@ a {
 #about-test-two {
   width: 100%;
   overflow: hidden;
-}
-
-@media screen and (max-width: 800px) {
-  #about-test-two {
-    display: none;
-  }
 }
 
 #body-con {
@@ -407,7 +359,7 @@ a {
   display: flex;
   align-items: center;
   color: var(--on-surface);
-  background-color: --foreground-4;
+  background-color: var(--foreground-4);
   box-shadow: var(--shadow-lg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -531,6 +483,31 @@ a {
 
   #title {
     font-size: 16vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #about-test-two {
+    display: none;
+  }
+
+  #body-con #about #about-me-data {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    left: auto;
+    right: auto;
+    margin: auto;
+    background-color: var(--foreground-1);
+    box-shadow: var(--shadow-lg);
+  }
+
+  #body-con #about #about-me-data:hover {
+    background-color: var(--foreground-2);
+    box-shadow: var(--shadow-xl);
   }
 }
 </style>style
