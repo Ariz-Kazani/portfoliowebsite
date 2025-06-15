@@ -148,7 +148,7 @@ async function landingInitialAnimation() {
           Outside of coding, I love exploring new tech trends, experimenting with programming languages, and sharing
           knowledge with fellow developers. I'm always eager to connect with others in the tech community, so feel free
           to reach out on
-          LinkedInF
+          LinkedIn
           to chat or collaborate!
         </div>
       </div>
