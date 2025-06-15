@@ -386,12 +386,12 @@ a {
   display: grid;
   align-items: center;
   color: var(--on-surface);
-  background-color: var(--foreground-2);
+  background-color: var(--foreground-1);
   box-shadow: var(--shadow-lg);
 }
 
 #body-con #about #about-me-data:hover {
-  background-color: var(--foreground-3);
+  background-color: var(--foreground-2);
   box-shadow: var(--shadow-xl);
 }
 

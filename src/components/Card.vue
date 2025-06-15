@@ -155,7 +155,7 @@ function abtMPREffect() {
   grid-template-columns: 420px 1fr;
   grid-template-rows: 50px 202px;
   border-radius: 32px;
-  background-color: var(--foreground-2);
+  background-color: var(--foreground-1);
   box-shadow: var(--shadow-lg);
   position: sticky;
   overflow: hidden;
@@ -163,7 +163,7 @@ function abtMPREffect() {
 }
 
 #project-con:hover {
-  background-color: var(--foreground-3);
+  background-color: var(--foreground-2);
   box-shadow: var(--shadow-xl);
 }
 

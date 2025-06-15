@@ -101,7 +101,7 @@ span {
 #un-focused-tech {
   white-space: normal;
   overflow-wrap: break-word;
-  color: var(--foreground-2);
+  color: var(--foreground-1);
   transition: color 1s ease;
 }
 
@@ -124,7 +124,7 @@ span {
   }
 
   100% {
-    color: var(--foreground-2);
+    color: var(--foreground-1);
   }
 
 }

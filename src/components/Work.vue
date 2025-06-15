@@ -200,12 +200,12 @@ img {
   padding: 24px;
   border-radius: 32px;
   width: 100%;
-  background-color: var(--foreground-2);
+  background-color: var(--foreground-1);
   box-shadow: var(--shadow-lg);
 }
 
 #work-con #work-item:hover {
-  background-color: var(--foreground-3);
+  background-color: var(--foreground-2);
   box-shadow: var(--shadow-xl);
 }
 
