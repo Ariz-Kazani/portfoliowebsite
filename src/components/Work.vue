@@ -20,7 +20,9 @@ import typescript from '../assets/technologies/typescript.svg';
 import nestjs from '../assets/technologies/nestjs.svg';
 import docker from '../assets/technologies/docker.svg';
 import firebase from '../assets/technologies/firebasesvg.svg';
-
+import mui from '../assets/technologies/mui.svg';
+import googlecloud from '../assets/technologies/googlecloud.svg';
+import awssvg from '../assets/technologies/awssvg.svg';
 
 const work = ref([
   {
@@ -29,7 +31,7 @@ const work = ref([
     companyLink: 'https://www.reinvestwealth.com/',
     type: '',
     date: 'May 2025 - Present',
-    technologies: [react, nestjs, typescript, html, css, docker, firebase, git],
+    technologies: [react, nestjs, mui, typescript, html, css, docker, googlecloud, firebase, git],
     description: `At ReInvestWealth, I'm working as a Full-Stack Developer on their AI-powered accounting platform for small business owners. I'm building features across the stack using React, NestJS, and even dabbling in AI/ML. Since I'm one of the first engineers outside the founding team, I've had a lot of freedom to take ownership and help shape parts of the product. It's been a great way to learn more about fintech, automation, and what it's like working in a fast-moving startup.`,
     id: 'ReInvestWealth-summer-2025',
     isShown: false,
@@ -62,7 +64,7 @@ const work = ref([
     companyLink: 'https://confidensanalytics.com/',
     type: '',
     date: 'May 2024 - August 2024',
-    technologies: [laravel, php, vuejs, javascript, html, sass, css, mysql, bitbucket, git],
+    technologies: [laravel, php, vuejs, javascript, html, sass, css, mysql, awssvg, bitbucket, git],
     description: `In the summer of 2024 I interned at ConfiDens Analytics as a Software Developer, I've had the opportunity to work on diverse and impactful projects that have significantly enhanced my technical skills and practical knowledge. One of my primary responsibilities was to create the competitor analysis feature. This has required a keen eye for design and a strong understanding of front-end technologies such as SASS, and Vue.js. Additionally, I lead research and development of the competitor analysis feature which has exposed me to both back-end and front-end development.`,
     id: 'confidens',
     isShown: false,
