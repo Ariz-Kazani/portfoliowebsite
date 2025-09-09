@@ -23,14 +23,26 @@ import firebase from '../assets/technologies/firebasesvg.svg';
 import mui from '../assets/technologies/mui.svg';
 import googlecloud from '../assets/technologies/googlecloud.svg';
 import awssvg from '../assets/technologies/awssvg.svg';
+import python from '../assets/technologies/python.svg';
 
 const work = ref([
+  {
+    company: 'ReInvestWealth',
+    position: 'AI/ML Engineering Intern',
+    companyLink: 'https://www.reinvestwealth.com/',
+    type: '',
+    date: 'September 2025 - Present',
+    technologies: [python],
+    description: `Building cool stuff using foundation and custom models!`,
+    id: 'ReInvestWealth-summer-2025',
+    isShown: false,
+  },
   {
     company: 'ReInvestWealth',
     position: 'Full-Stack Software Developer Intern',
     companyLink: 'https://www.reinvestwealth.com/',
     type: '',
-    date: 'May 2025 - Present',
+    date: 'May 2025 - August 2025',
     technologies: [react, nestjs, mui, typescript, html, css, docker, googlecloud, firebase, git],
     description: `At ReInvestWealth, I'm working as a Full-Stack Developer on their AI-powered accounting platform for small business owners. I'm building features across the stack using React, NestJS, and even dabbling in AI/ML. Since I'm one of the first engineers outside the founding team, I've had a lot of freedom to take ownership and help shape parts of the product. It's been a great way to learn more about fintech, automation, and what it's like working in a fast-moving startup.`,
     id: 'ReInvestWealth-summer-2025',
