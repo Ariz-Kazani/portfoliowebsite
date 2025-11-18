@@ -33,8 +33,8 @@ const work = ref([
     type: '',
     date: 'September 2025 - Present',
     technologies: [python],
-    description: `Building cool stuff using foundation and custom models!`,
-    id: 'ReInvestWealth-summer-2025',
+    description: `Making rocks that think, make other rocks think, just kidding! I'm working on building and improving machine learning models that power ReInvestWealth's AI-driven accounting platform.`,
+    id: 'ReInvestWealth-fall-2025',
     isShown: false,
   },
   {

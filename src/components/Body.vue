@@ -129,27 +129,17 @@ async function landingInitialAnimation() {
         </div>
 
         <div id="about-me-data" :class="{ 'abt-me-trans': showAMe, 'abt-me-trans-b': !showAMe }">
-          Hi, I'm Ariz Kazani, a dedicated Full Stack Developer studying Computer Science at Carleton University. I have
-          hands-on experience building scalable web applications, currently working at ReInvestWealth on their
-          AI-powered accounting platform. My technical toolkit includes Vue.js, React, NestJS, and AWS, and I enjoy
-          tackling complex problems and learning new technologies.
-
-          At ReInvestWealth, I've contributed to developing features across the stack, from designing robust backend
-          APIs to creating intuitive user interfaces. One of my proudest achievements was leading the implementation of
-          a real-time collaboration feature, which allowed multiple users to work together seamlessly on financial
-          documents. This experience taught me a lot about teamwork, system architecture, and delivering value in a
-          fast-paced startup environment.
-
-          Beyond my professional work, I've built several personal projects, including a productivity app with Next.js
-          and AWS, a dynamic movie streaming website using Vue.js and Firebase, and even a custom search engine in Java.
-          These projects have helped me strengthen my problem-solving skills and deepen my passion for software
-          development.
-
-          Outside of coding, I love exploring new tech trends, experimenting with programming languages, and sharing
-          knowledge with fellow developers. I'm always eager to connect with others in the tech community, so feel free
-          to reach out on
-          LinkedIn
-          to chat or collaborate!
+          Hi, I'm Ariz. I make rocks think. You might be wondering how can rocks think? Well, computers are just a bunch
+          of different rocks smooshed together. How? Well I... I got no clue. But hey, it works, and that's what matters, right?
+          <br /><br />
+          When I'm not convincing silicon to do my bidding, I'm probably breaking something in production (kidding... mostly), 
+          learning something that'll be obsolete next month, or pretending I understand how DNS works. 
+          Spoiler: nobody really does.
+          <br /><br />
+          I build things for the fun of it, solve problems that probably shouldn't exist in the first place, and occasionally write 
+          code that actually works on the first try. Those are good days.
+          <br /><br />
+          Feel free to reach out if you want to chat or collaborate!
         </div>
       </div>
     </div>
@@ -510,4 +500,4 @@ a {
     box-shadow: var(--shadow-xl);
   }
 }
-</style>style
+</style>

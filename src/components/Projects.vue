@@ -14,7 +14,7 @@ import Card from './Card.vue';
 const projects = ref([
   {
     name: 'Time-CoPilot',
-    hostingLink: 'https://www.time-copilot.com',
+    hostingLink: 'https://www.timecopilot.app',
     codeLink: null,
     technologies: ["nextjs", "reactjs", "typescript", "tailwindcss", "aws", "git"],
     photo: timecopilotIMG,
