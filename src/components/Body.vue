@@ -162,7 +162,7 @@ a {
 
 #about-test {
   display: flex;
-  padding: 32px;
+  padding: 0px;
   justify-content: center;
   align-items: center;
   gap: 32px;

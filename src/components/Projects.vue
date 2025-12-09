@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import theMovieIMG from '../assets/themovie.jpg';
 import sortingAlgoIMG from '../assets/sortingalgo.jpg';
-import timecopilotIMG from '../assets/time-copilot3.jpg';
+import timecopilotIMG from '../assets/tcp_demo_img.png';
 import searchEngineIMG from '../assets/searchengine.jpg';
 import carletonSchedular from '../assets/carletonschedular.jpg';
 import herbImage from '../assets/HERB.jpg';
@@ -13,12 +13,12 @@ import Card from './Card.vue';
 // Add projects here in the format below 
 const projects = ref([
   {
-    name: 'Time-CoPilot',
+    name: 'TimeCoPilot',
     hostingLink: 'https://www.timecopilot.app',
     codeLink: null,
     technologies: ["nextjs", "reactjs", "typescript", "tailwindcss", "aws", "git"],
     photo: timecopilotIMG,
-    description: `Time-CoPilot is an AI driven productivity app that will take your productivity to the next level. Uses AWS, React (with Next.js), Typescript, TailwindCSS and Shadcn. Time-CoPilot allows users to plan their day, and track their progress. Users can also create, notes, todo's and much much more!`,
+    description: `TimeCoPilot is an AI driven productivity app that will take your productivity to the next level. Uses AWS, React (with Next.js), Typescript, TailwindCSS and Shadcn. TimeCoPilot allows users to plan their day, and track their progress. Users can also create, notes, todo's and much much more!`,
     id: 'time-copilot',
   },
   {

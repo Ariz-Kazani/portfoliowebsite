@@ -2,10 +2,10 @@
 import { ref } from 'vue';
 
 const techs = ref([
-  'C', 'C#', 'C++', 'Java', 'Python', 'R', 'JavaScript', 'TypeScript', 'PHP', 'HTML5', 'CSS', 'SASS', 'TailwindCSS', 'Next.js', 'Vue.js', 'React.js', 'Laravel', 'Node.js', 'Deno.js', 'AWS', 'DynamoDB', 'Firebase', 'Firestore', 'Unity', 'Git', 'SQL', 'Bitbucket', 'Nuxt.js', 'SQLite', 'Go', 'Android', 'Nest.js', 'iOS', 'Docker', 'MySQL'
+  'C', 'C#', 'C++', 'Java', 'Python', 'R', 'JavaScript', 'TypeScript', 'PHP', 'HTML5', 'CSS', 'SASS', 'TailwindCSS', 'Next.js', 'Nuxt.js', 'Vue.js', 'React.js', 'Laravel', 'Node.js', 'Deno.js', 'AWS', 'DynamoDB', 'Firebase', 'Firestore', 'Unity', 'Git', 'SQL', 'Bitbucket', 'SQLite', 'Go', 'Android', 'Nest.js', 'iOS', 'Docker', 'MySQL'
 ]);
 
-const rows = ref(30);
+const rows = ref(35);
 
 const randomTech = ref(null);
 
@@ -15,7 +15,7 @@ function pickRandomTech() {
   randomTech.value = techs.value[randomTechItem] + randomIndex;
   setTimeout(() => {
     randomTech.value = null;
-  }, 10);
+  }, 8);
 }
 
 setInterval(pickRandomTech, 400);
