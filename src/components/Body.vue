@@ -108,7 +108,7 @@ async function landingInitialAnimation() {
       <div id="landing-con" :style="{ 'opacity': landingOpacity + '%' }">
         <div id="img-con">
           <div id="img-style-con">
-            <img src="../assets/earth.jpg" alt="" id="earth-img">
+            <img src="../assets/earth.webp" alt="" id="earth-img">
           </div>
         </div>
         <div id="landingMCon">
